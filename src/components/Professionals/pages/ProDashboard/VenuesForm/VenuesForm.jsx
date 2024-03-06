@@ -2,59 +2,62 @@ import React, {useState} from 'react'
 import Input from '../../../../../ui/Input'
 import AddImages from '../../../../../ui/AddImages';
 import Button from '../../../../../ui/Button';
+import { useTranslation } from 'react-i18next';
+
 const VenuesForm = () => {
+    const { t } = useTranslation();
   return (
     <div className="max-w-[1220px] ">
-        <div className="text-[#8D303A] text-2xl font-con">
-            Create Announcement
+        <div className="text-[#8D303A] border-b border-gray pb-4 text-2xl font-con">
+            {t('createAnn')}
         </div>
-        <p className='mt-8 font-con text-[18px]'>Venues</p> 
+        <p className='mt-8 font-con text-[18px]'>{t('venues')}</p> 
         <form className='flex flex-wrap mt-8 font-pop' action="">
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">Name</label>
-                <Input placeholder="Name" type="text" classes="large"></Input>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('name')}</label>
+                <Input placeholder={t('name')} type="text" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">Phone Number</label>
-                <Input placeholder="Phone Number" type="number" classes="large"></Input>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('phoneNum')}</label>
+                <Input placeholder={t('phoneNum')} type="number" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">Website</label>
-                <Input placeholder="Website" type="website" classes="large"></Input>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('website')}</label>
+                <Input placeholder={t('website')} type="website" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[50%]'>
-                <label htmlFor="">Address</label>
-                <Input placeholder="Address" type="text" classes="large"></Input>
+            <div className='flex flex-col md:w-[50%] w-full'>
+                <label htmlFor="">{t('address')}</label>
+                <Input placeholder={t('address')} type="text" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[50%]'>
-                <label htmlFor="">Description</label>
-                <Input placeholder="Description" type="text" classes="large"></Input>
+            <div className='flex flex-col md:w-[50%] w-full'>
+                <label htmlFor="">{t('description')}</label>
+                <Input placeholder={t('description')} type="text" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">Venue Size (in square meters)</label>
-                <Input placeholder="Venue Size" type="number" classes="large"></Input>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('venueSize')}</label>
+                <Input placeholder={t('venueSize')} type="number" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">Maximum Capacity Sitting</label>
-                <Input placeholder="Maximum Capacity Sitting" type="number" classes="large"></Input>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('maxCapSit')}</label>
+                <Input placeholder={t('maxCapSit')} type="number" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">Maximum Capacity Standing</label>
-                <Input placeholder="Maximum Capacity Standing" type="number" classes="large"></Input>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('maxCapStand')}</label>
+                <Input placeholder={t('maxCapStand')} type="number" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">Maximum Parking Space</label>
-                <Input placeholder="Maximum Parking Space" type="number" classes="large"></Input>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('maxPark')}</label>
+                <Input placeholder={t('maxPark')} type="number" classes="large"></Input>
             </div>
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">Catering choice</label>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('cateringChoice')}</label>
                 <select className='p-4 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
-                    <option value="Lunch">Lunch</option>
-                    <option value="Dinner">Dinner</option>
+                    <option value="Lunch">{t('lunch')}</option>
+                    <option value="Dinner">{t('dinner')}</option>
                 </select>
             </div>
-            <div className='flex flex-col w-[33%]'>
-                <label htmlFor="">The kind of cuisine you cook</label>
+            <div className='flex flex-col md:w-[33%] w-full'>
+                <label htmlFor="">{t('kindOfCuisine')}</label>
                 <select className='p-4 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
                     <option value="Dinner">Traditional</option>
                     <option value="Lunch">Chinese</option>
@@ -64,29 +67,29 @@ const VenuesForm = () => {
             </div>
 
             <div className="flex flex-col w-[100%]">
-                <p>Upload of pictures (max 15)</p>
+                <p>{t('uploadPic')}</p>
                 <AddImages />
             </div>
             <div className="flex flex-col mt-4">
-                <p>Indicate whether the following criteria are fulfilled</p>
+                <p>{t('indicateCri')}</p>
                 <div className="flex flex-wrap mt-4 gap-2">
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Professional Kitchen</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>With Terrasse</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>With Garden</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Sound system Available</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Lights Available</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Microphone Available</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Beamer + Screens available</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Dancefloor</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Skittle Alley</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Handicapped Accessible</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>Pets Accepted</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('profKitchen')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('withTerr')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('withGar')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('soundSysAva')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('lightsAva')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('microAva')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('beamer')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('danceFloor')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('skittle')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('handi')}</p></div>
+                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('pets')}</p></div>
                     
                 </div>
             </div>
             <div className="flex justify-between w-full mt-8 mb-8">
-                <Button type="grayButton">Back</Button>
-                <Button type="purpleButton">Next</Button>
+                <Button type="grayButton">{t('back')}</Button>
+                <Button type="purpleButton">{t('next')}</Button>
             </div>
 
         </form>

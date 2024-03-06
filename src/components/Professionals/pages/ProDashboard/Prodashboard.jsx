@@ -1,55 +1,58 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../../ui/Button";
+import { useTranslation } from 'react-i18next';
 
 function Prodashboard() {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
+  const { t } = useTranslation();
+
 
   const categories = [
     { value: "", label: "Select..." },
-    { value: "Venues", label: "Venues" },
-    { value: "Entertainment", label: "Entertainment" },
-    { value: "Rental", label: "Rental" },
-    { value: "Services", label: "Services" },
+    { value: "Venues", label: `${t('venues')}` },
+    { value: "Entertainment", label: `${t('entertainment')}` },
+    { value: "Rental", label: `${t('rental')}` },
+    { value: "Services", label: `${t('services')}` },
   ];
 
   const subcategoriesMap = {
     Venues: [
       { value: "", label: "Select..." },
-      { value: "Castles", label: "Castles" },
-      { value: "Party Rooms", label: "Party Rooms" },
-      { value: "Bars", label: "Bars" },
-      { value: "Hotels & Restaurants", label: "Hotels & Restaurants" },
+      { value: "Castles", label: `${t('castles')}` },
+      { value: "Party Rooms", label: `${t('partyRooms')}` },
+      { value: "Bars", label: `${t('bars')}` },
+      { value: "Hotels & Restaurants", label: `${t('hotelsRes')}` },
       {
         value: "Conference & Meetingrooms",
-        label: "Conference & Meetingrooms",
+        label: `${t('confMeet')}`,
       },
-      { value: "Open Air Spaces", label: "Open Air Spaces" },
-      { value: "Night clubs", label: "Night clubs" },
+      { value: "Open Air Spaces", label: `${t('openAir')}` },
+      { value: "Night clubs", label: `${t('nightClubs')}` },
     ],
     Entertainment: [
       { value: "", label: "Select..." },
       { value: "DJ", label: "Dj" },
-      { value: "Singers ", label: "Singers" },
-      { value: "Magicians  ", label: "Magicians " },
-      { value: "Live Music Bands ", label: "Live Music Bands" },
-      { value: "Cover band ", label: "Cover band" },
+      { value: "Singers ", label: `${t('singers')}` },
+      { value: "Magicians  ", label: `${t('magicians')}` },
+      { value: "Live Music Bands ", label: `${t('liveMusic')}` },
+      { value: "Cover band ", label: `${t('coverBands')}` },
     ],
     Rental: [
       { value: "", label: "Select..." },
 
       {
         value: "Rental",
-        label: "Rental",
+        label: `${t('rental')}`,
       },
     ],
     Services: [
       { value: "", label: "Select..." },
       {
         value: "Services",
-        label: "Services",
+        label: `${t('services')}`,
       },
     ],
   };
@@ -73,14 +76,14 @@ function Prodashboard() {
   return (
     <div className="">
       <div className="text-[#8D303A] text-2xl font-con py-5">
-        Create Announcement
+        {t('createAnn')}
       </div>
       <hr />
     <div className="max-w-[1220px]">
       <div className="max-w-sm ">
-        <h3 className="my-4 text-xl font-con">Categories & Subcategories</h3>
+        <h3 className="my-4 text-xl font-con">{t('catSub')}</h3>
         <div className="flex flex-col font-pop gap-2">
-          <label>Choice between categories</label>
+          <label>{t('choiceBwCat')}</label>
           <select
             value={selectedCategory}
             onChange={handleCategoryChange}
@@ -93,7 +96,7 @@ function Prodashboard() {
             ))}
           </select>
 
-          <label>Choice between subcategories</label>
+          <label>{t('choiceBwSubcat')}</label>
           <select
             value={selectedSubcategory}
             onChange={handleSubcategoryChange}
@@ -111,7 +114,7 @@ function Prodashboard() {
 
       <div className="flex justify-end pt-8">
         <Button onClick={handleNextClick} type="purpleButton">
-          Next
+          {t('next')}
         </Button>
       </div>
       </div>

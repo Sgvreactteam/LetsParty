@@ -1,6 +1,9 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 const Input = ({ children, placeholder, type, classes, state, onChange }) => {
+
+  const { t } = useTranslation();
 
     const base = " outline-none p-4 border rounded-md border-borde placeholder:text-placeholderText my-2 "
     const styles = {
