@@ -4,6 +4,11 @@
     "login": "Se connecter",
     "name": "Nom",
     "nameOfC": "Name des Kontakts",
+    "createAcc": "Créer un compte",
+    "forgotPass": "Mot de passe oublié",
+    "newpassword": "nouveau mot de passe",
+    "verpassword": "vérifier le mot de passe",
+    "submit": "Soumettre",
     
 
     "createAnn": "Créer une annonce",

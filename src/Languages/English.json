@@ -4,6 +4,11 @@
     "login": "Login",
     "name": "Name",
     "nameOfC": "Name of Contact",
+    "createAcc": "Create an account",
+    "forgotPass": "Forgot Password",
+    "newpassword": "New Password",
+    "verpassword": "Verify Password",
+    "submit": "Submit",
     
 
     "createAnn": "Create Announcement",
