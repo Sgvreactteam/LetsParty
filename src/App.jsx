@@ -8,6 +8,8 @@ import Prodashboard from './components/Professionals/pages/ProDashboard/Prodashb
 import Register from './components/Professionals/auth/Register';
 import VenuesForm from './components/Professionals/pages/ProDashboard/VenuesForm/VenuesForm';
 
+
+
 function App() {
 
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path='/myaccount' element={<MyAccount />} />
         <Route path='/venuesForm' element={<VenuesForm />} />
         <Route path='/myannouncements' element={<MyAnnouncements />} />
+
     
         </Route>
       </Routes>

@@ -7,22 +7,20 @@ import {
     ListItemSuffix,
     Chip,
   } from "@material-tailwind/react";
-  import {
-    PresentationChartBarIcon,
-    ShoppingBagIcon,
-    UserCircleIcon,
-    Cog6ToothIcon,
-    InboxIcon,
-    PowerIcon,
-    HomeIcon,
-  } from "@heroicons/react/24/solid";
   import { Link } from "react-router-dom";
+import { useState } from "react";
   
   export function Sidebar() {
+
+    const [list, setlist] = useState(0)
+
+    const handleClickList = (index) =>{
+      setlist(index)
+    }
     return (
       <Card className=" w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 font-pop">
         <div >
-        <List className=" flex flex-col ">
+        <List className=" flex flex-col text-lg gap-2 ">
           {[
             {
               link: "/",
@@ -37,9 +35,8 @@ import {
               title: "My Announcements",
             },
           ].map((item, index) => (
-            <Link to={item.link}>
+            <Link to={item.link} className={list == index ? "text-[#6757EC]" : ""} onClick={handleClickList.bind(this,index)}> 
               <ListItem key={index}>
-                <ListItemPrefix>{item.icon}</ListItemPrefix>
                 {item.title}
               </ListItem>
             </Link>
