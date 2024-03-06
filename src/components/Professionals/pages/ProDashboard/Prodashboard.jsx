@@ -71,12 +71,12 @@ function Prodashboard() {
   };
 
   return (
-    <div className="max-w-[1220px] ">
-      <div className="text-[#8D303A] text-2xl font-con">
+    <div className="">
+      <div className="text-[#8D303A] text-2xl font-con py-5">
         Create Announcement
       </div>
       <hr />
-
+    <div className="max-w-[1220px]">
       <div className="max-w-sm ">
         <h3 className="my-4 text-xl font-con">Categories & Subcategories</h3>
         <div className="flex flex-col font-pop gap-2">
@@ -113,6 +113,7 @@ function Prodashboard() {
         <Button onClick={handleNextClick} type="purpleButton">
           Next
         </Button>
+      </div>
       </div>
     </div>
   );
