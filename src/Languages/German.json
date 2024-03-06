@@ -4,6 +4,11 @@
     "login": "Anmeldung",
     "name": "Name",
     "nameOfC": "Name des Kontakts",
+    "createAcc": "Ein Konto erstellen",
+    "forgotPass": "Passwort vergessen",
+    "newpassword": "Neues Kennwort",
+    "verpassword": "Passwort bestätigen",
+    "submit": "Einreichen",
     
 
     "createAnn": "Ankündigung erstellen",
