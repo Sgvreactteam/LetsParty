@@ -6,30 +6,6 @@ import Input from '../../../ui/Input';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
-    // const formik = useFormik({
-    //     initialValues: {
-    //       email: "",
-    //       name: "",
-    //       password: "",
-    //     },
-    
-    //     validateOnChange: false,
-    //     validateOnBlur: false,
-    //     validationSchema: Yup.object({
-    //       email: Yup.string()
-    //         .email("Invalid email address")
-    //         .required("Email is required"),
-    
-    //       name: Yup.string().required("Name  is required"),
-    //       password: Yup.string()
-    //         .required("Password is required")
-    //         .min(8, "Password must be at least 8 characters long"),
-    //     }),
-    
-    //     onSubmit: (values) => {
-    //       console.log(values);
-    //     },
-    //   });
   return (
     <div className='relative w-full h-[100vh] flex items-center justify-center'>
       <img src={authBackground} className='absolute z-1 w-full h-full object-cover top-0' alt="" />
@@ -46,7 +22,6 @@ const Register = () => {
             <Button to="/ProfessionalDashboard" type="purpleButton">Register</Button>
           </form>
           <span className='mt-4'>Already have an account? Login</span>
-
         </div>
       </div>
     </div>
