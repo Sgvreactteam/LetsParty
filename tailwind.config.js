@@ -13,6 +13,8 @@ export default {
         secondary: "rgb(141, 48, 58)",
         light: "rgb(106, 106, 106)",
         borde: "rgb(202,202,202)",
+        placeholderText: "#B3B3B3",
+        gray: "#616161"
       },
     },
   },

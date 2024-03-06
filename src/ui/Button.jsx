@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Button = ({ children, disabled, to, type, onClick }) => {
-  const base = "py-1 px-10 rounded-md font-medium flex items-center text-white ";
+  const base = "py-1 px-10 rounded-sm font-medium flex items-center text-white ";
   const styles = {
     purpleButton: base + " bg-primary ",
     grayButton: base + " bg-gray ",
