@@ -24,8 +24,8 @@ function Header() {
   };
 
   return (
-    <div className="shadow-lg">
-      <div className="max-w-7xl mx-auto py-3 flex justify-between ">
+    <div className="border-b-2">
+      <div className="max-w-7xl m-auto py-3 flex justify-between">
         <div>
           <img src={logo} alt="" />
         </div>

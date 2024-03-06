@@ -10,7 +10,7 @@ function ProLayout() {
         <Header />
         <div className="flex h-screen">
           <Sidebar />
-          <div className=" w-full mt-10 mx-10">
+          <div className=" w-full mt-5 mx-10">
             <Outlet />
           </div>
         </div>
