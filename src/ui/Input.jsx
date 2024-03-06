@@ -2,9 +2,10 @@ import React from 'react'
 
 const Input = ({ children, placeholder, type, classes, state, onChange }) => {
 
-    const base = " outline-none p-4 border rounded-md border-grayBorder placeholder:text-grayText my-2 "
+    const base = " outline-none p-4 border rounded-md border-borde placeholder:text-placeholderText my-2 "
     const styles = {
-      small: base + "w-[380px]"
+      small: base + "sm:w-[45%] w-[100%]",
+      large: base + "sm:w-[95%] w-[100%]"
     }
 
     const className = styles[classes];
