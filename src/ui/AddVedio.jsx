@@ -1,31 +1,33 @@
 import React, { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 import { AiOutlineCloudUpload } from "react-icons/ai";
-const AddImages = () => {
-  const [selectedImages, setSelectedImages] = useState([]);
+
+const AddVideo = () => {
+  const [selectedVideos, setSelectedVideos] = useState([]);
 
   const handleFileChange = (event) => {
     const files = event.target.files;
-    setSelectedImages((prevImages) => [...prevImages, ...Array.from(files)]);
+    setSelectedVideos((prevVideos) => [...prevVideos, ...Array.from(files)]);
   };
 
   const handleUploadClick = () => {
-    document.getElementById("fileInput").click();
+    document.getElementById("videoInput").click();
   };
-  const handleRemoveImage = (indexToRemove) => {
-    setSelectedImages((prevImages) =>
-      prevImages.filter((_, index) => index !== indexToRemove)
+
+  const handleRemoveVideo = (indexToRemove) => {
+    setSelectedVideos((prevVideos) =>
+      prevVideos.filter((_, index) => index !== indexToRemove)
     );
   };
 
   return (
     <div className="flex flex-wrap gap-2 mt-4">
       <input
-        id="fileInput"
+        id="videoInput"
         onChange={handleFileChange}
         style={{ display: "none" }}
         type="file"
-        accept=".jpg, .png"
+        accept=".mp4, .avi, .mov"
         name=""
         multiple
       />
@@ -35,18 +37,19 @@ const AddImages = () => {
       >
         <AiOutlineCloudUpload color="#B3B3B3" size={32} />
       </div>
-      {selectedImages.map((item, index) => (
+      {selectedVideos.map((item, index) => (
         <div key={index} className="h-[100px] w-[121px] relative">
           <IoMdCloseCircle
             className="absolute -top-2 -right-2 bg-white rounded-full"
             size={20}
             color="#8D303A"
-            onClick={() => handleRemoveImage(index)}
+            onClick={() => handleRemoveVideo(index)}
           />
-          <img
+          <video
             src={URL.createObjectURL(item)}
             className="h-full w-full rounded-sm object-cover"
-            alt={`Selected Image ${index}`}
+            controls
+            alt={`Selected Video ${index}`}
           />
           {console.log(item)}
         </div>
@@ -55,4 +58,4 @@ const AddImages = () => {
   );
 };
 
-export default AddImages;
+export default AddVideo;

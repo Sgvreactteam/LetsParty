@@ -18,12 +18,12 @@ import { useState } from "react";
       setlist(index)
     }
     return (
-      <Card className=" w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 font-pop">
+      <Card className=" w-full max-w-[18rem] p-4 shadow-xl shadow-blue-gray-900/5 font-pop ">
         <div >
-        <List className=" flex flex-col text-lg gap-2 ">
+        <List className=" flex flex-col text-lg gap-2">
           {[
             {
-              link: "/",
+              link: "/ProfessionalDashboard",
               title: "Create Announcement",
             },
             {
