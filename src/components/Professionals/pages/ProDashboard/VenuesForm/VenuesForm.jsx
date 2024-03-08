@@ -1,16 +1,32 @@
-import React, {useState} from 'react'
-import Input from '../../../../../ui/Input'
-import AddImages from '../../../../../ui/AddImages';
-import Button from '../../../../../ui/Button';
+import React, { useState } from "react";
+import Input from "../../../../../ui/Input";
+import AddImages from "../../../../../ui/AddImages";
+import Button from "../../../../../ui/Button";
 import { useTranslation } from 'react-i18next';
-
 const VenuesForm = () => {
-    const { t } = useTranslation();
+  const checkBoxArry = [
+    {
+      Heading: "Indicate whether the following criteria are fulfilled ",
+      labels: [
+        { id: "1", label: "as resquested by host" },
+        { id: "1", label: "as resquested by host" },
+        { id: "1", label: "as resquested by " },
+        { id: "1", label: "as resquested by host" },
+        { id: "1", label: " resquested by host" },
+        { id: "1", label: "as resquested by host" },
+        { id: "1", label: "as resquested by host" },
+        { id: "1", label: "as " },
+        { id: "1", label: "as resquested by host" },
+      ],
+    },
+  ];
+const { t } = useTranslation();
   return (
-    <div className="max-w-[1220px] ">
+    <div className=" ">
         <div className="text-[#8D303A] border-b border-gray pb-4 text-2xl font-con">
             {t('createAnn')}
         </div>
+       <div className=" max-w-[1220px]">
         <p className='mt-8 font-con text-[18px]'>{t('venues')}</p> 
         <form className='flex flex-wrap mt-8 font-pop' action="">
             <div className='flex flex-col md:w-[33%] w-full'>
@@ -70,32 +86,48 @@ const VenuesForm = () => {
                 <p>{t('uploadPic')}</p>
                 <AddImages />
             </div>
-            <div className="flex flex-col mt-4">
-                <p>{t('indicateCri')}</p>
-                <div className="flex flex-wrap mt-4 gap-2">
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('profKitchen')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('withTerr')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('withGar')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('soundSysAva')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('lightsAva')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('microAva')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('beamer')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('danceFloor')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('skittle')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('handi')}</p></div>
-                    <div className='flex my-2'><input type="checkbox" name="" id="" /> <p className='ml-2'>{t('pets')}</p></div>
-                    
-                </div>
-            </div>
-            <div className="flex justify-between w-full mt-8 mb-8">
-                <Button type="grayButton">{t('back')}</Button>
-                <Button type="purpleButton">{t('next')}</Button>
-            </div>
 
+
+          <div className="mt-5 flex flex-col gap-4">
+            {checkBoxArry &&
+              checkBoxArry.map((item, index) => {
+                return (
+                  <div className=" " key={index}>
+                    <h3 className="text-2xl font-con pb-2">{item.Heading} </h3>
+                    <div className="flex flex-wrap gap-3">
+                      {item.labels.map((labelData, idx) => (
+                        <div
+                          className="flex justify-start items-baseline basis-52"
+                          key={idx}
+                        >
+                          <input
+                            type="checkbox"
+                            id={labelData.id}
+                            className=" checkbox-input p-1"
+                          />{" "}
+                          <label
+                            htmlFor={labelData.id}
+                            className="font-pop ps-2"
+                          >
+                            {labelData.label}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
         </form>
 
+        <div className="flex justify-between w-full mt-8 mb-8">
+          <Button type="grayButton" >Back</Button>
+          <Button type="purpleButton"to="/myannouncementss">Next</Button>
+        </div>
+      </div>
+     </div>
     </div>
-  )
-}
+  );
+};
 
-export default VenuesForm
+export default VenuesForm;

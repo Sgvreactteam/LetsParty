@@ -6,6 +6,7 @@ const Button = ({ children, disabled, to, type, onClick }) => {
   const styles = {
     purpleButton: base + " bg-primary ",
     grayButton: base + " bg-gray ",
+    cardBtn: "bg-[#E2E0F4] text-[#352C80] py-1 px-4 basis-64 rounded-sm font-medium flex items-center justify-center"
   };
 
   const handleClick = () => {

@@ -75,10 +75,9 @@ function Prodashboard() {
 
   return (
     <div className="">
-      <div className="text-[#8D303A] text-2xl font-con py-5">
+      <div className="text-[#8D303A] border-b-[1px] border-borde text-2xl font-con py-5">
         {t('createAnn')}
       </div>
-      <hr />
     <div className="max-w-[1220px]">
       <div className="max-w-sm ">
         <h3 className="my-4 text-xl font-con">{t('catSub')}</h3>
