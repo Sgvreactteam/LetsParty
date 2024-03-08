@@ -37,7 +37,7 @@ function App() {
         <Route path='/Services' element={<ServicesForm />} />
         <Route path='/myannouncements' element={<MyAnnouncements />} />
         <Route path='/myannouncementss' element={<AnnouncementStep3 />} />
-
+        </Route>  
       </Routes>
     </I18nextProvider>
     </BrowserRouter>
