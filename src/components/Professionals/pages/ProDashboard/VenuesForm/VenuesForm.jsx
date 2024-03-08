@@ -126,7 +126,6 @@ const { t } = useTranslation();
         </div>
       </div>
      </div>
-    </div>
   );
 };
 
