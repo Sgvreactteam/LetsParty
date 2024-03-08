@@ -39,8 +39,8 @@ function AnnouncementStep3() {
   // };
   return (
     <>
-      <div className="text-2xl text-secondary">Create MyAnnouncements</div>
-      <div className="mt-3 p">
+      <div className="text-2xl text-secondary  font-con border-b-[1px] border-borde py-5 px-10">Create MyAnnouncements</div>
+      <div className="mt-3 px-10">
         {headingsData.map((headingData, index) => (
           <div key={index}>
             <h2 className="text-2xl font-con  pb-2">{headingData.heading}</h2>
@@ -65,7 +65,7 @@ function AnnouncementStep3() {
         ))}
       </div>
 
-      <div className="mt-3 p">
+      <div className="mt-3 px-10">
         <h2 className="text-2xl font-con  pb-2">Accepted Kinds Of Booking</h2>
         <div className="flex flex-wrap gap-2">
           <div className=" flex justify-start items-baseline ">
@@ -98,7 +98,7 @@ function AnnouncementStep3() {
           <div></div>
         </div>
       </div>
-      <div className="mt-3 p">
+      <div className="mt-3 px-10">
         <div className="flex   pb-2">
           <h2 className="text-2xl font-con  ">Premium Announcement </h2>{" "}
           {/* <Box sx={{ width: 40 }}>
@@ -134,7 +134,7 @@ function AnnouncementStep3() {
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-16">
+      <div className="flex justify-between items-center mt-16 px-10">
         <Button type="grayButton">Back</Button>
         <Button type="purpleButton">Submit</Button>
       </div>

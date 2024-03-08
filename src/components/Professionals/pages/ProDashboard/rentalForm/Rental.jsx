@@ -6,18 +6,18 @@ import Button from "../../../../../ui/Button";
 function Rental() {
   return (
     <div className=" ">
-    <div className="text-[#8D303A] text-2xl font-con border-b-[1px] border-borde py-5">
+    <div className="text-[#8D303A] text-2xl font-con border-b-[1px] border-borde py-5 px-10">
       Create Announcement
     </div>
-    <div className=" max-w-[1220px]">
+    <div className=" max-w-[1220px] px-10">
       <p className="mt-8 font-con ">Rental </p>
       <form className="" action="">
         <div className="flex flex-wrap mt-8 font-pop">
-          <div className="flex flex-col w-[33%]">
+          <div className="flex flex-col md:w-[33%] w-full">
             <label htmlFor="">Name</label>
             <Input placeholder="Name" type="text" classes="large"></Input>
           </div>
-          <div className="flex flex-col w-[33%]">
+          <div className="flex flex-col md:w-[33%] w-full">
             <label htmlFor="">Phone Number</label>
             <Input
               placeholder="Phone Number"
@@ -25,7 +25,7 @@ function Rental() {
               classes="large"
             ></Input>
           </div>
-          <div className="flex flex-col w-[33%]">
+          <div className="flex flex-col md:w-[33%] w-full">
             <label htmlFor="">Website</label>
             <Input
               placeholder="Website"
@@ -33,7 +33,7 @@ function Rental() {
               classes="large"
             ></Input>
           </div>
-          <div className="flex flex-col w-[50%]">
+          <div className="flex flex-col md:w-[50%] w-full">
             <label htmlFor="">Address</label>
             <Input placeholder="Address" type="text" classes="large"></Input>
           </div>
@@ -45,7 +45,7 @@ function Rental() {
               classes="large"
             ></Input>
           </div>
-          <div className="flex flex-col w-[33%]">
+          <div className="flex flex-col md:w-[33%] w-full">
             <label htmlFor="">Minimum budget</label>
             <Input
               placeholder="Minimum budget"
@@ -54,8 +54,8 @@ function Rental() {
             ></Input>
           </div>
         </div>
-        <div className=" grid grid-cols-2">
-          <div className="flex flex-col w-[100%]">
+        <div className=" grid grid-cols-1">
+          <div className="flex flex-col md:w-[100%] w-full">
             <p>Upload of pictures (max 15)</p>
             <AddImages />
           </div>
