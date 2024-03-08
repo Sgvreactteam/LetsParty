@@ -5,7 +5,7 @@ import Logo from '../../../assets/logo.png'
 import Button from '../../../ui/Button';
 import Input from '../../../ui/Input';
 
-const UserRegister = () => {
+const Register = () => {
     const { t } = useTranslation();
   return (
     <div className='relative w-full h-[100vh] flex items-center justify-center'>
@@ -29,4 +29,4 @@ const UserRegister = () => {
   )
 }
 
-export default UserRegister
+export default Register
