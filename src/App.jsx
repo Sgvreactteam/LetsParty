@@ -11,15 +11,23 @@ import EntertainmentForm from './components/Professionals/pages/ProDashboard/Ent
 import Rental from './components/Professionals/pages/ProDashboard/rentalForm/Rental';
 import ServicesForm from './components/Professionals/pages/ProDashboard/servicesForm/ServicesForm';
 import AnnouncementStep3 from './components/Professionals/pages/ProDashboard/createAnnouncementStep3/AnnouncementStep3';
-
+import { I18nextProvider } from "react-i18next";
+import i18n from "./Languages/i18n";
+import UserLogin from './components/User/auth/UserLogin';
+import UserRegister from './components/User/auth/UserRegister';
+import UserForgotPass from './components/User/auth/UserForgotPass';
 
 
 function App() {
 
   return (
     <BrowserRouter>
+    <I18nextProvider i18n={i18n}>
       <Routes>
         <Route index element={<Register />}/>
+        <Route path='/userlogin' element={<UserLogin />} />
+        <Route path='/userRegister' element={<UserRegister />} />
+        <Route path='/userForgotpass' element={<UserForgotPass />} />
         <Route element={<ProLayout />}>
         <Route path='/ProfessionalDashboard' element={<Prodashboard />} />
         <Route path='/myaccount' element={<MyAccount />} />
@@ -30,9 +38,8 @@ function App() {
         <Route path='/myannouncements' element={<MyAnnouncements />} />
         <Route path='/myannouncementss' element={<AnnouncementStep3 />} />
 
-    
-        </Route>
       </Routes>
+    </I18nextProvider>
     </BrowserRouter>
   )
 }
