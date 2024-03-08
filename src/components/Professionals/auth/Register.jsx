@@ -1,12 +1,11 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 import authBackground from '../../../assets/auth-background.jpeg'
 import Logo from '../../../assets/logo.png'
 import Button from '../../../ui/Button';
 import Input from '../../../ui/Input';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
-const Register = () => {
+const UserRegister = () => {
     const { t } = useTranslation();
   return (
     <div className='relative w-full h-[100vh] flex items-center justify-center'>
@@ -21,7 +20,7 @@ const Register = () => {
             <Input placeholder={t('phoneNum')} type="number" classes="small"  />
             <Input placeholder={t('nameOfContact')} type="text" classes="small"  />
             <Input placeholder={t('address')} type="text" classes="large" />
-            <Button to="/ProfessionalDashboard" type="purpleButton ">{t('register')}</Button>
+            <Button to="/ProfessionalDashboard" type="purpleButton">{t('register')}</Button>
           </form>
           <span className='mt-4'>{t('alreadyHaveAnAccount')} {t('login')}</span>
         </div>
@@ -30,4 +29,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default UserRegister
