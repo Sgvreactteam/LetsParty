@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import logo from "../../../assets/logo.png";
-import Ellipse from "../../../assets/Ellipse1.png";
+import profileImg from "../../../assets/Ellipse1.png";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 function DropdownContent({ onLogout }) {
   return (
@@ -11,7 +12,7 @@ function DropdownContent({ onLogout }) {
   );
 }
 
-function Header() {
+function Header({ onToggleSidebar }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   const handleDropdownToggle = () => {
@@ -25,13 +26,27 @@ function Header() {
 
   return (
     <div className="shadow-md fixed w-full z-50 bg-white">
-      <div className="max-w-7xl m-auto py-3 flex justify-between">
+      <div className=" xl:max-w-5xl 2xl:max-w-full lg:max-w-4xl mx-auto py-2 2xl:px-56 xl:px-18 lg:px-0 sm:px-5 px-4 flex justify-between items-center">
         <div>
-          <img src={logo} alt="" />
+          <img
+            src={logo}
+            alt="logoImage"
+            className="lg:w-[165px] lg:h-[63px] sm:w-[100px] sm:h-[50px] w-[80px] h-[30px]"
+          />
         </div>
-        <div>
-          <button onClick={handleDropdownToggle} className="flex items-center gap-1">
-            <img src={Ellipse} alt="" />
+        <div className="flex justify-center items-center">
+          <div className="me-3 lg:hidden">
+            <RxHamburgerMenu onClick={onToggleSidebar} />
+          </div>
+          <button
+            onClick={handleDropdownToggle}
+            className="flex items-center justify-center"
+          >
+            <img
+              src={profileImg}
+              alt="Profile Image"
+              className=" lg:h-14 lg:w-14 sm:h-12 sm:w-12 w-8 h-8 rounded-full  "
+            />
             <IoMdArrowDropdown size={20} />
           </button>
           {isDropdownOpen && <DropdownContent onLogout={handleLogout} />}

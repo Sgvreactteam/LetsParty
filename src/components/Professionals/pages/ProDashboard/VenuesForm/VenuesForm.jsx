@@ -23,10 +23,10 @@ const VenuesForm = () => {
 const { t } = useTranslation();
   return (
     <div className=" ">
-        <div className="text-[#8D303A] border-b border-gray pb-4 text-2xl font-con">
+        <div className="text-[#8D303A] border-b border-gray pb-4 text-2xl font-con px-10">
             {t('createAnn')}
         </div>
-       <div className=" max-w-[1220px]">
+       <div className=" max-w-[1220px] px-10">
         <p className='mt-8 font-con text-[18px]'>{t('venues')}</p> 
         <form className='flex flex-wrap mt-8 font-pop' action="">
             <div className='flex flex-col md:w-[33%] w-full'>
@@ -67,14 +67,14 @@ const { t } = useTranslation();
             </div>
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('cateringChoice')}</label>
-                <select className='p-4 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
+                <select className='p-2 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
                     <option value="Lunch">{t('lunch')}</option>
                     <option value="Dinner">{t('dinner')}</option>
                 </select>
             </div>
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('kindOfCuisine')}</label>
-                <select className='p-4 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
+                <select className='p-2 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
                     <option value="Dinner">Traditional</option>
                     <option value="Lunch">Chinese</option>
                     <option value="Dinner">Italian</option>

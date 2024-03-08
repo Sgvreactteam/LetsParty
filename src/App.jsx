@@ -29,13 +29,13 @@ function App() {
         <Route path='/userRegister' element={<UserRegister />} />
         <Route path='/userForgotpass' element={<UserForgotPass />} />
         <Route element={<ProLayout />}>
-        <Route path='/ProfessionalDashboard' element={<Prodashboard />} />
+        <Route path='/ProfessionalDashboard' element={<Prodashboard index="0" />} />
         <Route path='/myaccount' element={<MyAccount />} />
         <Route path='/venues' element={<VenuesForm />} />
         <Route path='/Entertainment' element={<EntertainmentForm />} />
         <Route path='/Rental' element={<Rental />} />
         <Route path='/Services' element={<ServicesForm />} />
-        <Route path='/myannouncements' element={<MyAnnouncements />} />
+        <Route path='/myannouncements' element={<MyAnnouncements />} /> 
         <Route path='/myannouncementss' element={<AnnouncementStep3 />} />
         </Route>  
       </Routes>

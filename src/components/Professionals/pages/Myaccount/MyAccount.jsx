@@ -15,10 +15,10 @@ function MyAccount() {
     }
   }, [textareaHeight]);
   return (
-    <div className="max-w-5xl mx-auto">
-      <div className="flex justify-between items-center border-b-2 border-[#CCCCCC] py-3 bg-[#F8F8F8]">
-        <div className="text-2xl text-secondary">{t('myAcc')}</div>
-        <div>
+    <div className="">
+      <div className="flex justify-between items-center border-b-2 border-[#CCCCCC]  bg-[#F8F8F8]">
+        <div className="text-2xl text-secondary font-con py-5 pl-10">{t('myAcc')}</div>
+        <div className="pr-10">
           <button className="flex items-center justify-center text-white bg-primary font-pop border rounded-md py-1 px-3">
             <FaRegEdit size={16} />
             <span className="ms-1">{t('edit')}</span>
@@ -26,7 +26,7 @@ function MyAccount() {
         </div>
       </div>
 
-      <div className="mt-5 p-4 bg-white">
+      <div className="mt-5 p-4 bg-white px-5 mx-10">
         <h2 className="text-2xl font-con text-center pb-3">
           {t('personalInfo')}
         </h2>
