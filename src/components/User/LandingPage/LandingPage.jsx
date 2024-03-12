@@ -9,6 +9,7 @@ import image4 from './image5.jpeg'
 import EventsSection from './Events/EventsSection';
 import Footer from '../Footer/Footer';
 import HorizonatalTabBar from '../horizontalTabBar/HorizonatalTabBar';
+import Header from '../Header/Header';
 const LandingPage = () => {
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState("");
@@ -77,7 +78,8 @@ const LandingPage = () => {
     
   return (
     <div className='flex relative flex-col'>
-        <img src={image} className='absolute top-0 w-full md:h-[60vh] h-[70vh] object-cover z-5' alt="" />
+        <Header/>
+        <img src={image} className='absolute top-0 w-full md:h-[60vh] h-[70vh] object-cover -z-100' alt="" />
         <div className="font-pop flex flex-col items-center text-white z-10 mt-36">
             <p className='md:text-4xl text-3xl font-light'> {t('celebrate')} </p>
             <p className='md:text-2xl text-xl font-light mt-2 w-[70%] text-center'>{t('reception')}</p>

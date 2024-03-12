@@ -11,7 +11,7 @@ import { RiArrowUpSFill } from "react-icons/ri";
 import { MdOutlineFavorite } from "react-icons/md";
 import { FiLogOut } from "react-icons/fi";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import { FaFacebookF } from "react-icons/fa";
@@ -28,7 +28,7 @@ export default function Header() {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-
+  const location = useLocation();
   const [isVenue, setIsVenue] = useState(false);
   const [isEntertain, setIsEntertain] = useState(false);
   const [isRental, setIsRental] = useState(false);
@@ -97,8 +97,8 @@ export default function Header() {
     setModalOpen(false);
   };
 
-  return (
-    <header className=" font-pop ">
+  return location.pathname=='/' || location.pathname=='/userRegister' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : ( 
+    <header className=" font-pop">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 lg:py-3 p-3"
         aria-label="Global"
@@ -686,6 +686,6 @@ export default function Header() {
           </div>
         </Dialog.Panel>
       </Dialog>
-    </header>
-  );
+    </header>)
+  ;
 }
