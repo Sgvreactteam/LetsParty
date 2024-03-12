@@ -14,7 +14,9 @@ export default {
         light: "rgb(106, 106, 106)",
         borde: "rgb(202,202,202)",
         placeholderText: "#B3B3B3",
-        gray: "#616161"
+        gray: "#616161",
+        textPri: "#4D4A4A",
+        textSecondary: "#151515"
       },
     },
   },
