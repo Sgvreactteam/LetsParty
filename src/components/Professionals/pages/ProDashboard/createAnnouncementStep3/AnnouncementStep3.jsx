@@ -2,9 +2,9 @@ import { React, useState } from "react";
 import "../../../../../styles/checkbox.css"
 import Button from "../../../../../ui/Button";
 import vectorImg from "../../../../../assets/Frame.svg";
-// import Box from "@mui/material/Box";
-// import Grid from "@mui/material/Grid";
-// import Tooltip from "@mui/material/Tooltip";
+import { t } from "i18next";
+import { BsFillInfoCircleFill } from "react-icons/bs";
+import './Tooltip.css'
 function AnnouncementStep3() {
   const headingsData = [
     {
@@ -39,7 +39,7 @@ function AnnouncementStep3() {
   // };
   return (
     <>
-      <div className="text-2xl text-secondary  font-con border-b-[1px] border-borde py-5 px-10">Create MyAnnouncements</div>
+      <div className="text-2xl text-secondary  font-con border-b-[1px] border-borde py-5 px-10">{t('createAnn')}</div>
       <div className="mt-3 px-10">
         {headingsData.map((headingData, index) => (
           <div key={index}>
@@ -100,7 +100,7 @@ function AnnouncementStep3() {
       </div>
       <div className="mt-3 px-10">
         <div className="flex   pb-2">
-          <h2 className="text-2xl font-con  ">Premium Announcement </h2>{" "}
+          <h2 className="text-2xl font-con flex items-center gap-2">Premium Announcement <span className="info-icon" title="Do you want to create your announcement as Premium or Standard?"> <BsFillInfoCircleFill className="info-icon" color="#8D303A" size={16} /></span></h2>{" "}
           {/* <Box sx={{ width: 40 }}>
             <Grid container justifyContent="center">
               <Grid item>
