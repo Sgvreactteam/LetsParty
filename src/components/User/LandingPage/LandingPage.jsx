@@ -78,8 +78,8 @@ const LandingPage = () => {
     
   return (
     <div className='flex relative flex-col'>
-        <Header/>
-        <img src={image} className='absolute top-0 w-full md:h-[60vh] h-[70vh] object-cover -z-100' alt="" />
+        
+        <img src={image} className='absolute w-full md:h-[60vh] h-[70vh] object-cover -z-100' alt="" />
         <div className="font-pop flex flex-col items-center text-white z-10 mt-36">
             <p className='md:text-4xl text-3xl font-light'> {t('celebrate')} </p>
             <p className='md:text-2xl text-xl font-light mt-2 w-[70%] text-center'>{t('reception')}</p>

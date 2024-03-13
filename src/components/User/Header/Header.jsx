@@ -97,7 +97,7 @@ export default function Header() {
     setModalOpen(false);
   };
 
-  return location.pathname=='/' || location.pathname=='/userRegister' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : ( 
+  return location.pathname=='/' || location.pathname=='/userRegister' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/Venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : ( 
     <header className=" font-pop">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between  lg:px-8 lg:py-3 p-3"
