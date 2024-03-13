@@ -18,8 +18,8 @@ const Register = () => {
             <Input placeholder={t('name')} type="text" classes="small"  />
             <Input placeholder={t('email')} type="email" classes="small"  />
             <Input placeholder={t('phoneNum')} type="number" classes="small"  />
-            <Input placeholder={t('nameOfContact')} type="text" classes="small"  />
-            <Input placeholder={t('address')} type="text" classes="large" />
+            <Input placeholder={t('nameOfC')} type="text" classes="small"  />
+            <Input placeholder={t('address')} type="text" classes="textarea" />
             <Button to="/ProfessionalDashboard" type="purpleButton">{t('register')}</Button>
           </form>
           <span className='mt-4'>{t('alreadyHaveAnAccount')} {t('login')}</span>

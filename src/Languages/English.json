@@ -36,7 +36,7 @@
     
     "personalInfo": "Personal Information",
     "edit": "Edit",
-    "email": "Email",
+    "email": "Email Address",
     "password": "Password",
     "phoneNum": "Phone Number",
     "contactPerson": "Contact Person",
@@ -47,7 +47,7 @@
     "venueSize": "Venue Size (in square meters)",
     "maxCapSit": "Maximum Capacity Sitting",
     "maxCapStand": "Maximum Capacity Standing",
-    "maxPark": "Maximum Parking Space",
+    "maxPark": "Number of parking spaces available",
     "cateringChoice": "Catering Choice",
     "kindOfCuisine": "The kind of cuisine you cook",
     "uploadPic": "Upload of pictures (max 15)",
@@ -109,6 +109,7 @@
     "joinUsOn": "Join Us On",
     "contactUs": "Contact Us",
     "termsCon": "Terms and Conditions",
-    "pripol": "Privacy Policy"
+    "pripol": "Privacy Policy",
+    "details": "Details"
 
 }

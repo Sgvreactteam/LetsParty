@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaHeart } from "react-icons/fa";
-
+import { NavLink } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -88,6 +88,7 @@ function UserVenueBar(props) {
         >
           {fakeData.map((venue) => (
             <SwiperSlide key={venue.id} virtualIndex={venue.id - 1}>
+              <NavLink to={"/details/" + venue.id}>
               <div className="venue-card relative">
                 <img
                   className="w-full h-56 object-cover object-center rounded-md"
@@ -124,6 +125,7 @@ function UserVenueBar(props) {
                  }
                 </div>
               </div>
+              </NavLink>
             </SwiperSlide>
           ))}
         </Swiper>

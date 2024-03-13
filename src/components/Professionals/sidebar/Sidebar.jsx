@@ -49,7 +49,7 @@ export function Sidebar({ onClose }) {
             },
             {
               link: "/myaccount",
-              title: "my Account",
+              title: "My Account",
             },
             {
               link: "/myannouncements",

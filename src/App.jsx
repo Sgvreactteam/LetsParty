@@ -18,6 +18,7 @@ import UserRegister from './components/User/auth/UserRegister';
 import UserForgotPass from './components/User/auth/UserForgotPass';
 import LandingPage from './components/User/LandingPage/LandingPage';
 import Header from './components/User/Header/Header';
+import Details from './components/User/PropertyDetails/CardDetails';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/userRegister' element={<UserRegister />} />
         <Route path='/userForgotpass' element={<UserForgotPass />} />
         <Route path='/landingPage' element={<LandingPage />} />
+        <Route path='/details/:id' element={<Details />} />
         <Route element={<ProLayout />}>
         <Route path='/ProfessionalDashboard' element={<Prodashboard index="0" />} />
         <Route path='/myaccount' element={<MyAccount />} />

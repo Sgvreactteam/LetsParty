@@ -43,11 +43,11 @@ const { t } = useTranslation();
             </div>
             <div className='flex flex-col md:w-[50%] w-full'>
                 <label htmlFor="">{t('address')}</label>
-                <Input placeholder={t('address')} type="text" classes="large"></Input>
+                <Input placeholder={t('address')} type="text" classes="textarea"></Input>
             </div>
             <div className='flex flex-col md:w-[50%] w-full'>
                 <label htmlFor="">{t('description')}</label>
-                <Input placeholder={t('description')} type="text" classes="large"></Input>
+                <Input placeholder={t('description')} type="text" classes="textarea"></Input>
             </div>
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('venueSize')}</label>
