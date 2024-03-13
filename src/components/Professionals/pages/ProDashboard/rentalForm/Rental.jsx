@@ -28,7 +28,7 @@ function Rental() {
           <div className="flex flex-col md:w-[33%] w-full">
             <label htmlFor="">Website</label>
             <Input
-              placeholder="Website"
+              placeholder="Url..."
               type="website"
               classes="large"
             ></Input>

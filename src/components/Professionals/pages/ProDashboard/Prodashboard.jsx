@@ -81,7 +81,7 @@ function Prodashboard() {
       <div className="max-w-sm ">
         <h3 className="my-4 text-xl font-con">{t('catSub')}</h3>
         <div className="flex flex-col font-pop gap-2">
-          <label>{t('choiceBwCat')}</label>
+          <label className="text-lg">{t('choiceBwCat')}</label>
           <select
             value={selectedCategory}
             onChange={handleCategoryChange}
@@ -94,12 +94,13 @@ function Prodashboard() {
             ))}
           </select>
 
-          <label>{t('choiceBwSubcat')}</label>
+          <label className="text-lg">{t('choiceBwSubcat')}</label>
           <select
             value={selectedSubcategory}
             onChange={handleSubcategoryChange}
             className="border border-borde w-full rounded-md p-2 mt-2"
           >
+            {!subcategoriesMap[selectedCategory] && <option>Select</option>}
             {subcategoriesMap[selectedCategory] &&
               subcategoriesMap[selectedCategory].map((subcategory) => (
                 <option key={subcategory.value} value={subcategory.value}>

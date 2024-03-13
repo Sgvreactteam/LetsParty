@@ -43,7 +43,7 @@ function AnnouncementStep3() {
       <div className="mt-3 px-10">
         {headingsData.map((headingData, index) => (
           <div key={index}>
-            <h2 className="text-2xl font-con  pb-2">{headingData.heading}</h2>
+            <h2 className="text-xl font-con  pb-2">{headingData.heading}</h2>
             <div className="flex flex-wrap gap-2 ">
               {headingData.labels.map((labelData, idx) => (
                 <div

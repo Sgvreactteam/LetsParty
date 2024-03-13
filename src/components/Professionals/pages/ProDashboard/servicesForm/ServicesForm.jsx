@@ -28,7 +28,7 @@ function ServicesForm() {
           <div className="flex flex-col md:w-[33%] w-full">
             <label htmlFor="">Website</label>
             <Input
-              placeholder="Website"
+              placeholder="Url..."
               type="website"
               classes="large"
             ></Input>
@@ -49,7 +49,7 @@ function ServicesForm() {
             <label htmlFor="">Minimum budget</label>
             <Input
               placeholder="Minimum budget"
-              type="number"
+              type="text"
               classes="large"
             ></Input>
           </div>
