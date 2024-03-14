@@ -19,7 +19,7 @@ function EntertainmentForm() {
       ],
     },
     {
-      Heading: "Flexible ",
+      Heading: "Jazz ",
       labels: [
         { id: "1", label: "Swing" },
         { id: "1", label: "Bebop " },
@@ -27,27 +27,74 @@ function EntertainmentForm() {
       ],
     },
     {
-      Heading: "Flexible ",
+      Heading: "Rock ",
       labels: [
-        { id: "1", label: "Swing" },
-        { id: "1", label: "Bebop " },
-        { id: "1", label: "Fusion " },
+        { id: "1", label: "Classical Rock" },
+        { id: "1", label: "Punk " },
+        { id: "1", label: "Alternative " },
+        { id: "1", label: "Indie Rock " },
       ],
     },
     {
-      Heading: "Flexible ",
+      Heading: "Metal ",
       labels: [
-        { id: "1", label: "Swing" },
-        { id: "1", label: "Bebop " },
-        { id: "1", label: "Fusion " },
+        { id: "1", label: "Heavy Metal" },
+        { id: "1", label: "Black Metal " },
+        { id: "1", label: "Death Metal " },
       ],
     },
     {
-      Heading: "Flexible ",
+      Heading: "Pop ",
       labels: [
-        { id: "1", label: "Swing" },
-        { id: "1", label: "Bebop " },
-        { id: "1", label: "Fusion " },
+        { id: "1", label: "Pop-Rock" },
+        { id: "1", label: "Electro Pop " },
+        { id: "1", label: "Dance Pop " },
+        { id: "1", label: "Indie Pop " },
+      ],
+    },
+    {
+      Heading: "Hip-Hop/Rap ",
+      labels: [
+        { id: "1", label: "Hip-Hop/Rap" },
+        
+      ],
+    },
+    {
+      Heading: "Electronic ",
+      labels: [
+        { id: "1", label: "Techno" },
+        { id: "1", label: "House " },
+        { id: "1", label: "Trance " },
+        { id: "1", label: "Dubstep " },
+      ],
+    },
+    {
+      Heading: "Blues ",
+      labels: [
+        { id: "1", label: "Blues" },
+        
+      ],
+    },
+    {
+      Heading: "R&B ",
+      labels: [
+        { id: "1", label: "Raggea" },
+        { id: "2", label: "Latin" },
+        
+      ],
+    },
+    {
+      Heading: "Folk ",
+      labels: [
+        { id: "1", label: "Flok" },
+        
+      ],
+    },
+    {
+      Heading: "Indie ",
+      labels: [
+        { id: "1", label: "Indie" },
+        
       ],
     },
   ];
@@ -75,21 +122,21 @@ function EntertainmentForm() {
             <div className="flex flex-col md:w-[33%] w-full">
               <label htmlFor="">Website</label>
               <Input
-                placeholder="Website"
+                placeholder="Url..."
                 type="website"
                 classes="large"
               ></Input>
             </div>
             <div className="flex flex-col md:w-[50%] w-full">
               <label htmlFor="">Address</label>
-              <Input placeholder="Address" type="text" classes="large"></Input>
+              <Input placeholder="Address" type="text" classes="textarea"></Input>
             </div>
             <div className="flex flex-col md:w-[50%] w-full">
               <label htmlFor="">Description</label>
               <Input
                 placeholder="Description"
                 type="text"
-                classes="large"
+                classes="textarea"
               ></Input>
             </div>
             <div className="flex flex-col md:w-[33%] w-full">
@@ -134,8 +181,8 @@ function EntertainmentForm() {
           {checkBoxArry &&
             checkBoxArry.map((item, index) => {
               return (
-                <div className=" " key={index}>
-                  <h3 className="text-2xl font-con pb-2">{item.Heading} </h3>
+                <div className=" mt-2" key={index}>
+                  <h3 className="text-xl font-con pb-2">{item.Heading} </h3>
                   <div className="flex flex-wrap gap-2">
                     {item.labels.map((labelData, idx) => (
                       <div

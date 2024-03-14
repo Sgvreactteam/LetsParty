@@ -28,21 +28,21 @@ function Rental() {
           <div className="flex flex-col md:w-[33%] w-full">
             <label htmlFor="">Website</label>
             <Input
-              placeholder="Website"
+              placeholder="Url..."
               type="website"
               classes="large"
             ></Input>
           </div>
           <div className="flex flex-col md:w-[50%] w-full">
             <label htmlFor="">Address</label>
-            <Input placeholder="Address" type="text" classes="large"></Input>
+            <Input placeholder="Address" type="text" classes="textarea"></Input>
           </div>
           <div className="flex flex-col w-[50%]">
             <label htmlFor="">Description</label>
             <Input
               placeholder="Description"
               type="text"
-              classes="large"
+              classes="textarea"
             ></Input>
           </div>
           <div className="flex flex-col md:w-[33%] w-full">

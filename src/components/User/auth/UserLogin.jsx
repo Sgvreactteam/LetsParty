@@ -19,7 +19,7 @@ const UserLogin = () => {
 
             <Input placeholder={t('email')} type="email" classes="large"  />
             <Input placeholder={t('password')} type="password" classes="large"  />
-            <Button to="/ProfessionalDashboard" type="purpleButton">{t('register')}</Button>
+            <Button to="/landingPage" type="purpleButton">{t('register')}</Button>
           </form>
           <div className="flex justify-between w-full mt-8">
             <Link className='p-2 border rounded-sm' to='/userRegister'>{t('createAcc')}</Link>

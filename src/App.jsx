@@ -16,6 +16,9 @@ import i18n from "./Languages/i18n";
 import UserLogin from './components/User/auth/UserLogin';
 import UserRegister from './components/User/auth/UserRegister';
 import UserForgotPass from './components/User/auth/UserForgotPass';
+import LandingPage from './components/User/LandingPage/LandingPage';
+import Header from './components/User/Header/Header';
+import Details from './components/User/PropertyDetails/CardDetails';
 
 
 function App() {
@@ -23,11 +26,14 @@ function App() {
   return (
     <BrowserRouter>
     <I18nextProvider i18n={i18n}>
+      <Header />
       <Routes>
-        <Route index element={<Register />}/>
-        <Route path='/userlogin' element={<UserLogin />} />
+        <Route path='/ProfessionalRegister' index element={<Register />}/>
+        <Route index element={<UserLogin />} />
         <Route path='/userRegister' element={<UserRegister />} />
         <Route path='/userForgotpass' element={<UserForgotPass />} />
+        <Route path='/landingPage' element={<LandingPage />} />
+        <Route path='/details/:id' element={<Details />} />
         <Route element={<ProLayout />}>
         <Route path='/ProfessionalDashboard' element={<Prodashboard index="0" />} />
         <Route path='/myaccount' element={<MyAccount />} />

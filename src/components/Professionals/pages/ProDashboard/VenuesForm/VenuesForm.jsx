@@ -3,24 +3,29 @@ import Input from "../../../../../ui/Input";
 import AddImages from "../../../../../ui/AddImages";
 import Button from "../../../../../ui/Button";
 import { useTranslation } from 'react-i18next';
+import "./numberForm.css"
 const VenuesForm = () => {
+  const { t } = useTranslation();
   const checkBoxArry = [
     {
       Heading: "Indicate whether the following criteria are fulfilled ",
       labels: [
-        { id: "1", label: "as resquested by host" },
-        { id: "1", label: "as resquested by host" },
-        { id: "1", label: "as resquested by " },
-        { id: "1", label: "as resquested by host" },
-        { id: "1", label: " resquested by host" },
-        { id: "1", label: "as resquested by host" },
-        { id: "1", label: "as resquested by host" },
-        { id: "1", label: "as " },
-        { id: "1", label: "as resquested by host" },
+        { id: "1", label: t('profKitchen') },
+        { id: "1", label: t('withTerr') },
+        { id: "1", label: t('withGar') },
+        { id: "1", label: t('soundSysAva') },
+        { id: "1", label: t('lightsAva') },
+        { id: "1", label: t('microAva') },
+        { id: "1", label: t('beamer') },
+        { id: "1", label: t('danceFloor') },
+        { id: "1", label: t('skittle') },
+        { id: "1", label: "Bowling Alley" },
+        { id: "1", label: t('handi') },
+        { id: "1", label: t('pets') }
       ],
     },
   ];
-const { t } = useTranslation();
+
   return (
     <div className=" ">
         <div className="text-[#8D303A] border-b border-gray pb-4 text-2xl font-con px-10">
@@ -39,15 +44,15 @@ const { t } = useTranslation();
             </div>
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('website')}</label>
-                <Input placeholder={t('website')} type="website" classes="large"></Input>
+                <Input placeholder="Url..." type="website" classes="large"></Input>
             </div>
             <div className='flex flex-col md:w-[50%] w-full'>
                 <label htmlFor="">{t('address')}</label>
-                <Input placeholder={t('address')} type="text" classes="large"></Input>
+                <Input placeholder={t('address')} type="text" classes="textarea"></Input>
             </div>
             <div className='flex flex-col md:w-[50%] w-full'>
                 <label htmlFor="">{t('description')}</label>
-                <Input placeholder={t('description')} type="text" classes="large"></Input>
+                <Input placeholder={t('description')} type="text" classes="textarea"></Input>
             </div>
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('venueSize')}</label>
@@ -68,6 +73,7 @@ const { t } = useTranslation();
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('cateringChoice')}</label>
                 <select className='p-2 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
+                    <option value="">Select</option>
                     <option value="Lunch">{t('lunch')}</option>
                     <option value="Dinner">{t('dinner')}</option>
                 </select>
@@ -75,6 +81,7 @@ const { t } = useTranslation();
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('kindOfCuisine')}</label>
                 <select className='p-2 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
+                    <option value="">Select</option>
                     <option value="Dinner">Traditional</option>
                     <option value="Lunch">Chinese</option>
                     <option value="Dinner">Italian</option>
