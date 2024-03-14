@@ -72,7 +72,7 @@ const VenuesForm = () => {
             </div>
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('cateringChoice')}</label>
-                <select className='p-2 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
+                <select className='p-2 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%] outline-none' name="Catering Choice" id="">
                     <option value="">Select</option>
                     <option value="Lunch">{t('lunch')}</option>
                     <option value="Dinner">{t('dinner')}</option>
@@ -80,7 +80,7 @@ const VenuesForm = () => {
             </div>
             <div className='flex flex-col md:w-[33%] w-full'>
                 <label htmlFor="">{t('kindOfCuisine')}</label>
-                <select className='p-2 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%]' name="Catering Choice" id="">
+                <select className='p-2 border rounded-md border-borde placeholder:text-placeholderText my-2 w-[95%] outline-none' name="Catering Choice" id="">
                     <option value="">Select</option>
                     <option value="Dinner">Traditional</option>
                     <option value="Lunch">Chinese</option>
