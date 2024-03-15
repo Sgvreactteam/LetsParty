@@ -1,41 +1,44 @@
 import React from 'react'
 import MainCard from '../commanCard/MainCard';
+import { useTranslation } from 'react-i18next';
 
 
-const cardData = [
+function FilterRentalAndService() {
+  const { t } = useTranslation();
+  const cardData = [
+  
     {
       id: 1,
       photoSrc: "src/assets/Rectangle103.png",
-      name: "John Doe",
+      name: t('confMeet'),
       
     },
     {
       id: 2,
       photoSrc: "src/assets/Rectangle103.png",
-      name: "Jane Smith",
+      name: t('partyRooms'),
     },
     {
       id: 3,
       photoSrc: "src/assets/Rectangle103.png",
-      name: "Jane Smith",
+      name: "Bar",
     },
     {
       id: 4,
       photoSrc: "src/assets/Rectangle103.png",
-      name: "Jane Smith",
+      name: t('confMeet'),
     },
     {
       id: 5,
       photoSrc: "src/assets/Rectangle103.png",
-      name: "Jane Smith",
+      name: t('partyRooms'),
     },
     // Add more data as needed
   ];
-function FilterRentalAndService() {
   return (
-    <div className="grid grid-cols-4 gap-8">
+    <div className="grid grid-cols-3 gap-8 w-[90vw] mx-auto">
     <div className=" col-span-3">
-        <div className=" font-pop text-xl py-8">Entertainment</div>
+        <div className=" font-pop text-xl text-center py-8 text-secondary">Filter rental and services</div>
       <div className="grid grid-cols-3 gap-4">
         {cardData.map((data) => (
           <MainCard

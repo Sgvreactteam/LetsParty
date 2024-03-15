@@ -35,7 +35,7 @@ function UserEntertainmentBar() {
       id: 3,
       name: "Castle name 3",
       imageUrl:img1,
-    },
+    }, 
     {
       id: 4,
       name: "Castle name 4",
@@ -77,6 +77,7 @@ function UserEntertainmentBar() {
           virtual
         >
           {EntertainmentData.map((venue) => (
+            <NavLink to={"/details/" + venue.id}>
             <SwiperSlide key={venue.id} virtualIndex={venue.id - 1}>
               <div className="venue-card relative">
                 <img
@@ -93,6 +94,7 @@ function UserEntertainmentBar() {
                 </div>
               </div>
             </SwiperSlide>
+            </NavLink>
           ))}
         </Swiper>
       </div>
