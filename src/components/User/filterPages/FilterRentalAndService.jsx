@@ -1,7 +1,7 @@
 import React from 'react'
 import MainCard from '../commanCard/MainCard';
 import { useTranslation } from 'react-i18next';
-
+import photo from '../../../assets/Rectangle103.png'
 
 function FilterRentalAndService() {
   const { t } = useTranslation();
@@ -9,28 +9,28 @@ function FilterRentalAndService() {
   
     {
       id: 1,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: photo,
       name: t('confMeet'),
       
     },
     {
       id: 2,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: photo,
       name: t('partyRooms'),
     },
     {
       id: 3,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: photo,
       name: "Bar",
     },
     {
       id: 4,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: photo,
       name: t('confMeet'),
     },
     {
       id: 5,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: photo,
       name: t('partyRooms'),
     },
     // Add more data as needed
