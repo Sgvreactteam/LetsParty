@@ -1,34 +1,37 @@
+
 import React, { useState } from "react";
 import MainCard from "../commanCard/MainCard";
+import img1 from '../../../assets/Rectangle103.png'
+import Footer from "../Footer/Footer";
 
 const cardData = [
   {
     id: 1,
-    photoSrc: "src/assets/Rectangle103.png",
+    photoSrc: img1,
     name: "John Doe",
     city: "City, Country",
   },
   {
     id: 2,
-    photoSrc: "src/assets/Rectangle103.png",
+    photoSrc: img1,
     name: "Jane Smith",
     city: "Another City, Country",
   },
   {
     id: 3,
-    photoSrc: "src/assets/Rectangle103.png",
+    photoSrc: img1,
     name: "Jane Smith",
     city: "Another City, Country",
   },
   {
     id: 4,
-    photoSrc: "src/assets/Rectangle103.png",
+    photoSrc: img1,
     name: "Jane Smith",
     city: "Another City, Country",
   },
   {
     id: 5,
-    photoSrc: "src/assets/Rectangle103.png",
+    photoSrc: img1,
     name: "Jane Smith",
     city: "Another City, Country",
   },
@@ -87,10 +90,10 @@ function FilterVenues() {
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid grid-cols-4 gap-8 w-[90vw] mx-auto py-6">
         <div>
           <h3 className="text-secondary text-2xl font-con">Filters</h3>
-          <label>
+          <label className="items-center flex">
             Capacity
             <input
               type="range"
@@ -132,7 +135,7 @@ function FilterVenues() {
           </div>
           <div className="flex flex-col gap-5">
 
-            <label>
+            <label className="items-center flex">
               Size
               <input
                 type="range"
@@ -143,7 +146,7 @@ function FilterVenues() {
               {size}
             </label>
 
-            <label>
+            <label className="items-center flex">
               Distance
               <input
                 type="range"
@@ -186,10 +189,10 @@ function FilterVenues() {
           </div>
         </div>
 
-        <div className=" col-span-3">
-            <div className=" font-pop text-xl py-8">Venues</div>
-          <div className="grid grid-cols-3 gap-4">
-            {cardData.map((data) => (
+          <div className=" col-span-3">
+          <div className=" font-pop text-xl pb-4">Venues</div>
+            <div className="grid grid-cols-3 gap-4">
+              {cardData.map((data) => (
               <MainCard
                 key={data.id}
                 photoSrc={data.photoSrc}
@@ -199,10 +202,11 @@ function FilterVenues() {
             ))}
           </div>
         </div>
+
       </div>
+      <Footer />
     </>
   );
 }
 
 export default FilterVenues;
-

@@ -81,10 +81,10 @@ const LandingPage = () => {
   return (
     <div className='flex relative flex-col'>
         
-        <img src={image} className='absolute w-full md:h-[60vh] h-[70vh] object-cover -z-100' alt="" />
+        <img src={image} className='absolute w-full md:h-[60vh] h-[70vh] object-cover -z-20' alt="" />
         <div className="font-pop flex flex-col items-center text-white z-10 mt-36">
-            <p className='md:text-4xl text-3xl font-light'> {t('celebrate')} </p>
-            <p className='md:text-2xl text-xl font-light mt-2 w-[70%] text-center'>{t('reception')}</p>
+            <p className='md:text-4xl text-3xl font-light -z-20'> {t('celebrate')} </p>
+            <p className='md:text-2xl text-xl font-light mt-2 w-[70%] text-center -z-20'>{t('reception')}</p>
             <form className='bg-white flex flex-row rounded-md p-2 mt-8' action="">
                 <select
                     value={selectedCategory}

@@ -19,7 +19,9 @@ import UserForgotPass from './components/User/auth/UserForgotPass';
 import LandingPage from './components/User/LandingPage/LandingPage';
 import Header from './components/User/Header/Header';
 import Details from './components/User/PropertyDetails/CardDetails';
-
+import FilterVenues from './components/User/filterPages/FilterVenues';
+import FilterRentalAndService from './components/User/filterPages/FilterRentalAndService';
+import FilterEntertainment1 from './components/User/filterPages/FilterEntertainment1'
 
 function App() {
 
@@ -33,6 +35,9 @@ function App() {
         <Route path='/userRegister' element={<UserRegister />} />
         <Route path='/userForgotpass' element={<UserForgotPass />} />
         <Route path='/landingPage' element={<LandingPage />} />
+        <Route path='/filterVenues' element={<FilterVenues />} />
+        <Route path='/filterEnt' element={<FilterEntertainment1 />} />
+        <Route path='/filter' element={<FilterRentalAndService />} />
         <Route path='/details/:id' element={<Details />} />
         <Route element={<ProLayout />}>
         <Route path='/ProfessionalDashboard' element={<Prodashboard index="0" />} />

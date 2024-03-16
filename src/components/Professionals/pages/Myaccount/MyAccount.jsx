@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
+import Input from "../../../../ui/Input";
 
 function MyAccount() {
 
@@ -37,7 +38,7 @@ function MyAccount() {
             </label>
             <input
               type="email"
-              placeholder="@gmail.com"
+              placeholder="Ex: demo@gmail.com"
               className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
             />
           </div>
@@ -75,11 +76,11 @@ function MyAccount() {
             <label htmlFor="" className="font-pop">
               {t('address')}
             </label>
-            <textarea
+            <Input
               id="address"
-              className=" font-lato font-medium rounded resize-none border border-borde focus:outline-none p-2"
+              classes="textarea"
               placeholder="Street : Avenida Cervantes 5, Elantxobe , Biscay Zip Code : 48310"
-              style={{ height: textareaHeight }}
+
               onChange={(e) => setTextareaHeight(e.target.scrollHeight + "px")}
             />
           </div>

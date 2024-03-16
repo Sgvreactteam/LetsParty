@@ -1,5 +1,7 @@
+
 import React from 'react'
 import MainCard from '../commanCard/MainCard';
+import { Footer } from 'flowbite-react';
 
 
 const cardData = [
@@ -50,7 +52,8 @@ function FilterEntertainment1() {
         },
       ];
   return (
-    <div className="grid grid-cols-4 gap-8">
+    <>
+    <div className="grid grid-cols-4 gap-8 w-[90vw] py-6 mx-auto">
     <div>
       <h3 className="text-secondary text-2xl font-con">Filters</h3>
       <div className="mt-5 flex flex-col gap-4">
@@ -86,7 +89,7 @@ function FilterEntertainment1() {
     </div>
 
     <div className=" col-span-3">
-        <div className=" font-pop text-xl py-8">Entertainment</div>
+        <div className=" font-pop text-xl pb-4">Entertainment</div>
       <div className="grid grid-cols-3 gap-4">
         {cardData.map((data) => (
           <MainCard
@@ -99,6 +102,8 @@ function FilterEntertainment1() {
       </div>
     </div>
   </div>
+  <Footer/>
+  </>
   )
 }
 
