@@ -10,6 +10,8 @@ import EventsSection from './Events/EventsSection';
 import Footer from '../Footer/Footer';
 import HorizonatalTabBar from '../horizontalTabBar/HorizonatalTabBar';
 import Header from '../Header/Header';
+import VenuesForm from '../../Professionals/pages/ProDashboard/VenuesForm/VenuesForm';
+import FilterVenues from '../filterPages/FilterVenues';
 const LandingPage = () => {
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState("");

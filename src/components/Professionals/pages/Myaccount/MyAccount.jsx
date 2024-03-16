@@ -57,7 +57,7 @@ function MyAccount() {
               {t('phoneNum')}
             </label>
             <input
-              type="tel"
+              type="number"
               placeholder="Number"
               className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
             />
