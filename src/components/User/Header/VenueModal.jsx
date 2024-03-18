@@ -9,7 +9,7 @@ function VenueModal({ isModalOpen, setIsModalOpen }) {
   return (
     <>
 
-          <Modal show={isModalOpen} size={modalSize} onClose={setIsModalOpen}>
+          <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <div className="fixed inset-0 flex justify-center items-center">
         <div className="bg-white rounded-lg shadow-lg ">
             <Modal.Header className="!border-none"></Modal.Header>

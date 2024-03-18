@@ -28,13 +28,13 @@ const Button = ({ children, disabled, to, type, onClick }) => {
     );
   if (onClick)
     return (
-      <button onClick={onClick} disabled={disabled} className={styles[type]}>
+      <button type="button" onClick={onClick} disabled={disabled} className={styles[type]}>
         {children}
       </button>
     );
 
   return (
-    <button onClick={handleClick} disabled={disabled} className={className}>
+    <button  onClick={handleClick} disabled={disabled} className={className}>
       {children}
     </button>
   );
