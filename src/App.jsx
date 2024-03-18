@@ -39,6 +39,8 @@ function App() {
         <Route path='/userForgotpass' element={<UserForgotPass />} />
         <Route path='/landingPage' element={<LandingPage />} />
         <Route path='/filterVenues' element={<FilterVenues />} />
+        <Route path='/FilterEntertainment1' element={<FilterEntertainment1 />} />
+        <Route path='/FilterRentalAndService' element={<FilterRentalAndService />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/filterEnt' element={<FilterEntertainment1 />} />
         <Route path='/filter' element={<FilterRentalAndService />} />
@@ -56,7 +58,7 @@ function App() {
         <Route path='/myannouncementss' element={<AnnouncementStep3 />} />
         </Route>  
       </Routes>
-      
+
     </I18nextProvider>
     </BrowserRouter>
   )

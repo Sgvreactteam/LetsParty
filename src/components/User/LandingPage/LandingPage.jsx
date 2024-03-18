@@ -12,7 +12,9 @@ import HorizonatalTabBar from '../horizontalTabBar/HorizonatalTabBar';
 import Header from '../Header/Header';
 import VenuesForm from '../../Professionals/pages/ProDashboard/VenuesForm/VenuesForm';
 import FilterVenues from '../filterPages/FilterVenues';
+import { useNavigate } from 'react-router';
 const LandingPage = () => {
+  const navigate = useNavigate();
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedSubcategory, setSelectedSubcategory] = useState("");
@@ -20,14 +22,14 @@ const LandingPage = () => {
 
     const categories = [
         { value: "", label: "Select..." },
-        { value: "Venues", label: `${t('venues')}` },
-        { value: "Entertainment", label: `${t('entertainment')}` },
-        { value: "Rental", label: `${t('rental')}` },
-        { value: "Services", label: `${t('services')}` },
+        { value: "filterVenues", label: `${t('venues')}` },
+        { value: "FilterEntertainment1", label: `${t('entertainment')}` },
+        { value: "FilterRentalAndService", label: `${t('rental')}` },
+        { value: "FilterRentalAndService", label: `${t('services')}` },
       ];
     
       const subcategoriesMap = {
-        Venues: [
+        filterVenues: [
           { value: "", label: "Kind of Event" },
           { value: "Castles", label: `${t('castles')}` },
           { value: "Party Rooms", label: `${t('partyRooms')}` },
@@ -40,7 +42,7 @@ const LandingPage = () => {
           { value: "Open Air Spaces", label: `${t('openAir')}` },
           { value: "Night clubs", label: `${t('nightClubs')}` },
         ],
-        Entertainment: [
+        FilterEntertainment1: [
           { value: "", label: "Select..." },
           { value: "DJ", label: "Dj" },
           { value: "Singers ", label: `${t('singers')}` },
@@ -48,7 +50,7 @@ const LandingPage = () => {
           { value: "Live Music Bands ", label: `${t('liveMusic')}` },
           { value: "Cover band ", label: `${t('coverBands')}` },
         ],
-        Rental: [
+        FilterRentalAndService: [
           { value: "", label: "Select..." },
     
           {
@@ -56,7 +58,7 @@ const LandingPage = () => {
             label: `${t('rental')}`,
           },
         ],
-        Services: [
+        FilterRentalAndService: [
           { value: "", label: "Select..." },
           {
             value: "Services",
@@ -74,7 +76,11 @@ const LandingPage = () => {
         setSelectedSubcategory(event.target.value);
       };
     
-      
+      const handleNextClick = () => {
+        if (selectedCategory && selectedSubcategory) {
+          navigate(`/${selectedCategory}`);
+        }
+      };
 
 
     
@@ -102,6 +108,7 @@ const LandingPage = () => {
                     onChange={handleSubcategoryChange}
                     className="pl-2 border-l border-borde w-48 h-12 text-black mr-4 outline-none"
                 >
+                    {!subcategoriesMap[selectedCategory] && <option>Select</option>}
                     {subcategoriesMap[selectedCategory] &&
                     subcategoriesMap[selectedCategory].map((subcategory) => (
                         <option key={subcategory.value} value={subcategory.value}>
@@ -109,7 +116,7 @@ const LandingPage = () => {
                         </option>
                     ))}
                 </select>
-                <Button type="purpleButton"> {t('search')} </Button>
+                <Button onClick={handleNextClick}  type="purpleButton"> {t('search')} </Button>
             </form>
         </div>
         <div className="flex md:flex-row flex-col md:mt-40 mt-60 md:w-[80%] w-[90%] mx-auto py-16">
