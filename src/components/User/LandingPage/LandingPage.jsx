@@ -9,27 +9,32 @@ import image4 from './image5.jpeg'
 import EventsSection from './Events/EventsSection';
 import Footer from '../Footer/Footer';
 import HorizonatalTabBar from '../horizontalTabBar/HorizonatalTabBar';
-import Header from '../Header/Header';
-import VenuesForm from '../../Professionals/pages/ProDashboard/VenuesForm/VenuesForm';
-import FilterVenues from '../filterPages/FilterVenues';
+// import Header from '../Header/Header';
+// import VenuesForm from '../../Professionals/pages/ProDashboard/VenuesForm/VenuesForm';
+// import FilterVenues from '../filterPages/FilterVenues';
 import { useNavigate } from 'react-router';
+import VenueModal from '../Header/VenueModal';
+import EnterModal from '../Header/EnterModal';
 const LandingPage = () => {
   const navigate = useNavigate();
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedSubcategory, setSelectedSubcategory] = useState("");
+    const [isVenueModalOpen, setIsVenueModalOpen] = useState(false);
+    const [isEntertainmentModalOpen, setIsEntertainmentModalOpen] = useState(false);
+  
 
 
     const categories = [
         { value: "", label: "Select..." },
-        { value: "filterVenues", label: `${t('venues')}` },
+        { value: "venues", label: `${t('venues')}` },
         { value: "FilterEntertainment1", label: `${t('entertainment')}` },
         { value: "FilterRentalAndService", label: `${t('rental')}` },
         { value: "FilterRentalAndService", label: `${t('services')}` },
       ];
     
       const subcategoriesMap = {
-        filterVenues: [
+        venues: [
           { value: "", label: "Kind of Event" },
           { value: "Castles", label: `${t('castles')}` },
           { value: "Party Rooms", label: `${t('partyRooms')}` },
@@ -77,7 +82,12 @@ const LandingPage = () => {
       };
     
       const handleNextClick = () => {
-        if (selectedCategory && selectedSubcategory) {
+        if (selectedCategory === 'venues') {
+          setIsVenueModalOpen(true);
+        } else if (selectedCategory === 'FilterEntertainment1') {
+          setIsEntertainmentModalOpen(true);
+        } else {
+          // Navigate to the corresponding page for rental and services
           navigate(`/${selectedCategory}`);
         }
       };
@@ -117,6 +127,9 @@ const LandingPage = () => {
                     ))}
                 </select>
                 <Button onClick={handleNextClick}  type="purpleButton"> {t('search')} </Button>
+               <VenueModal isModalOpen={isVenueModalOpen} setIsModalOpen={setIsVenueModalOpen} />
+               <EnterModal isModalOpen={isEntertainmentModalOpen} setIsModalOpen={setIsEntertainmentModalOpen} />
+               
             </form>
         </div>
         <div className="flex md:flex-row flex-col md:mt-40 mt-60 md:w-[80%] w-[90%] mx-auto py-16">

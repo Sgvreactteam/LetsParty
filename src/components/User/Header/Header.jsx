@@ -145,9 +145,14 @@ export default function Header() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleMenuItemClick = (category) => {
+    
+
+    console.log("click")
     setIsModalOpen(true);
     setSelectedCategory(category);
   };
+  
+
 
 
   return location.pathname=='/'  || location.pathname=='/userRegister' || location.pathname==='/myannouncementss' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/Venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : (  
@@ -219,7 +224,7 @@ export default function Header() {
                             {href==="/filter"? (
                             <Link
                               to="/filter"
-                              
+                              onClick={() => {console.log("click")}}
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
