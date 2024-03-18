@@ -103,7 +103,7 @@ function FilterVenues() {
               value={capacity}
               max={100}
               onChange={handleCapacityChange}
-              
+              className="slider"
             />
           </label>
           <div className="mt-5 flex flex-col gap-4">

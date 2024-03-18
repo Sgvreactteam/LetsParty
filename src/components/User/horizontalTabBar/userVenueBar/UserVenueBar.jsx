@@ -9,6 +9,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./Swiper.css";
+import image from '../../../../assets/Rectangle103.png'
+import person from '../../../../assets/Vector.png'
+import group from '../../../../assets/Group.png'
+
 
 function UserVenueBar(props) {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -22,44 +26,44 @@ function UserVenueBar(props) {
     {
       id: 1,
       name: "Castle name 1",
-      imageUrl: "src/assets/Rectangle103.png",
-      personImg: "src/assets/Vector.png",
-      groupImg: "src/assets/Group.png",
+      imageUrl: image,
+      personImg: person,
+      groupImg: group,
     },
     {
       id: 2,
       name: "Castle name 2",
-      imageUrl: "src/assets/Rectangle103.png",
-      personImg: "src/assets/Vector.png",
-      groupImg: "src/assets/Group.png",
+      imageUrl: image,
+      personImg: person,
+      groupImg: group,
     },
     {
       id: 3,
       name: "Castle name 3",
-      imageUrl: "src/assets/auth-background.jpeg",
-      personImg: "src/assets/Vector.png",
-      groupImg: "src/assets/Group.png",
+      imageUrl: image,
+      personImg: person,
+      groupImg: group,
     },
     {
       id: 4,
       name: "Castle name 4",
-      imageUrl: "src/assets/Rectangle103.png",
-      personImg: "src/assets/Vector.png",
-      groupImg: "src/assets/Group.png",
+      imageUrl: image,
+      personImg: person,
+      groupImg: group,
     },
     {
       id: 5,
       name: "Castle name 3",
-      imageUrl: "src/assets/Rectangle103.png",
-      personImg: "src/assets/Vector.png",
-      groupImg: "src/assets/Group.png",
+      imageUrl: image,
+      personImg: person,
+      groupImg: group,
     },
     {
       id: 6,
       name: "Castle name 3",
-      imageUrl: "src/assets/auth-background.jpeg",
-      personImg: "src/assets/Vector.png",
-      groupImg: "src/assets/Group.png",
+      imageUrl: image,
+      personImg: person,
+      groupImg: group,
     },
   ];
 

@@ -23,6 +23,7 @@ import FilterVenues from './components/User/filterPages/FilterVenues';
 import FilterRentalAndService from './components/User/filterPages/FilterRentalAndService';
 import FilterEntertainment1 from './components/User/filterPages/FilterEntertainment1'
 import Profile from './components/User/ProfilePage/Profile';
+import Favourites from './components/User/Favourites/Favourites';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/filterEnt' element={<FilterEntertainment1 />} />
         <Route path='/filter' element={<FilterRentalAndService />} />
+        <Route path='/fav' element={<Favourites />} />
         <Route path='/details/:id' element={<Details />} />
         <Route element={<ProLayout />}>
         <Route path='/ProfessionalDashboard' element={<Prodashboard index="0" />} />

@@ -50,7 +50,7 @@ export default function Header() {
     {
       category: t('rental'),
       subcategory: [
-        {  label: t('audioSound') },
+        { href: "/filter", label: t('audioSound') },
         { href: "/filter", label: t('lighting') },
   
         { href: "/filter", label: t('screens') },

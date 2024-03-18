@@ -50,4 +50,21 @@ leaflet-container {
     align-items: center;
     z-index: 999;
   }
+  .slider {
 
+
+    -webkit-appearance: none;
+    height: 8px;
+
+    margin-bottom: 15px;
+    background-color: #D9D9D9;
+  }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+
+    background-color: #332D7C;
+    overflow: visible;
+    cursor: pointer;
+  }
