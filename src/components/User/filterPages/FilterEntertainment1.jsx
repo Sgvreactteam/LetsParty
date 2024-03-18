@@ -2,33 +2,33 @@
 import React from 'react'
 import MainCard from '../commanCard/MainCard';
 import { Footer } from 'flowbite-react';
-
+import image from '../../../assets/Rectangle103.png'
 
 const cardData = [
     {
       id: 1,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: image,
       name: "John Doe",
       
     },
     {
       id: 2,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: image,
       name: "Jane Smith",
     },
     {
       id: 3,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: image,
       name: "Jane Smith",
     },
     {
       id: 4,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: image,
       name: "Jane Smith",
     },
     {
       id: 5,
-      photoSrc: "src/assets/Rectangle103.png",
+      photoSrc: image,
       name: "Jane Smith",
     },
     // Add more data as needed

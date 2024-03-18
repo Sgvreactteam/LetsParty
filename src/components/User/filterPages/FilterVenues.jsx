@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import MainCard from "../commanCard/MainCard";
 import img1 from '../../../assets/Rectangle103.png'
 import Footer from "../Footer/Footer";
+import Map from "./Map";
+import { t } from 'i18next';
+import './map.css'
 
 const cardData = [
   {
@@ -93,15 +96,16 @@ function FilterVenues() {
       <div className="grid grid-cols-4 gap-8 w-[90vw] mx-auto py-6">
         <div>
           <h3 className="text-secondary text-2xl font-con">Filters</h3>
-          <label className="items-center flex">
-            Capacity
+          <Map />
+          <label className=" flex flex-col w-full mt-4">
+            {t('capacity')}
             <input
               type="range"
               value={capacity}
               max={100}
               onChange={handleCapacityChange}
+              className="slider"
             />
-            {capacity}
           </label>
           <div className="mt-5 flex flex-col gap-4">
             {checkBoxArry &&
@@ -119,7 +123,7 @@ function FilterVenues() {
                             type="checkbox"
                             id={labelData.id}
                             className=" checkbox-input p-1"
-                          />{" "}
+                          />
                           <label
                             htmlFor={labelData.id}
                             className="font-pop ps-2"

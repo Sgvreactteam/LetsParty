@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // import img1 from "../../../../../assets/Rectangle103.png"
 import { FaHeart } from "react-icons/fa";
 
+import image from '../../../../assets/Rectangle103.png'
 
 // Import Swiper styles
 import "swiper/css";
@@ -24,32 +25,32 @@ function UserEntertainmentBar() {
     {
      id:"1",
      name:"Entertainment 1",
-     imageUrl:img1,
+     imageUrl:image,
     },
     {
       id: 2,
       name: "Castle name 2",
-      imageUrl:img1,
+      imageUrl:image,
     },
     {
       id: 3,
       name: "Castle name 3",
-      imageUrl:img1,
+      imageUrl:image,
     }, 
     {
       id: 4,
       name: "Castle name 4",
-      imageUrl:img1,
+      imageUrl:image,
     },
     {
       id: 5,
       name: "Castle name 3",
-      imageUrl:img1,
+      imageUrl:image,
     },
     {
       id: 6,
       name: "Castle name 3",
-      imageUrl:img1,
+      imageUrl:image,
     },
   ];
 

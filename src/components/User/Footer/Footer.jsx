@@ -49,7 +49,7 @@ const Footer = () => {
                     {t('joinUsOn')}
                 </p>
                 <p> {t('contactUs')} </p>
-                <p> {t('termsCon')} </p>
+                <Link to="/TermsAndCondition"> {t('termsCon')} </Link>
                 <p> {t('pripol')} </p>
                 <div className="flex gap-2 mt-2">
                     <FaSquareFacebook size={24} />
