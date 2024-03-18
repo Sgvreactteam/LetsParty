@@ -16,7 +16,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { t } from 'i18next';
-
+import Modaal from './Modaal'
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -26,31 +26,31 @@ export default function Header() {
     {
       category: "Venue",
       subcategory: [
-        { href: "/filterVenues", label: t('castles') },
-        { href: "/filterVenues", label: t('partyRooms') },
+        { href: "", label: t('castles') },
+        { href: "", label: t('partyRooms') },
   
-        { href: "/filterVenues", label: t('bars') },
-        { href: "/filterVenues", label: t('hotelsRes') },
-        { href: "/filterVenues", label: t('confMeet') },
-        { href: "/filterVenues", label: t('openAir') },
-        { href: "/filterVenues", label: t('nightClubs') },
+        { href: "", label: t('bars') },
+        { href: "", label: t('hotelsRes') },
+        { href: "", label: t('confMeet') },
+        { href: "", label: t('openAir') },
+        { href: "", label: t('nightClubs') },
       ],
     },
     {
       category: t('entertainment'),
       subcategory: [
-        { href: "/filterEnt", label: "DJ" },
-        { href: "/filterEnt", label: t('singers') },
+        { href: "", label: "DJ" },
+        { href: "", label: t('singers') },
   
-        { href: "/filterEnt", label: t('magicians') },
-        { href: "/filterEnt", label: t('liveMusic') },
-        { href: "/filterEnt", label: t('coverBands') },
+        { href: "", label: t('magicians') },
+        { href: "", label: t('liveMusic') },
+        { href: "", label: t('coverBands') },
       ],
     },
     {
       category: t('rental'),
       subcategory: [
-        { href: "/filter", label: t('audioSound') },
+        {  label: t('audioSound') },
         { href: "/filter", label: t('lighting') },
   
         { href: "/filter", label: t('screens') },
@@ -87,17 +87,20 @@ export default function Header() {
       subcategory: [
         {
           id: 1,
+          href: "/profile",
           image: profileImg,
           label: "My Profile",
         },
         {
           id: 2,
           image: favourtie,
+          href: "/fav",
           label: "Favourites",
         },
         {
           id: 3,
           image: logout,
+          href: "/",
           label: "Log Out",
         },
       ],
@@ -116,7 +119,7 @@ export default function Header() {
   ];
 
   const [openMenu, setOpenMenu] = useState(null);
-
+  const active = true;
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -137,7 +140,17 @@ export default function Header() {
   const showSidebar = () => {
     setHamburger(!hamburger);
   };
-  return location.pathname=='/' || location.pathname=='/userRegister' || location.pathname==='/myannouncementss' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/Venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : (  
+
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal open/close
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleMenuItemClick = (category) => {
+    setIsModalOpen(true);
+    setSelectedCategory(category);
+  };
+
+
+  return location.pathname=='/'  || location.pathname=='/userRegister' || location.pathname==='/myannouncementss' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/Venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : (  
     <div className="border-b border-[#A2A2A2]">
       <header className="mx-auto flex max-w-7xl items-center justify-between ">
         <div className="flex flex-1">
@@ -203,9 +216,25 @@ export default function Header() {
                     <div className="py-1">
                       {subcategory.map(({ label, href }) => (
                         <Menu.Item >
-                          {({ active }) => (
+                            {href==="/filter"? (
                             <Link
-                              to={href}
+                              to="/filter"
+                              
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block px-4 py-2 text-lg font-pop"
+                              )}
+                            >
+                              {label}
+                            </Link>): (
+                              <Link
+
+                              onClick={() => {
+                                console.log("sdggsfsdf");
+                                handleMenuItemClick(category);
+                              }}
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -215,7 +244,8 @@ export default function Header() {
                             >
                               {label}
                             </Link>
-                          )}
+                            )}
+
                         </Menu.Item>
                       ))}
                     </div>
@@ -224,6 +254,11 @@ export default function Header() {
               </Menu>
             ))}
           </div>
+          <Modaal
+            isModalOpen={isModalOpen}
+            setIsModalOpen={() => setIsModalOpen(!isModalOpen)}
+            category={selectedCategory}
+          />
 
           <Link to={`#`} className="text-[#1A2736]   px-4 text-lg">
             Blog
@@ -275,10 +310,10 @@ export default function Header() {
               >
                 <Menu.Items className="absolute right-0  w-40 origin-top-right z-50 bg-white shadow-lg ">
                   <div className="py-1">
-                    {subcategory.map(({ id, image, label }) => (
+                    {subcategory.map(({ id, image, label, href }) => (
                       <Menu.Item key={id}>
                         {({ active }) => (
-                          <a href="#">
+                          <Link to={href}>
                             <div className="flex flex-row pl-4 items-start py-2 gap-2 text-lg font-pop">
                               <img
                                 src={image}
@@ -287,7 +322,7 @@ export default function Header() {
                               />{" "}
                               {label}
                             </div>
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                     ))}

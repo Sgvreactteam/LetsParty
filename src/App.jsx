@@ -22,6 +22,7 @@ import Details from './components/User/PropertyDetails/CardDetails';
 import FilterVenues from './components/User/filterPages/FilterVenues';
 import FilterRentalAndService from './components/User/filterPages/FilterRentalAndService';
 import FilterEntertainment1 from './components/User/filterPages/FilterEntertainment1'
+import Profile from './components/User/ProfilePage/Profile';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
         <Route path='/userForgotpass' element={<UserForgotPass />} />
         <Route path='/landingPage' element={<LandingPage />} />
         <Route path='/filterVenues' element={<FilterVenues />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='/filterEnt' element={<FilterEntertainment1 />} />
         <Route path='/filter' element={<FilterRentalAndService />} />
         <Route path='/details/:id' element={<Details />} />
