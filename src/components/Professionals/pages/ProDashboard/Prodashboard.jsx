@@ -85,7 +85,7 @@ function Prodashboard() {
           <select
             value={selectedCategory}
             onChange={handleCategoryChange}
-            className="border border-borde w-full rounded-md p-2 mt-2"
+            className="border border-borde w-full rounded-md p-2 mt-2 outline-none"
           >
             {categories.map((category) => (
               <option key={category.value} value={category.value}>
@@ -98,7 +98,7 @@ function Prodashboard() {
           <select
             value={selectedSubcategory}
             onChange={handleSubcategoryChange}
-            className="border border-borde w-full rounded-md p-2 mt-2"
+            className="border border-borde w-full rounded-md p-2 mt-2 outline-none"
           >
             {!subcategoriesMap[selectedCategory] && <option>Select</option>}
             {subcategoriesMap[selectedCategory] &&

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../../../../../ui/Input";
 import AddImages from "../../../../../ui/AddImages";
 import Button from "../../../../../ui/Button";
+import { t } from "i18next";
 
 function ServicesForm() {
   return (
@@ -37,14 +38,18 @@ function ServicesForm() {
             <label htmlFor="">Address</label>
             <Input placeholder="Address" type="text" classes="textarea"></Input>
           </div>
-          <div className="flex flex-col w-[50%]">
-            <label htmlFor="">Description</label>
-            <Input
-              placeholder="Description"
-              type="text"
-              classes="textarea"
-            ></Input>
-          </div>
+          <div className='flex flex-col md:w-[50%] w-full'>
+                <label htmlFor="">{t('Description (EN)')}</label>
+                <Input placeholder={t('description')} type="text" classes="textarea"></Input>
+            </div>
+            <div className='flex flex-col md:w-[50%] w-full'>
+                <label htmlFor="">{t('Description (DE)')}</label>
+                <Input placeholder={t('description')} type="text" classes="textarea"></Input>
+            </div>
+            <div className='flex flex-col md:w-[50%] w-full'>
+                <label htmlFor="">{t('Description (FR)')}</label>
+                <Input placeholder={t('description')} type="text" classes="textarea"></Input>
+            </div>
           <div className="flex flex-col md:w-[33%] w-full">
             <label htmlFor="">Minimum budget</label>
             <Input

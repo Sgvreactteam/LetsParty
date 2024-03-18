@@ -1,10 +1,11 @@
 import React from "react";
+import Footer from "../Footer/Footer";
 
 function Profile() {
   return (
     <>
-      <div className="bg-[#F8F8F8]">
-        <div className="max-w-2xl mx-auto ">
+      <div className="bg-[#F8F8F8] h-[51vh]">
+        <div className="max-w-2xl mx-auto">
           <h1 className="text-lg text-secondary text-center font-con my-3">
             My Profile
           </h1>
@@ -37,6 +38,7 @@ function Profile() {
           </div>
         </div>
       </div>
+        <Footer/>
     </>
   );
 }
