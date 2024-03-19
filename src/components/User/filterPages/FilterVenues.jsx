@@ -1,11 +1,13 @@
-
 import React, { useState } from "react";
 import MainCard from "../commanCard/MainCard";
 import img1 from '../../../assets/Rectangle103.png'
 import Footer from "../Footer/Footer";
 import Map from "./Map";
 import { t } from 'i18next';
-import './map.css'
+
+
+
+
 
 const cardData = [
   {
@@ -62,15 +64,13 @@ function FilterVenues() {
     {
       Heading: "Kind of venue ",
       labels: [
-        { id: "1", label: "Castles" },
-        { id: "1", label: "Castles" },
-        { id: "1", label: "as resquested by " },
-        { id: "1", label: "Castles" },
-        { id: "1", label: " resquested by host" },
-        { id: "1", label: "Castles" },
-        { id: "1", label: "Castles" },
-        { id: "1", label: "as " },
-        { id: "1", label: "Castles" },
+        { id: "1", label: t('castles') },
+        { id: "1", label: t('partyRooms') },
+        { id: "1", label: t('bars') },
+        { id: "1", label: t('hotelsRes') },
+        { id: "1", label: t('confMeet') },
+        { id: "1", label: t('openAir') },
+        { id: "1", label: t('nightClubs') },
       ],
     },
   ];
@@ -78,18 +78,22 @@ function FilterVenues() {
     {
       Heading: "Features of the venue ",
       labels: [
-        { id: "1", label: "Castles" },
-        { id: "1", label: "Castles" },
-        { id: "1", label: "as resquested by " },
-        { id: "1", label: "Castles" },
-        { id: "1", label: " resquested by host" },
-        { id: "1", label: "Castles" },
-        { id: "1", label: "Castles" },
-        { id: "1", label: "as " },
-        { id: "1", label: "Castles" },
+        { id: "1", label: t('profKitchen') },
+        { id: "1", label: t('partywithTerrRooms') },
+        { id: "1", label: t('withGar') },
+        { id: "1", label: t('soundSysAva') },
+        { id: "1", label: t('lightsAva') },
+        { id: "1", label: t('microAva') },
+        { id: "1", label: t('beamer') },
+        { id: "1", label: t('danceFloor') },
+        { id: "1", label: t('skittle') },
+        { id: "1", label: t('Bowling Alley') },
+        { id: "1", label: t('handi') },
+        { id: "1", label: t('pets') },
       ],
     },
   ];
+
 
   return (
     <>
@@ -97,22 +101,25 @@ function FilterVenues() {
         <div>
           <h3 className="text-secondary text-2xl font-con">Filters</h3>
           <Map />
-          <label className=" flex flex-col w-full mt-4">
-            {t('capacity')}
+          <label className=" flex flex-col w-full mt-4 text-2xl text-pop">
+            {t('distance')}
             <input
               type="range"
-              value={capacity}
+              value={distance}
               max={100}
-              onChange={handleCapacityChange}
-              className="slider"
+              onChange={handleDistanceChange}
+              className={distance>0?"pruple":"pp"}
             />
+            <div className="slider-value text-sm ">{distance} Km</div>
+
+            
           </label>
           <div className="mt-5 flex flex-col gap-4">
             {checkBoxArry &&
               checkBoxArry.map((item, index) => {
                 return (
                   <div className=" " key={index}>
-                    <h3 className="text-2xl font-con pb-2">{item.Heading} </h3>
+                    <h3 className="text-2xl font-pop font-light pb-2">{item.Heading} </h3>
                     <div className=" flex flex-col gap-3">
                       {item.labels.map((labelData, idx) => (
                         <div
@@ -126,7 +133,7 @@ function FilterVenues() {
                           />
                           <label
                             htmlFor={labelData.id}
-                            className="font-pop ps-2"
+                            className="font-pop ps-2 font-light"
                           >
                             {labelData.label}
                           </label>
@@ -139,27 +146,33 @@ function FilterVenues() {
           </div>
           <div className="flex flex-col gap-5">
 
-            <label className="items-center flex">
-              Size
-              <input
-                type="range"
-                value={size}
-                max={100}
-                onChange={handleSizeChange}
-              />
-              {size}
-            </label>
+          <label className=" flex flex-col w-full mt-4 text-2xl text-pop">
+            {t('size')}
+            <input
+              type="range"
+              value={size}
+              max={1000}
+              onChange={handleSizeChange}
+              className={capacity>0?"pruple":"pp"}
+            />
+            <div className="slider-value text-sm ">{size} Square feet</div>
 
-            <label className="items-center flex">
-              Distance
-              <input
-                type="range"
-                value={distance}
-                max={100}
-                onChange={handleDistanceChange}
-              />
-              {distance}
-            </label>
+            
+          </label>
+
+          <label className=" flex flex-col w-full mt-4 text-2xl text-pop">
+            {t('capacity')}
+            <input
+              type="range"
+              value={capacity}
+              max={1000}
+              onChange={handleCapacityChange}
+              className={capacity>0?"pruple":"pp"}
+            />
+            <div className="slider-value text-sm ">{capacity} People</div>
+
+            
+          </label>
           </div>
           <div className="mt-5 flex flex-col gap-4">
             {checkBoxArry2 &&
@@ -180,7 +193,7 @@ function FilterVenues() {
                           />{" "}
                           <label
                             htmlFor={labelData.id}
-                            className="font-pop ps-2"
+                            className="font-pop ps-2 font-light"
                           >
                             {labelData.label}
                           </label>

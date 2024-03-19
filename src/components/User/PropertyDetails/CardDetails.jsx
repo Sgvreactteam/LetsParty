@@ -34,6 +34,7 @@ import dance from './assets/dance.svg'
 import Footer from '../Footer/Footer';
 import Button from '../../../ui/Button';
 import PhotoOverlay from './PhotoOverlay';
+import FormOverlay from './FormOverlay';
 const Details = () => {
     const { t } = useTranslation();
     const navigate = useNavigate()
@@ -46,7 +47,7 @@ const Details = () => {
         name: "Hotel Grand Safari",
         website: "absd.co.in",
         contactNumber: "+352 76 01 06",
-        emailAddress: "demomail@gmail.com",
+        emailAddress: "mailto:demomail@gmail.com",
         location: "Sitapura, Jaipur",
         description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat eius tempore laboriosam perspiciatis ex officiis voluptate deserunt possimus, dignissimos reiciendis mollitia vitae libero vel, voluptatem harum maiores veniam ducimus odio impedit laudantium esse eum voluptas voluptatum. Deserunt officiis suscipit quaerat. Hic nam veritatis consequatur consectetur voluptates ut velit, eaque, corporis qui officiis deserunt tempora fugit deleniti in perspiciatis saepe laudantium sapiente ipsam culpa, vero eius. Beatae, asperiores illum sunt dolore, nulla eaque commodi recusandae, enim animi provident dolores unde necessitatibus ratione ducimus quo molestiae laborum nemo. Nemo impedit earum suscipit eligendi. Illum corrupti quae nisi blanditiis doloribus eos asperiores consequatur!",
         price: "$400",
@@ -184,9 +185,10 @@ const Details = () => {
 
     const [modalOpen, setModalOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [formModal, setFormModal] = useState(false)
 
-    const openModal = () => {
-      setCurrentIndex(0)
+    const openModal = (index) => {
+      setCurrentIndex(index)
       setModalOpen(true);
     };
   
@@ -205,6 +207,14 @@ const Details = () => {
         prevIndex === dummyData[0].images.length - 1 ? 0 : prevIndex + 1
       );
     };
+
+    const openFormModal = () => {
+      setFormModal(true);
+    }
+    const closeFormModal = ( ) => {
+      setFormModal(false);
+    }
+
     const { pathname } = useLocation();
 
     useEffect(() => {
@@ -217,13 +227,13 @@ const Details = () => {
     <div className='flex flex-col w-[85%] mx-auto mt-8 font-pop z-9'>
         <p onClick={handleBackButton} className='flex items-center gap-2 text-secondary cursor-pointer'> <IoCaretBackCircleSharp size={20} /> {t('details')} </p>
         <div className="flex flex-col flex-wrap w-full mt-4 h-[400px] gap-2">
-          <img className='w-1/2 h-full object-cover' src={dummyData[0].images[0].img} alt="" />
+          <img onClick={() => openModal(0)} className='w-1/2 h-full object-cover' src={dummyData[0].images[0].img} alt="" />
           <div className="flex w-1/2 flex-wrap">
-            <img className='w-1/2 h-1/2 pb-1 pr-1 object-cover rounded-md' src={dummyData[0].images[1].img} alt="" />
-            <img className='w-1/2 h-1/2 object-cover pb-1 pl-1 rounded-md' src={dummyData[0].images[2].img} alt="" />
-            <img className='w-1/2 h-1/2 object-cover pt-1 pr-1 rounded-md' src={dummyData[0].images[3].img} alt="" />
-            <div className='w-1/2 h-1/2 pl-1 pt-1 relative rounded-md cursor-pointer'><img className=' object-cover h-full rounded-md' src={dummyData[0].images[4].img} alt="" />
-              <p onClick={() => openModal()} className='absolute bg-gray w-[99%] h-[98%] mb-2  rounded-md top-1 opacity-80  flex justify-center items-center text-white'>+{dummyData[0].images.length-4}</p>
+            <img onClick={() => openModal(1)} className='w-1/2 h-1/2 pb-1 pr-1 object-cover rounded-md' src={dummyData[0].images[1].img} alt="" />
+            <img onClick={() => openModal(2)} className='w-1/2 h-1/2 object-cover pb-1 pl-1 rounded-md' src={dummyData[0].images[2].img} alt="" />
+            <img onClick={() => openModal(3)} className='w-1/2 h-1/2 object-cover pt-1 pr-1 rounded-md' src={dummyData[0].images[3].img} alt="" />
+            <div onClick={() => openModal(4)} className='w-1/2 h-1/2 pl-1 pt-1 relative rounded-md cursor-pointer'><img className=' object-cover h-full rounded-md' src={dummyData[0].images[4].img} alt="" />
+              <p onClick={() => openModal(0)} className='absolute bg-gray w-[99%] h-[98%] mb-2  rounded-md top-1 opacity-80  flex justify-center items-center text-white'>+{dummyData[0].images.length-4}</p>
               
             </div>
             
@@ -305,7 +315,7 @@ const Details = () => {
                 </div>
               </div>
               <div className="mt-20 items-center flex justify-center md:mb-0 mb-12">
-              <Button type="purpleLarge" > Contact </Button>
+              <Button onClick={() => {openFormModal()}} type="purpleLarge" > Contact </Button>
               </div>
             </div>
           </div>
@@ -319,6 +329,13 @@ const Details = () => {
                   currentPhoto={dummyData[0].images[currentIndex]}
                   onPrev={goToPrevPhoto}
                   onNext={goToNextPhoto}
+                />
+              )
+    }
+    {
+            formModal && (
+                <FormOverlay
+                  closeFormModal={closeFormModal}
                 />
               )
     }

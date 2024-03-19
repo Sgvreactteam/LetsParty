@@ -36,8 +36,8 @@ const Map = () => {
           className="mapcontainer"
           attributionControl={false}
           center={position}
-          zoom={15}
-          style={{ height: "150px", width: "300px", zIndex: "1" }}
+          zoom={10}
+          style={{ height: "150px", width: "20vw", zIndex: "1" }}
         >
 
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
