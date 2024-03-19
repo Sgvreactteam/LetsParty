@@ -121,7 +121,13 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState(null);
   const active = true;
   const menuRef = useRef(null);
+  
+  
+  const handleMenufirst = (category) => {
+    setOpenMenu(null ?? category);
+  };
 
+  
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -152,8 +158,6 @@ export default function Header() {
     setSelectedCategory(category);
   };
   
-
-
 
   return location.pathname=='/'  || location.pathname=='/userRegister' || location.pathname==='/myannouncementss' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/Venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : (  
     <div className="border-b border-[#A2A2A2]">
@@ -187,9 +191,7 @@ export default function Header() {
                   <Menu.Button
                     className="inline-flex w-full justify-center items-center font-pop gap-x-1.5  bg-white px-3 py-2 text-lg  text-[#1A2737] shadow-sm "
                     onClick={() =>
-                      setOpenMenu((prevOpenMenu) =>
-                        prevOpenMenu === category ? null : category
-                      )
+                      handleMenufirst(category)
                     }
                   >
                     {category}
@@ -236,7 +238,15 @@ export default function Header() {
                             </Link>): (
                               <Link
 
-                              onClick={() => {
+                              onMouseDown={() => {
+                                console.log("sdggsfsdf");
+                                handleMenuItemClick(category);
+                              }}
+                              onKeyDown={() => {
+                                console.log("sdggsfsdf");
+                                handleMenuItemClick(category);
+                              }}
+                              onTouchStart={() => {
                                 console.log("sdggsfsdf");
                                 handleMenuItemClick(category);
                               }}
@@ -290,10 +300,10 @@ export default function Header() {
                     className="2xl:w-[50px] 2xl:h-[50px] w-[30px] h-[30px]"
                   />
                   {openMenu === image ? (
-                    <RiArrowUpSFill
-                      className="-mr-1 h-5 w-5 text-gray-400"
-                      aria-hidden="true"
-                    />
+                      <RiArrowUpSFill
+                        className="-mr-1 h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      />
                   ) : (
                     <RiArrowDownSFill
                       className="-mr-1 h-5 w-5 text-gray-400"
@@ -318,7 +328,7 @@ export default function Header() {
                     {subcategory.map(({ id, image, label, href }) => (
                       <Menu.Item key={id}>
                         {({ active }) => (
-                          <Link to={href}>
+                          <Link to={href} >
                             <div className="flex flex-row pl-4 items-start py-2 gap-2 text-lg font-pop">
                               <img
                                 src={image}

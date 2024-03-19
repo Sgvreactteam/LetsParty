@@ -1,20 +1,20 @@
 import React from "react";
 import Footer from "../Footer/Footer";
-
+import { t } from "i18next";
 function Profile() {
   return (
     <>
-      <div className="bg-[#F8F8F8] h-[51vh]">
-        <div className="max-w-2xl mx-auto">
+      <div className="bg-[#F8F8F8] pb-20">
+        <div className="max-w-2xl mx-auto ">
           <h1 className="text-lg text-secondary text-center font-con my-3">
             My Profile
           </h1>
 
           <div className="bg-white p-4">
-            <h2 className="text-lg font-con">Personal Information</h2>
+            <h2 className="text-lg font-con">{t('personalInfo')}</h2>
             <div className="flex flex-col">
               <label htmlFor="" className="font-pop ">
-                Name
+                {t('name')}
               </label>
               <input
                 type="text"
@@ -26,7 +26,7 @@ function Profile() {
             </div>
             <div className="flex flex-col">
               <label htmlFor="" className="font-pop ">
-                Address
+                {t('address')}
               </label>
               <textarea
                 name=""
@@ -38,7 +38,7 @@ function Profile() {
           </div>
         </div>
       </div>
-        <Footer/>
+      <Footer/>
     </>
   );
 }

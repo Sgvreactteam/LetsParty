@@ -39,14 +39,12 @@ function App() {
         <Route path='/userForgotpass' element={<UserForgotPass />} />
         <Route path='/landingPage' element={<LandingPage />} />
         <Route path='/filterVenues' element={<FilterVenues />} />
-        <Route path='/FilterEntertainment1' element={<FilterEntertainment1 />} />
-        <Route path='/FilterRentalAndService' element={<FilterRentalAndService />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/filterEnt' element={<FilterEntertainment1 />} />
         <Route path='/filter' element={<FilterRentalAndService />} />
         <Route path='/fav' element={<Favourites />} />
+        <Route path='/terms&condition' element={<TermCondition />} />
         <Route path='/details/:id' element={<Details />} />
-        <Route path='/TermsAndCondition' element={<TermCondition />} />
         <Route element={<ProLayout />}>
         <Route path='/ProfessionalDashboard' element={<Prodashboard index="0" />} />
         <Route path='/myaccount' element={<MyAccount />} />
@@ -58,7 +56,6 @@ function App() {
         <Route path='/myannouncementss' element={<AnnouncementStep3 />} />
         </Route>  
       </Routes>
-
     </I18nextProvider>
     </BrowserRouter>
   )

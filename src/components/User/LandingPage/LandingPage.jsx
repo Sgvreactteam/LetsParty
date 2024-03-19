@@ -15,6 +15,7 @@ import HorizonatalTabBar from '../horizontalTabBar/HorizonatalTabBar';
 import { useNavigate } from 'react-router';
 import VenueModal from '../Header/VenueModal';
 import EnterModal from '../Header/EnterModal';
+import LatestNews from '../latestNews/LatestNews';
 const LandingPage = () => {
   const navigate = useNavigate();
     const { t } = useTranslation();
@@ -150,6 +151,9 @@ const LandingPage = () => {
         <div className="flex flex-col w-[80%] mx-auto">
         <EventsSection/>
         <HorizonatalTabBar />
+        <div>
+        <LatestNews/>
+        </div>
         </div>
         <Footer />
     </div>

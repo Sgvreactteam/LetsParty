@@ -111,5 +111,15 @@
     "contactUs": "Contactez-nous",
     "termsCon": "Termes et conditions",
     "pripol": "Politique de confidentialité",
-    "details": "Détails"
+    "details": "Détails",
+    "distance": "Distance",
+    "size": "Size",
+    "capacity": "Capacity",
+    "contactwith": "Contact avec formulaire professionnel",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "eveInfo": "Informations sur l'événement",
+    "eveDate": "Date de l'événement",
+    "participants": "Nombre de participants",
+    "message": "Message"
 }
