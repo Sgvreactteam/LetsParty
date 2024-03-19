@@ -110,6 +110,16 @@
     "contactUs": "Contact Us",
     "termsCon": "Terms and Conditions",
     "pripol": "Privacy Policy",
-    "details": "Details"
+    "details": "Details",
+    "distance": "Distance",
+    "size": "Size",
+    "capacity": "Capacity",
+    "contactwith": "Contact With Professional Form",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "eveInfo": "Event Information",
+    "eveDate": "Event Date",
+    "participants": "Number Of Participants",
+    "message": "Message"
 
 }

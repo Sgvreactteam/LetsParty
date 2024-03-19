@@ -14,7 +14,7 @@ function MainCard({ photoSrc, name, city }) {
     <FaHeart size={25} style={{ color: "#D9D9D9" }} />
     </div>
     <div className="py-3">
-      <h3 className="text-lg font-semibold mb-2 text-light font-pop">
+      <h3 className="text-lg mb-2 text-light font-pop">
         {name}
       </h3>
       <h3 className="text-[#151515] font-lato">{city}</h3>

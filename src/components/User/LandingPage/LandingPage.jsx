@@ -10,6 +10,7 @@ import EventsSection from './Events/EventsSection';
 import Footer from '../Footer/Footer';
 import HorizonatalTabBar from '../horizontalTabBar/HorizonatalTabBar';
 import Header from '../Header/Header';
+import LatestNews from '../latestNews/LatestNews';
 const LandingPage = () => {
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState("");
@@ -128,6 +129,9 @@ const LandingPage = () => {
         <div className="flex flex-col w-[80%] mx-auto">
         <EventsSection/>
         <HorizonatalTabBar />
+        <div className='rounded-md'>
+        <LatestNews />
+        </div>
         </div>
         <Footer />
     </div>

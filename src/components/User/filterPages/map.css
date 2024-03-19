@@ -55,7 +55,7 @@ leaflet-container {
 
     -webkit-appearance: none;
     height: 8px;
-
+    accent-color: green !important;
     margin-bottom: 15px;
     background-color: #D9D9D9;
   }
@@ -68,3 +68,14 @@ leaflet-container {
     overflow: visible;
     cursor: pointer;
   }
+  .slider::-webkit-slider-runnable-track {
+    accent-color: #F76900;
+    border: none;
+    outline: none;
+ }
+.pruple{
+  accent-color: #332D7C;
+}
+.pp{
+  accent-color: #ddd;
+}

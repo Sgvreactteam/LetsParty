@@ -1,66 +1,189 @@
 import React from 'react'
 import MainCard from '../commanCard/MainCard';
-import { Footer } from 'flowbite-react';
+import Footer from '../Footer/Footer';
 import image from '../../../assets/Rectangle103.png'
 
 const cardData = [
     {
       id: 1,
       photoSrc: image,
-      name: "John Doe",
+      name: "David Classic Rock",
       
     },
     {
       id: 2,
       photoSrc: image,
-      name: "Jane Smith",
+      name: "Classical Music Band",
     },
     {
       id: 3,
       photoSrc: image,
-      name: "Jane Smith",
+      name: "Night club",
     },
     {
       id: 4,
       photoSrc: image,
-      name: "Jane Smith",
+      name: "Party room",
     },
     {
       id: 5,
       photoSrc: image,
-      name: "Jane Smith",
+      name: "Electronic Arrangement",
+    },
+    {
+      id: 6,
+      photoSrc: image,
+      name: "Conference & Meeting room",
+    },
+    {
+      id: 7,
+      photoSrc: image,
+      name: "Herry Metal",
     },
     // Add more data as needed
   ];
 
 function FilterEntertainment1() {
-    const checkBoxArry = [
-        {
-          Heading: "Kind of venue ",
-          labels: [
-            { id: "1", label: "Castles" },
-            { id: "1", label: "Castles" },
-            { id: "1", label: "as resquested by " },
-            { id: "1", label: "Castles" },
-            { id: "1", label: " resquested by host" },
-            { id: "1", label: "Castles" },
-            { id: "1", label: "Castles" },
-            { id: "1", label: "as " },
-            { id: "1", label: "Castles" },
-          ],
-        },
-      ];
+  const checkBoxArry = [
+    {
+      Heading: "Flexible ",
+      labels: [{ id: "1", label: "as resquested by host" }],
+    },
+    {
+      Heading: "Classical Music ",
+      labels: [
+        { id: "1", label: "Baroque" },
+        { id: "2", label: "Classical " },
+        { id: "3", label: "Romantic  " },
+        { id: "4", label: "Contemporary  " },
+      ],
+    },
+    {
+      Heading: "Jazz ",
+      labels: [
+        { id: "1", label: "Swing" },
+        { id: "1", label: "Bebop " },
+        { id: "1", label: "Fusion " },
+      ],
+    },
+    {
+      Heading: "Rock ",
+      labels: [
+        { id: "1", label: "Classical Rock" },
+        { id: "1", label: "Punk " },
+        { id: "1", label: "Alternative " },
+        { id: "1", label: "Indie Rock " },
+      ],
+    },
+    {
+      Heading: "Metal ",
+      labels: [
+        { id: "1", label: "Heavy Metal" },
+        { id: "1", label: "Black Metal " },
+        { id: "1", label: "Death Metal " },
+      ],
+    },
+    {
+      Heading: "Pop ",
+      labels: [
+        { id: "1", label: "Pop-Rock" },
+        { id: "1", label: "Electro Pop " },
+        { id: "1", label: "Dance Pop " },
+        { id: "1", label: "Indie Pop " },
+      ],
+    },
+    {
+      Heading: "Hip-Hop/Rap ",
+      labels: [
+        { id: "1", label: "Hip-Hop/Rap" },
+        
+      ],
+    },
+    {
+      Heading: "Electronic ",
+      labels: [
+        { id: "1", label: "Techno" },
+        { id: "1", label: "House " },
+        { id: "1", label: "Trance " },
+        { id: "1", label: "Dubstep " },
+      ],
+    },
+    {
+      Heading: "Blues ",
+      labels: [
+        { id: "1", label: "Blues" },
+        
+      ],
+    },
+    {
+      Heading: "R&B ",
+      labels: [
+        { id: "1", label: "Raggea" },
+        { id: "2", label: "Latin" },
+        
+      ],
+    },
+    {
+      Heading: "Folk ",
+      labels: [
+        { id: "1", label: "Flok" },
+        
+      ],
+    },
+    {
+      Heading: "Indie ",
+      labels: [
+        { id: "1", label: "Indie" },
+        
+      ],
+    },
+  ];
   return (
     <>
     <div className="grid grid-cols-4 gap-8 w-[90vw] py-6 mx-auto">
     <div>
-      <h3 className="text-secondary text-2xl font-con">Filters</h3>
+      <h3 className="text-secondary text-2xl font-pop">Filters</h3>
+      <p className='text-xl font-pop mt-4'>Offers rental of audio and lights</p>
+      <div
+                      className="flex justify-start items-baseline mt-2"
+
+                    >
+                      <input
+                        type="checkbox"
+                        
+                        className=" checkbox-input p-1"
+                      />{" "}
+                      <label
+
+                        className="font-pop ps-2 font-extralight"
+                      >
+                        Audio
+                      </label>
+                    </div>
+                    <div
+                      className="flex justify-start items-baseline mt-1"
+
+                    >
+                      <input
+                        type="checkbox"
+                        
+                        className=" checkbox-input p-1"
+                      />{" "}
+                      <label
+
+                        className="font-pop ps-2 font-extralight"
+                      >
+                        Light
+                      </label>
+                    </div>
+                    <p className='text-xl font-pop mt-4'>Music Genre</p>
+
       <div className="mt-5 flex flex-col gap-4">
         {checkBoxArry &&
           checkBoxArry.map((item, index) => {
             return (
               <div className=" " key={index}>
-                <h3 className="text-2xl font-con pb-2">{item.Heading} </h3>
+                <h3 className="font-pop pb-2 text-xl font-light">{item.Heading} </h3>
                 <div className=" flex flex-col gap-3">
                   {item.labels.map((labelData, idx) => (
                     <div
@@ -74,7 +197,7 @@ function FilterEntertainment1() {
                       />{" "}
                       <label
                         htmlFor={labelData.id}
-                        className="font-pop ps-2"
+                        className="font-pop ps-2 font-extralight"
                       >
                         {labelData.label}
                       </label>
