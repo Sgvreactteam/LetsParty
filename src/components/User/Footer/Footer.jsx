@@ -28,7 +28,6 @@ const Footer = () => {
                 <img src={whiteLogo} className='w-40 bg-black mt-2' alt="" />
             </div>
             <div className="flex flex-col gap-2 w-1/3 font-light">
-                <p> {t('contactUs')} </p>
                 <Link to="/terms&condition"> {t('termsCon')} </Link>
                 <p> {t('pripol')} </p>
                 <p className="text-xl font-light">
