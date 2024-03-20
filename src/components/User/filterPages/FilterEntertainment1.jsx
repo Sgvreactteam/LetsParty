@@ -219,7 +219,7 @@ function FilterEntertainment1() {
     <div className=" col-span-3">
 
 
-      <div className="grid grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-4 gap-4 mt-8">
 
         {cardData.map((data) => (
           <MainCard
