@@ -31,8 +31,8 @@ const LandingPage = () => {
         { value: "venues", label: `${t('venues')}` },
         { value: "FilterEntertainment1", label: `${t('entertainment')}` },
 
-        { value: "filter", label: `${t('rental')}` },
-        { value: "filter", label: `${t('services')}` },
+        { value: "rental", label: `${t('rental')}` },
+        { value: "services", label: `${t('services')}` },
 
       ];
     
@@ -58,7 +58,7 @@ const LandingPage = () => {
           { value: "Live Music Bands ", label: `${t('liveMusic')}` },
           { value: "Cover band ", label: `${t('coverBands')}` },
         ],
-        filter: [
+        rental: [
 
           { value: "", label: "Select..." },
     
@@ -73,7 +73,7 @@ const LandingPage = () => {
         { value: "heating", label: t('heating') },
         { value: "cars", label: t('cars') },
         ],
-        filter: [
+        services: [
 
           { value: "", label: "Select..." },
           { value: "decorators", label: t('decorators') },
