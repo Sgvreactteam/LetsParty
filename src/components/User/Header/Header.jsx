@@ -16,6 +16,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { t } from 'i18next';
+import { useTranslation } from "react-i18next";
 import Modaal from './Modaal'
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -106,14 +107,25 @@ export default function Header() {
       ],
     },
   ];
+  const { i18n } = useTranslation();
+    const handleEnglish = () => {
+      
+        i18n.changeLanguage("en");
+    }
+    const handleGerman = () => {
+        i18n.changeLanguage("gr");
+    }
+    const handleFrench = () => {
+        i18n.changeLanguage("fr");
+    }
   const language = [
     {
-      flag: flag2,
+      flag: flag1,
       lang: "EN",
       subcategory: [
-        { id: 1, flag: flag2, lang: "EN" },
-        { id: 2, flag: flag3, lang: "DE" },
-        { id: 3, flag: flag1, lang: "FR" },
+        { id: 2, flag: flag2, lang: "DE", func: handleGerman },
+        { id: 3, flag: flag3, lang: "FR", func: handleFrench },
+        { id: 1, flag: flag1, lang: "EN", func: handleEnglish },
       ],
     },
   ];
@@ -157,6 +169,7 @@ export default function Header() {
     setIsModalOpen(true);
     setSelectedCategory(category);
   };
+
   
 
   return location.pathname=='/'  || location.pathname=='/userRegister' || location.pathname==='/myannouncementss' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/Venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : (  
@@ -347,7 +360,7 @@ export default function Header() {
             </Menu>
           ))}
 
-          {language.map(({ flag, subcategory, index }) => (
+          {language.map(({ flag,lang, subcategory, index }) => (
             <Menu
               as="div"
               className="relative inline-block text-left"
@@ -363,7 +376,7 @@ export default function Header() {
                   }
                 >
                   <img src={flag} alt="" className=" w-[20px] h-[15px]" />
-                  EN
+                  {lang}
                   {openMenu === flag ? (
                     <RiArrowUpSFill
                       className="-mr-1 h-5 w-5 text-gray-400"
@@ -392,9 +405,9 @@ export default function Header() {
                   <div className="py-1">
                     {subcategory.map(({ id, flag, lang }) => (
                       <Menu.Item key={id}>
-                        {({ active }) => (
-                          <a href="#">
-                            <div className="flex flex-row pl-4 items-center gap-2 text-lg font-pop">
+                        {() => (
+
+                            <div  className="flex flex-row pl-4 items-center gap-2 text-lg font-pop">
                               <img
                                 src={flag}
                                 alt=""
@@ -402,7 +415,7 @@ export default function Header() {
                               />{" "}
                               {lang}
                             </div>
-                          </a>
+
                         )}
                       </Menu.Item>
                     ))}
@@ -436,18 +449,19 @@ export default function Header() {
               </button>
             </div>
 
-            {language.map(({ flag, lang, subcategory, index }) => (
+            {language.map(({ func, subcategory, index }) => (
               <div className="flex gap-2" key={index}>
-                {subcategory.map(({ id, flag, lang }) => (
-                  <div
-                    className="flex flex-row gap-1 justify-center items-center"
-                    key={id}
-                  >
-                    <img src={flag} alt="" className="w-5 h-3" />
-                    <span className="text-white">{lang}</span>
-                  </div>
-                ))}
-              </div>
+              {subcategory.map(({ id, flag, lang }) => (
+                <div
+                onClick={func}
+                  className="flex flex-row gap-1 justify-center items-center"
+                  key={id}
+                >
+                  <img src={flag} alt="" className="w-5 h-3" />
+                  <span className="text-white">{lang}</span>
+                </div>
+              ))}
+            </div>
             ))}
 
             <Sidebar.Items>
