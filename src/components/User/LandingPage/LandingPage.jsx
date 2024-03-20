@@ -30,8 +30,8 @@ const LandingPage = () => {
         { value: "", label: "Select..." },
         { value: "venues", label: `${t('venues')}` },
         { value: "FilterEntertainment1", label: `${t('entertainment')}` },
-        { value: "FilterRentalAndService", label: `${t('rental')}` },
-        { value: "FilterRentalAndService", label: `${t('services')}` },
+        { value: "FilterRental", label: `${t('rental')}` },
+        { value: "FilterService", label: `${t('services')}` },
       ];
     
       const subcategoriesMap = {
@@ -56,7 +56,7 @@ const LandingPage = () => {
           { value: "Live Music Bands ", label: `${t('liveMusic')}` },
           { value: "Cover band ", label: `${t('coverBands')}` },
         ],
-        FilterRentalAndService: [
+        FilterRental: [
           { value: "", label: "Select..." },
     
           {
@@ -64,7 +64,7 @@ const LandingPage = () => {
             label: `${t('rental')}`,
           },
         ],
-        FilterRentalAndService: [
+        FilterService: [
           { value: "", label: "Select..." },
           {
             value: "Services",
@@ -89,7 +89,7 @@ const LandingPage = () => {
           setIsEntertainmentModalOpen(true);
         } else {
           // Navigate to the corresponding page for rental and services
-          navigate(`/${selectedCategory}`);
+          navigate(`/filter`);
         }
       };
 
@@ -121,8 +121,8 @@ const LandingPage = () => {
                 >
                     {!subcategoriesMap[selectedCategory] && <option>Select</option>}
                     {subcategoriesMap[selectedCategory] &&
-                    subcategoriesMap[selectedCategory].map((subcategory) => (
-                        <option key={subcategory.value} value={subcategory.value}>
+                    subcategoriesMap[selectedCategory].map((subcategory, index) => (
+                        <option key={index} value={subcategory.value}>
                         {subcategory.label}
                         </option>
                     ))}

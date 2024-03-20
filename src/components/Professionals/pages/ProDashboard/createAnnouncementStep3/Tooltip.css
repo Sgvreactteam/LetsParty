@@ -14,6 +14,6 @@
     white-space: nowrap;
     z-index: 1;
     top: -320%;
-    left: 50%;
+    left: 160%;
     transform: translateX(-50%);
   }
