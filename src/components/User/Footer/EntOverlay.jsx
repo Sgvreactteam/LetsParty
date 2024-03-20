@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import React from 'react'
 import Button from '../../../ui/Button'
 import './overlay.css'
+import { IoMdClose } from "react-icons/io";
 const EntOverlay = ({ closeModal }) => {
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -18,9 +19,18 @@ const EntOverlay = ({ closeModal }) => {
           document.removeEventListener("mousedown", handleClickOutside);
         };
       }, [closeModal]);
+      const category = [
+        { value: "", label: "Select..." },
+        { value: "DJ", label: "DJ" },
+        { value: "concert ", label: "Concert/Theatre Show" },
+        { value: "public party  ", label: "Public Party" },
+        { value: "afterwork ", label: "Afterwork" },
+    
+      ];
   return (
     <div className='modal-overlay'>
-        <div className='bg-white text-black p-8 rounded-md modal-content'>
+        <div className='bg-white text-black p-8 rounded-md modal-content relative'>
+          <IoMdClose className='absolute top-2 right-2' onClick={closeModal} size={24} />
         <div className="text-center font-con text-2xl text-secondary">
               Entertainment
             </div>
@@ -33,7 +43,9 @@ const EntOverlay = ({ closeModal }) => {
                 id=""
                 className="font-lato font-medium rounded border border-borde focus:outline-none py-2"
               >
-                <option value="">Entertainment</option>
+                {category.map((category, index) => (
+                  <option value={category.value} key={index}>{category.label}</option>
+                ))}
               </select>
             </div>
             <div className="font-pop text-white flex justify-center">
