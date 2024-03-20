@@ -59,7 +59,7 @@ const VenueOverlay = ({ closeModal }) => {
                     id=""
                     className="font-lato  rounded border border-borde focus:outline-none py-2"
                   >
-                    <option value="">Privitise</option>
+                    <option value="">Privatise</option>
                     <option value="">Book</option>
                   </select>
                 </div>

@@ -107,21 +107,29 @@ export default function Header() {
       ],
     },
   ];
+
+  const [imgflag, setimgflag] = useState(flag1)
+  const [langshow, setlangshow] = useState("EN")
   const { i18n } = useTranslation();
     const handleEnglish = () => {
-      
+        setimgflag(flag1)
+        setlangshow("EN")
         i18n.changeLanguage("en");
     }
     const handleGerman = () => {
+      setlangshow("DE")
+      setimgflag(flag2)
         i18n.changeLanguage("gr");
     }
     const handleFrench = () => {
+      setimgflag(flag3)
+      setlangshow("FR")
         i18n.changeLanguage("fr");
     }
   const language = [
     {
-      flag: flag1,
-      lang: "EN",
+      flag: imgflag,
+      lang: langshow,
       subcategory: [
 
         { id: 2, flag: flag2, lang: "DE", func: handleGerman },
@@ -362,7 +370,7 @@ export default function Header() {
             </Menu>
           ))}
 
-          {language.map(({ flag,lang, subcategory, index }) => (
+          {language.map(({ flag,  subcategory, index }) => (
             <Menu
               as="div"
               className="relative inline-block text-left"
@@ -378,7 +386,7 @@ export default function Header() {
                   }
                 >
                   <img src={flag} alt="" className=" w-[20px] h-[15px]" />
-                  {lang}
+                  {langshow}
                   {openMenu === flag ? (
                     <RiArrowUpSFill
                       className="-mr-1 h-5 w-5 text-gray-400"
@@ -405,11 +413,11 @@ export default function Header() {
               >
                 <Menu.Items className="absolute right-0 z-10  w-40 origin-top-right  bg-white shadow-lg ">
                   <div className="py-1">
-                    {subcategory.map(({ id, flag, lang }) => (
+                    {subcategory.map(({ id, flag, lang, func }) => (
                       <Menu.Item key={id}>
-                        {() => (
 
-                            <div  className="flex flex-row pl-4 items-center gap-2 text-lg font-pop">
+
+                            <div onClick={func} className="flex flex-row pl-4 items-center gap-2 text-lg font-pop">
                               <img
                                 src={flag}
                                 alt=""
@@ -418,7 +426,7 @@ export default function Header() {
                               {lang}
                             </div>
 
-                        )}
+
                       </Menu.Item>
                     ))}
                   </div>
