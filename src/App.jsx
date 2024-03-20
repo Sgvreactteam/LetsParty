@@ -60,7 +60,10 @@ function App() {
         <Route path='/Rental' element={<Rental />} />
         <Route path='/Services' element={<ServicesForm />} />
         <Route path='/myannouncements' element={<MyAnnouncements />} /> 
-        <Route path='/myannouncementss' element={<AnnouncementStep3 />} />
+        <Route path='/Venues/myannouncementss' element={<AnnouncementStep3 />} />
+        <Route path='/Entertainment/myannouncementss' element={<AnnouncementStep3 />} />
+        <Route path='/Rental/myannouncementss' element={<AnnouncementStep3 />} />
+        <Route path='/Services/myannouncementss' element={<AnnouncementStep3 />} />
         </Route>  
         </>
       </Routes>

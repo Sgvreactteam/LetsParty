@@ -5,6 +5,15 @@ import Button from "../../../ui/Button";
 function VenueModal({ isModalOpen, setIsModalOpen }) {
   // console.log(isModalOpen, "Venue Modal");
   const [modalSize, setModalSize] = useState("md");
+  const category =  [
+    { value: "", label: "Select" },
+    { value: "Birthday", label: "Birthday" },
+    { value: "Wedding", label: "Wedding" },
+    { value: "Anniversary", label: "Anniversary" },
+    { value: "Family Gathering", label: "Family Gathering" },
+    { value: "reception", label: "Reception" },
+    
+  ]
 
   return (
     <>
@@ -27,7 +36,9 @@ function VenueModal({ isModalOpen, setIsModalOpen }) {
                     id=""
                     className="font-lato  rounded border border-borde focus:outline-none py-2"
                   >
-                    <option value="">Venue</option>
+                    {category.map((category, index) => (
+                      <option value={category.value} key={index}>{category.label}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="flex flex-col">
@@ -39,7 +50,7 @@ function VenueModal({ isModalOpen, setIsModalOpen }) {
                     id=""
                     className="font-lato  rounded border border-borde focus:outline-none py-2"
                   >
-                    <option value="">Privitise</option>
+                    <option value="">Privatise</option>
                     <option value="">Book</option>
                   </select>
                 </div>

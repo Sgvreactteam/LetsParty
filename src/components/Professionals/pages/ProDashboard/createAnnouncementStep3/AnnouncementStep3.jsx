@@ -4,8 +4,11 @@ import Button from "../../../../../ui/Button";
 import vectorImg from "../../../../../assets/Frame.svg";
 import { t } from "i18next";
 import { BsFillInfoCircleFill } from "react-icons/bs";
+import { useNavigate, useLocation} from "react-router-dom";
 import './Tooltip.css'
 function AnnouncementStep3() {
+  const location = useLocation()
+  let navigate = useNavigate();
   const headingsData = [
     {
       heading: "Accepted Events",
@@ -65,7 +68,7 @@ function AnnouncementStep3() {
         ))}
       </div>
 
-      <div className="mt-3 px-10">
+      { !location.pathname==="Entertainment/myannouncementss" && <div className="mt-3 px-10">
         <h2 className="text-2xl font-con  pb-2">Accepted Kinds Of Booking</h2>
         <div className="flex flex-wrap gap-2">
           <div className=" flex justify-start items-baseline ">
@@ -97,27 +100,28 @@ function AnnouncementStep3() {
           </div>
           <div></div>
         </div>
-      </div>
+      </div>}
       <div className="mt-3 px-10">
         <div className="flex   pb-2">
-          <h2 className="text-2xl font-con flex items-center gap-2">Premium Announcement <span className="info-icon" title="Do you want to create your announcement as Premium or Standard?"> <BsFillInfoCircleFill className="info-icon" color="#8D303A" size={16} /></span></h2>{" "}
+          <h2 className="text-2xl font-con flex items-center gap-2">Premium Announcement <span className="info-icon" title="Premium announcements are shown as top results on the starting page and on top of the search results"> <BsFillInfoCircleFill className="info-icon" color="#8D303A" size={16} /></span></h2>{" "}
           {/* <Box sx={{ width: 40 }}>
             <Grid container justifyContent="center">
-              <Grid item>
-                <Tooltip
-                  title="Do You Want To Create Your Announcement As Standard Or Premium ?"
-                  placement="top"
-                >
-                  <img
-                    src={vectorImg}
-                    alt=""
-                    className="w-[12px] h-[12px] rounded-xl bg-red-900"
-                  />
-                </Tooltip>
-              </Grid>
+            <Grid item>
+            <Tooltip
+            title="Do You Want To Create Your Announcement As Standard Or Premium ?"
+            placement="top"
+            >
+            <img
+            src={vectorImg}
+            alt=""
+            className="w-[12px] h-[12px] rounded-xl bg-red-900"
+            />
+            </Tooltip>
+            </Grid>
             </Grid>
           </Box> */}
         </div>
+          <h2 className="pb-4 text-xl">Do you want to create your announcement as premium or standard?</h2>
         <div className="flex flex-wrap gap-2">
           <div className=" flex justify-start items-baseline ">
             <input type="checkbox" className="checkbox-input p-1" />
@@ -135,7 +139,7 @@ function AnnouncementStep3() {
       </div>
 
       <div className="flex justify-between items-center mt-16 px-10">
-        <Button type="grayButton">Back</Button>
+        <Button onClick={() => navigate(-1)} type="grayButton">Back</Button>
         <Button type="purpleButton">Submit</Button>
       </div>
     </>

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import React from 'react'
 import Button from '../../../ui/Button'
 import './overlay.css'
+import { IoMdClose } from "react-icons/io";
 const VenueOverlay = ({ closeModal }) => {
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -18,9 +19,19 @@ const VenueOverlay = ({ closeModal }) => {
           document.removeEventListener("mousedown", handleClickOutside);
         };
       }, [closeModal]);
+      const category =  [
+        { value: "", label: "Select" },
+        { value: "Birthday", label: "Birthday" },
+        { value: "Wedding", label: "Wedding" },
+        { value: "Anniversary", label: "Anniversary" },
+        { value: "Family Gathering", label: "Family Gathering" },
+        { value: "reception", label: "Reception" },
+        
+      ]
   return (
     <div className='modal-overlay'>
-        <div className='bg-white text-black p-8 rounded-md modal-content'>
+        <div className='bg-white text-black p-8 rounded-md modal-content relative'>
+        <IoMdClose className='absolute top-2 right-2' onClick={closeModal} size={24} />
             <div className="text-center font-con text-2xl text-secondary">
                 Venue
             </div>
@@ -34,7 +45,9 @@ const VenueOverlay = ({ closeModal }) => {
                     id=""
                     className="font-lato  rounded border border-borde focus:outline-none py-2"
                   >
-                    <option value="">Venue</option>
+                    {category.map((category, index) => (
+                      <option value={category.value} key={index}>{category.label}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="flex flex-col">

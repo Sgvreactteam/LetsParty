@@ -5,7 +5,10 @@ import Button from "../../../../../ui/Button";
 import AddVideo from "../../../../../ui/AddVedio";
 import { t } from "i18next";
 import AddressAutoComplete from "../AddressAutoComplete";
+import { useNavigate, useLocation } from "react-router-dom";
 function EntertainmentForm() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const checkBoxArry = [
     {
       Heading: "Flexible ",
@@ -212,8 +215,8 @@ function EntertainmentForm() {
         </div>
         </form>
         <div className="flex justify-between w-full mt-8 mb-8">
-          <Button type="grayButton">Back</Button>
-          <Button type="purpleButton" to="/myannouncementss">Next</Button>
+          <Button onClick={() => navigate(-1)} type="grayButton">Back</Button>
+          <Button type="purpleButton" to={ location.pathname + "/myannouncementss"}>Next</Button>
         </div>
       </div>
     </div>
