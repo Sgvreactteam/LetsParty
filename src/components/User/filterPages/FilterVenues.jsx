@@ -5,7 +5,8 @@ import Footer from "../Footer/Footer";
 import Map from "./Map";
 import { t } from 'i18next';
 
-
+import person from '../../../assets/Vector.png'
+import group from '../../../assets/Group.png'
 
 
 
@@ -15,30 +16,40 @@ const cardData = [
     photoSrc: img1,
     name: "John Doe",
     city: "City, Country",
+    personImg: person,
+    groupImg: group,
   },
   {
     id: 2,
     photoSrc: img1,
     name: "Jane Smith",
     city: "Another City, Country",
+    personImg: person,
+    groupImg: group,
   },
   {
     id: 3,
     photoSrc: img1,
     name: "Jane Smith",
     city: "Another City, Country",
+    personImg: person,
+    groupImg: group,
   },
   {
     id: 4,
     photoSrc: img1,
     name: "Jane Smith",
     city: "Another City, Country",
+    personImg: person,
+    groupImg: group,
   },
   {
     id: 5,
     photoSrc: img1,
     name: "Jane Smith",
     city: "Another City, Country",
+    personImg: person,
+    groupImg: group,
   },
   // Add more data as needed
 ];
@@ -208,20 +219,37 @@ function FilterVenues() {
 
           <div className=" col-span-3">
           <div className=" font-pop text-xl pb-4">Venues</div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-4 gap-4">
+
               {cardData.map((data) => (
+                <div>
               <MainCard
                 key={data.id}
                 photoSrc={data.photoSrc}
                 name={data.name}
                 city={data.city}
-              />
+              /> 
+               <div className="grid grid-cols-2 mt-2 text-[#8D303A] font-lato">
+              <div className="flex gap-3">
+                <img className="w-8 h-8" src={data.personImg} alt="" />
+                <div className="flex flex-col text-sm">
+                  <span>200</span>
+                  <span>persons</span>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <img className="w-8 h-8" src={data.groupImg} alt="" />
+                <div className="flex flex-col text-sm">
+                  <span>100</span>
+                  <span>persons</span>
+                </div>
+              </div>
+            </div>
+              </div>
             ))}
           </div>
         </div>
-
       </div>
-      <Footer />
     </>
   );
 }

@@ -30,7 +30,7 @@ const fakeData = [
     content: "Why register my establishment on Find Your Place?",
     imageUrl: image,
     cardImg: BgImg,
-    date: "12 February 2024",
+    date: "12 February ",
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const fakeData = [
     content: "Why register my establishment on Find Your Place?",
     imageUrl: image,
     cardImg: BgImg,
-    date: "12 February 2024",
+    date: "12 February    ",
   },
   {
     id: 5,
@@ -81,12 +81,13 @@ function LatestNews() {
           spaceBetween={30}
           centeredSlides={false}
           autoplay={{
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
           }}
           pagination={{
             clickable: true,
           }}
+          loop= {true}
           navigation={false}
           modules={[Autoplay, Pagination, Navigation]}
           onAutoplayTimeLeft={onAutoplayTimeLeft}
