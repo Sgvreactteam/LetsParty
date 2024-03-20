@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import image from './Group 3.jpeg'
+import image from './Group3.jpeg'
 import { useTranslation } from 'react-i18next';
-import image1 from './image 1.jpeg'
+import image1 from './image1.jpeg'
 import Button from '../../../ui/Button';
 import image2 from './image3.jpeg'
 import image3 from './image4.jpeg'
@@ -93,61 +93,90 @@ const LandingPage = () => {
         }
       };
 
-
+      const backgroundStyle = {
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%",
+        // height: "500px",
+      };
     
   return (
-    <div className='flex relative flex-col'>
-        
-        <img src={image} className='absolute w-full md:h-[60vh] h-[70vh] object-cover -z-20' alt="" />
-        <div className="font-pop flex flex-col items-center text-white z-10 mt-36">
-            <p className='md:text-4xl text-3xl font-light -z-20'> {t('celebrate')} </p>
-            <p className='md:text-2xl text-xl font-light mt-2 w-[70%] text-center -z-20'>{t('reception')}</p>
-            <form className='bg-white flex flex-row rounded-md p-2 mt-8' action="">
+    <div className=''>
+       
+
+        <div style={backgroundStyle} className="md:h-[500px] h-[400px]">
+        <div className="max-w-xl 2xl:max-w-4xl mx-auto flex flex-col justify-center items-center text-white z-10 h-full">
+          <div>
+            <h2 className="md:text-4xl text-3xl font-light font-pop  text-center">
+              {" "}
+              {t("celebrate")}{" "}
+            </h2>
+            <p className="md:text-2xl text-xl font-light font-pop mt-2 text-center">
+              {t("reception")}
+            </p>
+            <form
+              className="bg-white flex flex-row justify-center items-center rounded-md p-1 mt-8"
+              action=""
+            >
+              <div className="grid gap-5 sm:grid-cols-3 sm:justify-center sm:items-center w-full">
                 <select
-                    value={selectedCategory}
-                    onChange={handleCategoryChange}
-                    className="text-black w-48 h-12 mr-4 outline-none"
+                  value={selectedCategory}
+                  onChange={handleCategoryChange}
+                  className="text-black sm:w-48 sm:h-12  w-full
+                   mr-4 pr-2 outline-none"
                 >
-                    {categories.map((category) => (
+                  {categories.map((category) => (
                     <option key={category.value} value={category.value}>
-                        {category.label}
+                      {category.label}
                     </option>
-                    ))}
+                  ))}
                 </select>
                 <select
-                    value={selectedSubcategory}
-                    onChange={handleSubcategoryChange}
-                    className="pl-2 border-l border-borde w-48 h-12 text-black mr-4 outline-none"
+                  value={selectedSubcategory}
+                  onChange={handleSubcategoryChange}
+                  className=" sm:border-l border-borde  sm:w-48 sm:h-12 text-black  outline-none"
                 >
-                    {!subcategoriesMap[selectedCategory] && <option>Select</option>}
-                    {subcategoriesMap[selectedCategory] &&
+                  {subcategoriesMap[selectedCategory] &&
                     subcategoriesMap[selectedCategory].map((subcategory) => (
-                        <option key={subcategory.value} value={subcategory.value}>
+                      <option key={subcategory.value} value={subcategory.value}>
                         {subcategory.label}
-                        </option>
+                      </option>
                     ))}
                 </select>
                 <Button onClick={handleNextClick}  type="purpleButton"> {t('search')} </Button>
                <VenueModal isModalOpen={isVenueModalOpen} setIsModalOpen={setIsVenueModalOpen} />
                <EnterModal isModalOpen={isEntertainmentModalOpen} setIsModalOpen={setIsEntertainmentModalOpen} />
-               
+              </div>
             </form>
+          </div>
         </div>
-        <div className="flex md:flex-row flex-col md:mt-40 mt-60 md:w-[80%] w-[90%] mx-auto py-16">
-            <div className="flex flex-col md:w-2/3 w-full items-center text-center">
-                <p className='text-2xl text-secondary mb-8'> {t('welcome')} </p>
-                <p> {t('text-1')} </p>
-                <p> {t('text-2')} </p>
-                <div className="flex mt-8">
-                <img src={image4 } className='w-1/3' alt="" />
-                    <img src={image2} className='w-1/3 mx-2' alt="" />
-                    <img src={image3} className='w-1/3' alt="" />
-                </div>
+      </div>
+
+      <div className="grid lg:grid-cols-4 py-6">
+        <div className="grid col-span-3">
+          <h2 className="text-2xl text-secondary mb-8 text-center">
+            {" "}
+            {t("welcome")}{" "}
+          </h2>
+          <p className="text-center"> {t("text-1")} </p>
+          <p className="text-center"> {t("text-2")} </p>
+          <div className="grid grid-cols-3 justify-center items-center gap-4 pt-8 px-3">
+            <div className="flex justify-center items-center">
+              <img src={image4} className="w-full" alt="" />
             </div>
-            <div className=' ml-8 mt-12'>
-                <img src={image1} alt="" />
+            <div className="flex justify-center items-center">
+              <img src={image2} className="w-full" alt="" />
             </div>
+            <div className="flex justify-center items-center">
+              <img src={image3} className="w-full" alt="" />
+            </div>
+          </div>
         </div>
+        <div className="lg:flex hidden ">
+          <img src={image1} alt="" className="w-full h-full" />
+        </div>
+      </div>
         <div className="flex flex-col w-[80%] mx-auto">
         <EventsSection/>
         <HorizonatalTabBar />
@@ -155,7 +184,7 @@ const LandingPage = () => {
         <LatestNews/>
         </div>
         </div>
-        <Footer />
+       
     </div>
   )
 }

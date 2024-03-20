@@ -111,9 +111,9 @@ export default function Header() {
       flag: flag2,
       lang: "EN",
       subcategory: [
-        { id: 1, flag: flag2, lang: "EN" },
-        { id: 2, flag: flag3, lang: "DE" },
-        { id: 3, flag: flag1, lang: "FR" },
+        { id: 1, flag: flag3, lang: "DE" },
+        { id: 2, flag: flag1, lang: "FR" },
+        { id: 3, flag: flag2, lang: "EN" },
       ],
     },
   ];
@@ -159,7 +159,7 @@ export default function Header() {
   };
   
 
-  return location.pathname=='/'  || location.pathname=='/userRegister' || location.pathname==='/myannouncementss' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/Venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : (  
+  return  (  
     <div className="border-b border-[#A2A2A2]">
       <header className="mx-auto flex max-w-7xl items-center justify-between ">
         <div className="flex flex-1">

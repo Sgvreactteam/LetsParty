@@ -212,7 +212,7 @@ function FilterEntertainment1() {
 
     <div className=" col-span-3">
         <div className=" font-pop text-xl pb-4">Entertainment</div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-4 gap-4">
         {cardData.map((data) => (
           <MainCard
             key={data.id}
@@ -224,7 +224,6 @@ function FilterEntertainment1() {
       </div>
     </div>
   </div>
-  <Footer/>
   </>
   )
 }
