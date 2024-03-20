@@ -37,9 +37,9 @@ function FilterRentalAndService() {
     // Add more data as needed
   ];
   return (
-    <div className="grid grid-cols-3 gap-8 w-[90vw] mx-auto">
+    <div className="grid grid-cols-3 gap-8 w-[90vw] mx-auto mt-10">
     <div className=" col-span-3">
-        <div className=" font-pop text-xl text-center py-8 text-secondary">Filter rental and services</div>
+        {/* <div className=" font-pop text-xl text-center py-8 text-secondary">Filter rental and services</div> */}
       <div className="grid grid-cols-4 gap-4">
         {cardData.map((data) => (
           <MainCard

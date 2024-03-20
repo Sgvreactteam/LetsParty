@@ -30,8 +30,8 @@ const LandingPage = () => {
         { value: "", label: "Select..." },
         { value: "venues", label: `${t('venues')}` },
         { value: "FilterEntertainment1", label: `${t('entertainment')}` },
-        { value: "FilterRentalAndService", label: `${t('rental')}` },
-        { value: "FilterRentalAndService", label: `${t('services')}` },
+        { value: "filter", label: `${t('rental')}` },
+        { value: "filter", label: `${t('services')}` },
       ];
     
       const subcategoriesMap = {
@@ -56,7 +56,7 @@ const LandingPage = () => {
           { value: "Live Music Bands ", label: `${t('liveMusic')}` },
           { value: "Cover band ", label: `${t('coverBands')}` },
         ],
-        FilterRentalAndService: [
+        filter: [
           { value: "", label: "Select..." },
     
           {
@@ -64,7 +64,7 @@ const LandingPage = () => {
             label: `${t('rental')}`,
           },
         ],
-        FilterRentalAndService: [
+        filter: [
           { value: "", label: "Select..." },
           {
             value: "Services",
