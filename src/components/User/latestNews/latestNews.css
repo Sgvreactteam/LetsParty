@@ -1,0 +1,5 @@
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 29px;
+    border-radius: 50pc !important;
+    background: #352C80;
+}

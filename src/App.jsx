@@ -25,16 +25,17 @@ import FilterEntertainment1 from './components/User/filterPages/FilterEntertainm
 import Profile from './components/User/ProfilePage/Profile';
 import Favourites from './components/User/Favourites/Favourites';
 import TermCondition from './components/User/TermCondition/TermCondition';
+import MainLayout from './Layout/MainLayout';
 
 function App() {
 
   return (
     <BrowserRouter>
     <I18nextProvider i18n={i18n}>
-      <Header />
       <Routes>
-        <Route path='/ProfessionalRegister' index element={<Register />}/>
+        {/* User ======== */}
         <Route index element={<UserLogin />} />
+        <Route element={<MainLayout/>}>
         <Route path='/userRegister' element={<UserRegister />} />
         <Route path='/userForgotpass' element={<UserForgotPass />} />
         <Route path='/landingPage' element={<LandingPage />} />
@@ -45,6 +46,12 @@ function App() {
         <Route path='/fav' element={<Favourites />} />
         <Route path='/terms&condition' element={<TermCondition />} />
         <Route path='/details/:id' element={<Details />} />
+        </Route>
+       
+
+        {/* professional=========== */}
+        <>
+        <Route path='/ProfessionalRegister' index element={<Register />}/>
         <Route element={<ProLayout />}>
         <Route path='/ProfessionalDashboard' element={<Prodashboard index="0" />} />
         <Route path='/myaccount' element={<MyAccount />} />
@@ -58,6 +65,7 @@ function App() {
         <Route path='/Rental/myannouncementss' element={<AnnouncementStep3 />} />
         <Route path='/Services/myannouncementss' element={<AnnouncementStep3 />} />
         </Route>  
+        </>
       </Routes>
     </I18nextProvider>
     </BrowserRouter>

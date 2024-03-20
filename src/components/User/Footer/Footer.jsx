@@ -10,23 +10,6 @@ import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 const Footer = () => {
     const { t } = useTranslation()
-    const [venues, setVenues] = useState()
-    const [ent, setEnt] = useState()
-    const [rental, setRental] = useState()
-    const [services, setServices] = useState()
-
-    const handleVenues = () => {
-        setVenues(!venues);
-    }
-    const handleEnt = () => {
-        setEnt(!ent);
-    }
-    const handleRental = () => {
-        setRental(!rental);
-    }
-    const handleServices = () => {
-        setServices(!services);
-    }
   return (
     <div className="bg-[#141626] w-full text-white font-pop pt-12 flex flex-col">
         <div className="flex flex-row w-[80%] mx-auto justify-between">
@@ -45,12 +28,12 @@ const Footer = () => {
                 <img src={whiteLogo} className='w-40 bg-black mt-2' alt="" />
             </div>
             <div className="flex flex-col gap-2 w-1/3 font-light">
-                <p className="text-xl font-light">
-                    {t('joinUsOn')}
-                </p>
                 <p> {t('contactUs')} </p>
                 <Link to="/terms&condition"> {t('termsCon')} </Link>
                 <p> {t('pripol')} </p>
+                <p className="text-xl font-light">
+                    {t('joinUsOn')}
+                </p>
                 <div className="flex gap-2 mt-2">
                     <FaSquareFacebook size={24} />
                     <FaInstagram size={24} />
