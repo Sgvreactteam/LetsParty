@@ -103,8 +103,6 @@ const LandingPage = () => {
     
   return (
     <div className=''>
-       
-
         <div style={backgroundStyle} className="md:h-[500px] h-[400px]">
         <div className="max-w-xl 2xl:max-w-4xl mx-auto flex flex-col justify-center items-center text-white z-10 h-full">
           <div>
@@ -156,7 +154,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-4 py-6">
+      <div className="grid lg:grid-cols-4 py-6 w-[80%] mx-auto">
         <div className="grid col-span-3">
           <h2 className="text-2xl text-secondary mb-8 text-center">
             {" "}
