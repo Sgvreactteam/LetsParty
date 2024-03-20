@@ -12,6 +12,7 @@ import { t } from 'i18next';
 
 import person from '../../../assets/Vector.png'
 import group from '../../../assets/Group.png'
+import { Link } from "react-router-dom";
 
 
 
@@ -229,12 +230,14 @@ function FilterVenues() {
 
               {cardData.map((data) => (
                 <div>
+                  <Link to={"/details/" + data.id}>
               <MainCard
                 key={data.id}
                 photoSrc={data.photoSrc}
                 name={data.name}
                 city={data.city}
               /> 
+              </Link>
                <div className="grid grid-cols-2 mt-2 text-[#8D303A] font-lato">
               <div className="flex gap-3">
                 <img className="w-8 h-8" src={data.personImg} alt="" />

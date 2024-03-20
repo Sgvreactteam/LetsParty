@@ -228,7 +228,7 @@ const Details = () => {
         <p onClick={handleBackButton} className='flex items-center gap-2 text-secondary cursor-pointer'> <IoCaretBackCircleSharp size={20} /> {t('details')} </p>
         <div className="flex flex-col flex-wrap w-full mt-4 h-[400px] gap-2">
           <img onClick={() => openModal(0)} className='w-1/2 h-full object-cover' src={dummyData[0].images[0].img} alt="" />
-          <div className="flex w-1/2 flex-wrap">
+          <div className="flex w-1/2 h-full flex-wrap">
             <img onClick={() => openModal(1)} className='w-1/2 h-1/2 pb-1 pr-1 object-cover rounded-md' src={dummyData[0].images[1].img} alt="" />
             <img onClick={() => openModal(2)} className='w-1/2 h-1/2 object-cover pb-1 pl-1 rounded-md' src={dummyData[0].images[2].img} alt="" />
             <img onClick={() => openModal(3)} className='w-1/2 h-1/2 object-cover pt-1 pr-1 rounded-md' src={dummyData[0].images[3].img} alt="" />
