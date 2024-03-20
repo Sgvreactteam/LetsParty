@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import img4 from '../../../assets/img4.png'
 import img5 from '../../../assets/img5.png'
 import img6 from '../../../assets/img6.png'
+import { Link } from 'react-router-dom';
 
 function FilterRentalAndService() {
   const { t } = useTranslation();
@@ -61,12 +62,14 @@ function FilterRentalAndService() {
       <div className="grid grid-cols-4 gap-4">
 
         {cardData.map((data) => (
+          <Link to={"/details/" + data.id}>
           <MainCard
             key={data.id}
             photoSrc={data.photoSrc}
             name={data.name}
             city={data.city}
           />
+          </Link>
         ))}
       </div>
     </div>

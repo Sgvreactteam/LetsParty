@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import React from 'react'
-import './photoOverlay.css'
+
 import { IoCloseSharp } from "react-icons/io5";
 import { t } from 'i18next';
 import Input from '../../../ui/Input';
+import './overlay.css'
 import Button from '../../../ui/Button';
-const FormOverlay = ({closeFormModal}) => {
+const ContactOverlay = ({closeContactOverlay}) => {
     useEffect(() => {
         const handleClickOutside = (event) => {
             const modalContent = document.querySelector('.modal-content');
@@ -16,7 +17,7 @@ const FormOverlay = ({closeFormModal}) => {
               !event.target.closest('.button') 
             ) {
               // Close the modal if the click is outside the modal content and not on the excluded class
-              closeFormModal();
+              closeContactOverlay();
             }
 
             
@@ -32,16 +33,16 @@ const FormOverlay = ({closeFormModal}) => {
         
     
         
-      }, [closeFormModal]);
+      }, [closeContactOverlay]);
 
       
     
   return (
     <div className="modal-overlay overflow-y-auto">
-      <div className="modal-content bg-white flex flex-col gap-2 p-8 rounded-3xl w-[50vw] overflow-y-auto top-0">
+      <div className="modal-content bg-white flex flex-col gap-2 p-8 rounded-3xl w-[50vw] overflow-y-auto top-0 text-black">
         <div className="flex w-full justify-center">
-        <p className='text-secondary text-2xl'> {t('contactwith')} </p>
-        <IoCloseSharp onClick={closeFormModal} size={24} className='absolute top-0 mt-2 mr-2 right-0' color='white' />
+        <p className='text-secondary text-2xl'> {t('contactUs')} </p>
+        <IoCloseSharp onClick={closeContactOverlay} size={24} className='absolute top-0 mt-2 mr-2 right-0' color='white' />
         </div>
         <p className='text-xl underline-offset-4 underline'>{t('personalInfo')}</p>
         <div className="flex gap-4">
@@ -54,8 +55,7 @@ const FormOverlay = ({closeFormModal}) => {
             <Input type="text" placeholder="Last Name" classes="large" ></Input>
             </div>
         </div>
-        <label htmlFor=""> {t('address')} </label>
-        <Input placeholder={t('address')} classes="textarea"></Input>
+
 
         <div className="flex gap-4">
             <div className="flex flex-col w-1/2">
@@ -67,17 +67,8 @@ const FormOverlay = ({closeFormModal}) => {
             <Input type="mail" placeholder={t('email')} classes="large" ></Input>
             </div>
         </div>
-        <p className='text-xl underline-offset-4 underline'>{t('eveInfo')}</p>
-        <div className="flex gap-4">
-            <div className="flex flex-col w-1/2">
-                <label htmlFor=""> {t('eveDate')} </label>
-                <Input placeholder={t('eveDate')} type="date" classes="large"></Input>
-                </div>
-                <div className="flex flex-col w-1/2">
-                <label htmlFor="">{t('participants')}</label>
-                <Input type="number" placeholder={t('participants')} classes="large" ></Input>
-            </div>
-        </div>
+
+
         <label htmlFor=""> {t('message')} </label>
         <Input placeholder={t('message')} classes="textarea"></Input>
 
@@ -91,4 +82,4 @@ const FormOverlay = ({closeFormModal}) => {
   )
 }
 
-export default FormOverlay
+export default ContactOverlay
