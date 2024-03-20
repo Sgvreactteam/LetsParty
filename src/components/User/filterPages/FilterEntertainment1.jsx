@@ -218,7 +218,9 @@ function FilterEntertainment1() {
 
     <div className=" col-span-3">
 
+
       <div className="grid grid-cols-3 gap-4 mt-8">
+
         {cardData.map((data) => (
           <MainCard
             key={data.id}
@@ -230,7 +232,6 @@ function FilterEntertainment1() {
       </div>
     </div>
   </div>
-  <Footer/>
   </>
   )
 }

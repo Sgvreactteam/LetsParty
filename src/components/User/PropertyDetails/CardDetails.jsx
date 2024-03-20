@@ -321,7 +321,6 @@ const Details = () => {
           </div>
         </div>
     </div>
-    <Footer/>
     {
             modalOpen && (
                 <PhotoOverlay

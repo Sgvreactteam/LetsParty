@@ -18,10 +18,9 @@ import group from '../../../../assets/Group.png'
 
 
 function UserVenueBar(props) {
-  const [swiperRef, setSwiperRef] = useState(null);
 
   const handleSwiperInit = (swiper) => {
-    setSwiperRef(swiper);
+    props.setSwiperRef(swiper);
     swiper.update();
   };
 
@@ -79,7 +78,7 @@ function UserVenueBar(props) {
           onSwiper={handleSwiperInit}
           slidesPerView={1}
           spaceBetween={30}
-          navigation={false} // Disable built-in navigation
+          navigation={false} 
           breakpoints={{
             640: {
               slidesPerView: 2,
@@ -94,52 +93,55 @@ function UserVenueBar(props) {
           virtual
         >
           {fakeData.map((venue) => (
-            <SwiperSlide key={venue.id} virtualIndex={venue.id - 1}>
-              <NavLink to={"/details/" + venue.id}>
-              <div className="venue-card relative">
-                <img
-                  className="w-full h-56 object-cover object-center rounded-md"
-                  src={venue.imageUrl}
-                  alt={venue.name}
-                />
-                <div className=" absolute top-0 right-0 mt-2 mr-3">
-                <FaHeart size={25} style={{ color: "#D9D9D9" }} />
-                </div>
-                <div className="py-3">
-                  <h3 className="text-lg font-semibold mb-2 text-[#1A2737] font-pop">
-                    {venue.name}
-                  </h3>
-                  <h3 className="text-[#151515] font-lato">City name</h3>
-                 {
-                  props.currentPage == 0 ? (
-                    <div className="grid grid-cols-2 mt-2 text-[#8D303A] font-lato">
-                    <div className="flex gap-3">
-                      <img className="w-8 h-8" src={venue.personImg} alt="" />
-                      <div className="flex flex-col text-sm">
-                        <span>200</span>
-                        <span>persons</span>
-                      </div>
-                    </div>
-                    <div className="flex gap-3">
-                      <img className="w-8 h-8" src={venue.groupImg} alt="" />
-                      <div className="flex flex-col text-sm">
-                        <span>100</span>
-                        <span>persons</span>
-                      </div>
-                    </div>
-                  </div>
-                  ):(<></>)
-                 }
-                </div>
-              </div>
-              </NavLink>
-            </SwiperSlide>
+           <SwiperSlide key={venue.id} virtualIndex={venue.id - 1}>
+           <div className="relative">
+             <NavLink to={"/details/" + venue.id}>
+               <img
+                 className="w-full h-56 object-cover object-center rounded-md"
+                 src={venue.imageUrl}
+                 alt={venue.name}
+               />
+               <div className="absolute top-0 right-0 mt-2 mr-3">
+                 <FaHeart size={25} style={{ color: "#D9D9D9" }} />
+               </div>
+             </NavLink>
+             <div className="py-3">
+               <NavLink to={"/details/" + venue.id}>
+                 <h3 className="text-lg font-semibold mb-2 text-[#1A2737] font-pop">
+                   {venue.name}
+                 </h3>
+                 <h3 className="text-[#151515] font-lato">City name</h3>
+               </NavLink>
+               {props.currentPage == 0 ? (
+                 <div className="grid grid-cols-2 mt-2 text-[#8D303A] font-lato">
+                   <div className="flex gap-3">
+                     <img className="w-8 h-8" src={venue.personImg} alt="" />
+                     <div className="flex flex-col text-sm">
+                       <span>200</span>
+                       <span>persons</span>
+                     </div>
+                   </div>
+                   <div className="flex gap-3">
+                     <img className="w-8 h-8" src={venue.groupImg} alt="" />
+                     <div className="flex flex-col text-sm">
+                       <span>100</span>
+                       <span>persons</span>
+                     </div>
+                   </div>
+                 </div>
+               ) : (
+                 <></>
+               )}
+             </div>
+           </div>
+         </SwiperSlide>
+         
           ))}
         </Swiper>
       </div>
       <div
         className="absolute top-[40%] -mt-4 -left-8 cursor-pointer z-1000"
-        onClick={() => swiperRef.slidePrev()}
+        onClick={() => props.swiperRef.slidePrev()}
       >
         <div>
           <svg
@@ -164,7 +166,7 @@ function UserVenueBar(props) {
       </div>
       <div
         className="absolute top-[40%] -mt-4 -right-8 cursor-pointer"
-        onClick={() => swiperRef.slideNext()}
+        onClick={() => props.swiperRef.slideNext()}
       >
         <div>
           <svg

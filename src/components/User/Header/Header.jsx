@@ -123,9 +123,11 @@ export default function Header() {
       flag: flag1,
       lang: "EN",
       subcategory: [
+
         { id: 2, flag: flag2, lang: "DE", func: handleGerman },
         { id: 3, flag: flag3, lang: "FR", func: handleFrench },
         { id: 1, flag: flag1, lang: "EN", func: handleEnglish },
+
       ],
     },
   ];
@@ -172,7 +174,7 @@ export default function Header() {
 
   
 
-  return location.pathname=='/'  || location.pathname=='/userRegister' || location.pathname==='/myannouncementss' || location.pathname=='/ProfessionalRegister' || location.pathname=='/userForgotpass' || location.pathname=='/ProfessionalDashboard' || location.pathname=='/myaccount' || location.pathname=='/Venues' || location.pathname=='/Entertainment' || location.pathname=='/Rental' || location.pathname=='/Services' || location.pathname=='/myannouncements' ? (<></>) : (  
+  return  (  
     <div className="border-b border-[#A2A2A2]">
       <header className="mx-auto flex max-w-7xl items-center justify-between ">
         <div className="flex flex-1">
