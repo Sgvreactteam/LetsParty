@@ -59,17 +59,31 @@ const LandingPage = () => {
         FilterRental: [
           { value: "", label: "Select..." },
     
-          {
-            value: "Rental",
-            label: `${t('rental')}`,
-          },
+          { value: "audioSound", label: t('audioSound') },
+        { value: "lighting", label: t('lighting') },
+  
+        { value: "screens", label: t('screens') },
+        { value: "tents", label: t('tents') },
+        { value: "fotoboxes", label: t('fotoboxes') },
+        { value: "bouncyCastle", label: t('bouncyCastle') },
+        { value: "furniture", label: t('furniture') },
+        { value: "heating", label: t('heating') },
+        { value: "cars", label: t('cars') },
         ],
         FilterService: [
           { value: "", label: "Select..." },
-          {
-            value: "Services",
-            label: `${t('services')}`,
-          },
+          { value: "decorators", label: t('decorators') },
+        { value: "evePlanner", label: t('evePlanner') },
+  
+        { value: "photographers", label: t('photographers') },
+        { value: "catering", label: t('catering') },
+        { value: "bakeries", label: t('bakeries') },
+        { value: "foodTrucks", label: t('foodTrucks') },
+        { value: "wine", label: t('wine') },
+        { value: "other", label: t('other') },
+        { value: "staff", label: t('staff') },
+        { value: "security", label: t('security') },
+        { value: "buses", label: t('buses') },
         ],
       };
 
