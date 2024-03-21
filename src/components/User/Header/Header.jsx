@@ -29,7 +29,6 @@ export default function Header() {
       subcategory: [
         { href: "", label: t('castles') },
         { href: "", label: t('partyRooms') },
-  
         { href: "", label: t('bars') },
         { href: "", label: t('hotelsRes') },
         { href: "", label: t('confMeet') },
@@ -42,7 +41,6 @@ export default function Header() {
       subcategory: [
         { href: "", label: "DJ" },
         { href: "", label: t('singers') },
-  
         { href: "", label: t('magicians') },
         { href: "", label: t('liveMusic') },
         { href: "", label: t('coverBands') },
@@ -53,7 +51,7 @@ export default function Header() {
       subcategory: [
         { href: "/filter", label: t('audioSound') },
         { href: "/filter", label: t('lighting') },
-  
+
         { href: "/filter", label: t('screens') },
         { href: "/filter", label: t('tents') },
         { href: "/filter", label: t('fotoboxes') },
@@ -68,7 +66,7 @@ export default function Header() {
       subcategory: [
         { href: "/filter", label: t('decorators') },
         { href: "/filter", label: t('evePlanner') },
-  
+
         { href: "/filter", label: t('photographers') },
         { href: "/filter", label: t('catering') },
         { href: "/filter", label: t('bakeries') },
@@ -111,6 +109,7 @@ export default function Header() {
   const [imgflag, setimgflag] = useState(flag1)
   const [langshow, setlangshow] = useState("EN")
   const { i18n } = useTranslation();
+
     const handleEnglish = () => {
         setimgflag(flag1)
         setlangshow("EN")
@@ -143,13 +142,13 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState(null);
   const active = true;
   const menuRef = useRef(null);
-  
-  
+
+
   const handleMenufirst = (category) => {
     setOpenMenu(null ?? category);
   };
 
-  
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -172,17 +171,15 @@ export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal open/close
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const handleMenuItemClick = (category) => {
-    
-
+  const handleMenuItemClick = (category) => { 
     console.log("click")
     setIsModalOpen(true);
     setSelectedCategory(category);
   };
 
-  
 
-  return  (  
+
+  return (
     <div className="border-b border-[#A2A2A2]">
       <header className="mx-auto flex max-w-7xl items-center justify-between ">
         <div className="flex flex-1">
@@ -232,24 +229,15 @@ export default function Header() {
                   </Menu.Button>
                 </div>
 
-                <Transition
-                  as={Fragment}
-                  show={openMenu === category}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
+                
                   <Menu.Items className="absolute right-0 z-50  w-56 origin-top-right  bg-white shadow-lg ">
                     <div className="py-1">
                       {subcategory.map(({ label, href }) => (
                         <Menu.Item >
-                            {href==="/filter"? (
+                          {href === "/filter" ? (
                             <Link
-                              to="/filter"
-                              onClick={() => {console.log("click")}}
+                              to={href}
+                              onClick={() => { console.log("click") }}
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -258,21 +246,14 @@ export default function Header() {
                               )}
                             >
                               {label}
-                            </Link>): (
-                              <Link
+                            </Link>) : (
+                            <Link
 
-                              onMouseDown={() => {
+                              onClick={() => {
                                 console.log("sdggsfsdf");
                                 handleMenuItemClick(category);
                               }}
-                              onKeyDown={() => {
-                                console.log("sdggsfsdf");
-                                handleMenuItemClick(category);
-                              }}
-                              onTouchStart={() => {
-                                console.log("sdggsfsdf");
-                                handleMenuItemClick(category);
-                              }}
+                              
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -282,13 +263,13 @@ export default function Header() {
                             >
                               {label}
                             </Link>
-                            )}
+                          )}
 
                         </Menu.Item>
                       ))}
                     </div>
                   </Menu.Items>
-                </Transition>
+                
               </Menu>
             ))}
           </div>
@@ -305,7 +286,7 @@ export default function Header() {
           {profile.map(({ image, subcategory }) => (
             <Menu
               as="div"
-              className="relative inline-block text-left z-100"
+              className="relative inline-block text-left z-10"
               key={image}
             >
               <div ref={menuRef}>
@@ -323,10 +304,10 @@ export default function Header() {
                     className="2xl:w-[50px] 2xl:h-[50px] w-[30px] h-[30px]"
                   />
                   {openMenu === image ? (
-                      <RiArrowUpSFill
-                        className="-mr-1 h-5 w-5 text-gray-400"
-                        aria-hidden="true"
-                      />
+                    <RiArrowUpSFill
+                      className="-mr-1 h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
                   ) : (
                     <RiArrowDownSFill
                       className="-mr-1 h-5 w-5 text-gray-400"
@@ -336,37 +317,31 @@ export default function Header() {
                 </Menu.Button>
               </div>
 
-              <Transition
-                as={Fragment}
-                show={openMenu === image}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
-                <Menu.Items className="absolute right-0  w-40 origin-top-right z-50 bg-white shadow-lg ">
+              
+                <Menu.Items  className="absolute right-0  w-40 origin-top-right z-10 bg-white shadow-lg ">
                   <div className="py-1">
                     {subcategory.map(({ id, image, label, href }) => (
-                      <Menu.Item key={id}>
-                        {({ active }) => (
-                          <Link to={href} >
+                      <Link to={href} >
+                        <Menu.Item key={id} onClick={() => {
+                          console.log("console.log 999999")
+                        }} >
+                          {({ active }) => (
+
                             <div className="flex flex-row pl-4 items-start py-2 gap-2 text-lg font-pop">
                               <img
                                 src={image}
                                 alt=""
                                 className=" w-[25px] h-[25px]"
-                              />{" "}
+                              />
                               {label}
                             </div>
-                          </Link>
-                        )}
-                      </Menu.Item>
+                          )}
+                        </Menu.Item>
+                      </Link>
                     ))}
                   </div>
                 </Menu.Items>
-              </Transition>
+            
             </Menu>
           ))}
 
@@ -417,6 +392,7 @@ export default function Header() {
                       <Menu.Item key={id}>
 
 
+
                             <div onClick={func} className="flex flex-row pl-4 items-center gap-2 text-lg font-pop">
                               <img
                                 src={flag}
@@ -461,41 +437,57 @@ export default function Header() {
 
             {language.map(({ func, subcategory, index }) => (
               <div className="flex gap-2" key={index}>
-              {subcategory.map(({ id, flag, lang }) => (
-                <div
-                onClick={func}
-                  className="flex flex-row gap-1 justify-center items-center"
-                  key={id}
-                >
-                  <img src={flag} alt="" className="w-5 h-3" />
-                  <span className="text-white">{lang}</span>
-                </div>
-              ))}
-            </div>
+                {subcategory.map(({ id, flag, lang }) => (
+                  <div
+                    onClick={func}
+                    className="flex flex-row gap-1 justify-center items-center"
+                    key={id}
+                  >
+                    <img src={flag} alt="" className="w-5 h-3" />
+                    <span className="text-white">{lang}</span>
+                  </div>
+                ))}
+              </div>
+
             ))}
 
-            <Sidebar.Items>
-              <Sidebar.ItemGroup className="border-t-0 ">
-                {data.map((category, index) => (
-                  <Sidebar.Collapse
-                    label={category.category}
-                    key={index}
-                    className="text-lg font-pop text-white"
-                  >
-                    {category.subcategory.map((sub, i) => (
-                      <Sidebar.Item
-                        className=" flex justify-start rounded-none text-white text-lg font-pop"
-                        href={sub.href}
-                        key={i}
-                      >
-                        {" "}
-                        {sub.label}{" "}
-                      </Sidebar.Item>
-                    ))}
-                  </Sidebar.Collapse>
-                ))}
-              </Sidebar.ItemGroup>
-            </Sidebar.Items>
+<Sidebar.Items>
+  <Sidebar.ItemGroup className="border-t-0">
+    {data.map((category, index) => (
+      <Sidebar.Collapse
+        label={category.category}
+        key={index}
+        className="text-lg font-pop text-white"
+      >
+        {category.subcategory.map((sub, i) => (
+          <Sidebar.Item
+            className="flex justify-start rounded-none text-white text-lg font-pop"
+            href={sub.href}
+            key={i}
+          >
+            {sub.href === "/filter" ? (
+              <Link
+                to={sub.href}
+              
+              >
+                {sub.label}
+              </Link>
+            ) : (
+              <Link
+                to="#"
+                onClick={() => handleMenuItemClick(category.category, sub)}
+              
+              >
+                {sub.label}
+              </Link>
+            )}
+          </Sidebar.Item>
+        ))}
+      </Sidebar.Collapse>
+    ))}
+  </Sidebar.ItemGroup>
+</Sidebar.Items>
+
             <Link to={`#`} className="text-white   p-2 text-lg font-pop ">
               Blog
             </Link>
