@@ -30,8 +30,10 @@ const LandingPage = () => {
         { value: "", label: "Select..." },
         { value: "venues", label: `${t('venues')}` },
         { value: "FilterEntertainment1", label: `${t('entertainment')}` },
-        { value: "filter", label: `${t('rental')}` },
-        { value: "filter", label: `${t('services')}` },
+
+        { value: "rental", label: `${t('rental')}` },
+        { value: "services", label: `${t('services')}` },
+
       ];
     
       const subcategoriesMap = {
@@ -56,20 +58,36 @@ const LandingPage = () => {
           { value: "Live Music Bands ", label: `${t('liveMusic')}` },
           { value: "Cover band ", label: `${t('coverBands')}` },
         ],
-        filter: [
+        rental: [
+
           { value: "", label: "Select..." },
     
-          {
-            value: "Rental",
-            label: `${t('rental')}`,
-          },
+          { value: "audioSound", label: t('audioSound') },
+        { value: "lighting", label: t('lighting') },
+  
+        { value: "screens", label: t('screens') },
+        { value: "tents", label: t('tents') },
+        { value: "fotoboxes", label: t('fotoboxes') },
+        { value: "bouncyCastle", label: t('bouncyCastle') },
+        { value: "furniture", label: t('furniture') },
+        { value: "heating", label: t('heating') },
+        { value: "cars", label: t('cars') },
         ],
-        filter: [
+        services: [
+
           { value: "", label: "Select..." },
-          {
-            value: "Services",
-            label: `${t('services')}`,
-          },
+          { value: "decorators", label: t('decorators') },
+        { value: "evePlanner", label: t('evePlanner') },
+  
+        { value: "photographers", label: t('photographers') },
+        { value: "catering", label: t('catering') },
+        { value: "bakeries", label: t('bakeries') },
+        { value: "foodTrucks", label: t('foodTrucks') },
+        { value: "wine", label: t('wine') },
+        { value: "other", label: t('other') },
+        { value: "staff", label: t('staff') },
+        { value: "security", label: t('security') },
+        { value: "buses", label: t('buses') },
         ],
       };
 
@@ -89,7 +107,7 @@ const LandingPage = () => {
           setIsEntertainmentModalOpen(true);
         } else {
           // Navigate to the corresponding page for rental and services
-          navigate(`/${selectedCategory}`);
+          navigate(`/filter`);
         }
       };
 
@@ -135,9 +153,12 @@ const LandingPage = () => {
                   onChange={handleSubcategoryChange}
                   className=" sm:border-l border-borde  sm:w-48 sm:h-12 text-black  outline-none"
                 >
-                  {subcategoriesMap[selectedCategory] &&
-                    subcategoriesMap[selectedCategory].map((subcategory) => (
-                      <option key={subcategory.value} value={subcategory.value}>
+
+                    {!subcategoriesMap[selectedCategory] && <option>Select</option>}
+                    {subcategoriesMap[selectedCategory] &&
+                    subcategoriesMap[selectedCategory].map((subcategory, index) => (
+                        <option key={index} value={subcategory.value}>
+
                         {subcategory.label}
                       </option>
                     ))}

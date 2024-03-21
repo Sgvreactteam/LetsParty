@@ -9,7 +9,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./Swiper.css";
-import image from '../../../../assets/Rectangle103.png'
+import img1 from '../../../../assets/v1.png'
+import img2 from '../../../../assets/v2.png'
+import img3 from '../../../../assets/v3.png'
+import img4 from '../../../../assets/v4.png'
 import person from '../../../../assets/Vector.png'
 import group from '../../../../assets/Group.png'
 
@@ -25,42 +28,42 @@ function UserVenueBar(props) {
     {
       id: 1,
       name: "Castle name 1",
-      imageUrl: image,
+      imageUrl: img1,
       personImg: person,
       groupImg: group,
     },
     {
       id: 2,
       name: "Castle name 2",
-      imageUrl: image,
+      imageUrl: img2,
       personImg: person,
       groupImg: group,
     },
     {
       id: 3,
       name: "Castle name 3",
-      imageUrl: image,
+      imageUrl: img3,
       personImg: person,
       groupImg: group,
     },
     {
       id: 4,
       name: "Castle name 4",
-      imageUrl: image,
+      imageUrl: img4,
       personImg: person,
       groupImg: group,
     },
     {
       id: 5,
       name: "Castle name 3",
-      imageUrl: image,
+      imageUrl: img1,
       personImg: person,
       groupImg: group,
     },
     {
       id: 6,
       name: "Castle name 3",
-      imageUrl: image,
+      imageUrl: img2,
       personImg: person,
       groupImg: group,
     },

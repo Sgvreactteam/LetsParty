@@ -5,9 +5,13 @@ import Button from "../../../../../ui/Button";
 import { useTranslation } from "react-i18next";
 import "./numberForm.css";
 import AddressAutoComplete from "../AddressAutoComplete";
+import { useNavigate} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const VenuesForm = () => {
+  const location  = useLocation()
   const { t } = useTranslation();
+  let navigate = useNavigate();
 
   const checkBoxArry = [
     {
@@ -126,8 +130,9 @@ const VenuesForm = () => {
               <option className=" text-borde" disabled selected value="">
                 Select
               </option>
-              <option value="Lunch">{t("lunch")}</option>
-              <option value="Dinner">{t("dinner")}</option>
+              <option value="Free">Free</option>
+              <option value="Limited">Limited</option>
+              <option value="No Caterer Allowed">No Caterer Allowed</option>
             </select>
           </div>
           <div className="flex flex-col md:w-[33%] w-full">
@@ -140,10 +145,20 @@ const VenuesForm = () => {
               <option className=" text-borde" disabled selected value="">
                 Select
               </option>
-              <option value="Dinner">Traditional</option>
-              <option value="Lunch">Chinese</option>
-              <option value="Dinner">Italian</option>
-              <option value="Dinner">Mexican</option>
+              <option value="Luxembourgish">Luxembourgish</option>
+              <option value="French">French</option>
+              <option value="Italian">Italian</option>
+              <option value="Greek">Greek</option>
+              <option value="Spanish">Spanish</option>
+              <option value="Other European">Other European</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Indian">Indian</option>
+              <option value="Other Asian">Other Asian</option>
+              <option value="Middle Eastern">Middle Eastern</option>
+              <option value="American">American</option>
+              <option value="Vegetarian">Vegetarian and Vegan Cuisine</option>
+              <option value="International Fusion">International Fusion</option>
             </select>
           </div>
 
@@ -185,8 +200,8 @@ const VenuesForm = () => {
         </form>
 
         <div className="flex justify-between w-full mt-8 mb-8">
-          <Button type="grayButton">Back</Button>
-          <Button type="purpleButton" to="/myannouncementss">
+          <Button onClick={() => navigate(-1)} type="grayButton">Back</Button>
+          <Button type="purpleButton" to={location.pathname+ "/myannouncementss"}>
             Next
           </Button>
         </div>

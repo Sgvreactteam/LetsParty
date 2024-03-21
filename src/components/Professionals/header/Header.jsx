@@ -3,6 +3,7 @@ import logo from "../../../assets/logo.png";
 import profileImg from "../../../assets/Ellipse1.png";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 function DropdownContent({ onLogout }) {
   return (
@@ -28,11 +29,12 @@ function Header({ onToggleSidebar }) {
     <div className="shadow-md fixed w-full z-50 bg-white">
       <div className=" xl:max-w-5xl 2xl:max-w-full lg:max-w-4xl mx-auto py-2 2xl:px-56 xl:px-18 lg:px-0 sm:px-5 px-4 flex justify-between items-center">
         <div>
+          <Link to="/">
           <img
             src={logo}
             alt="logoImage"
             className="lg:w-[165px] lg:h-[63px] sm:w-[100px] sm:h-[50px] w-[80px] h-[30px]"
-          />
+          /></Link>
         </div>
         <div className="flex justify-center items-center">
           <div className="me-3 lg:hidden">

@@ -109,21 +109,22 @@ export default function Header() {
   const [imgflag, setimgflag] = useState(flag1)
   const [langshow, setlangshow] = useState("EN")
   const { i18n } = useTranslation();
-  const handleEnglish = () => {
-    setimgflag(flag1)
-    setlangshow("EN")
-    i18n.changeLanguage("en");
-  }
-  const handleGerman = () => {
-    setlangshow("DE")
-    setimgflag(flag2)
-    i18n.changeLanguage("gr");
-  }
-  const handleFrench = () => {
-    setimgflag(flag3)
-    setlangshow("FR")
-    i18n.changeLanguage("fr");
-  }
+
+    const handleEnglish = () => {
+        setimgflag(flag1)
+        setlangshow("EN")
+        i18n.changeLanguage("en");
+    }
+    const handleGerman = () => {
+      setlangshow("DE")
+      setimgflag(flag2)
+        i18n.changeLanguage("gr");
+    }
+    const handleFrench = () => {
+      setimgflag(flag3)
+      setlangshow("FR")
+        i18n.changeLanguage("fr");
+    }
   const language = [
     {
       flag: imgflag,
@@ -344,7 +345,7 @@ export default function Header() {
             </Menu>
           ))}
 
-          {language.map(({ flag, subcategory, index }) => (
+          {language.map(({ flag,  subcategory, index }) => (
             <Menu
               as="div"
               className="relative inline-block text-left"
@@ -391,14 +392,15 @@ export default function Header() {
                       <Menu.Item key={id}>
 
 
-                        <div onClick={func} className="flex flex-row pl-4 items-center gap-2 text-lg font-pop">
-                          <img
-                            src={flag}
-                            alt=""
-                            className=" w-[20px] h-[15px]"
-                          />{" "}
-                          {lang}
-                        </div>
+
+                            <div onClick={func} className="flex flex-row pl-4 items-center gap-2 text-lg font-pop">
+                              <img
+                                src={flag}
+                                alt=""
+                                className=" w-[20px] h-[15px]"
+                              />{" "}
+                              {lang}
+                            </div>
 
 
                       </Menu.Item>
@@ -446,6 +448,7 @@ export default function Header() {
                   </div>
                 ))}
               </div>
+
             ))}
 
 <Sidebar.Items>

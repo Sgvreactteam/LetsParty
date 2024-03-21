@@ -3,8 +3,11 @@ import Input from "../../../../../ui/Input";
 import AddImages from "../../../../../ui/AddImages";
 import Button from "../../../../../ui/Button";
 import { t } from "i18next";
+import { useNavigate, useLocation} from "react-router-dom";
 
 function ServicesForm() {
+  const location = useLocation();
+  let navigate = useNavigate();
   return (
     <div className=" ">
     <div className="text-[#8D303A] text-2xl font-con border-b-[1px] border-borde py-5 px-10">
@@ -67,8 +70,8 @@ function ServicesForm() {
         </div>
       </form>
       <div className="flex justify-between w-full mt-8 mb-8">
-        <Button type="grayButton">Back</Button>
-        <Button type="purpleButton" to="/myannouncementss">Next</Button>
+        <Button onClick={() => navigate(-1)} type="grayButton">Back</Button>
+        <Button type="purpleButton" to={ location.pathname +  "/myannouncementss"}>Next</Button>
       </div>
     </div>
   </div>

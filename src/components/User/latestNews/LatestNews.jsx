@@ -13,7 +13,10 @@ import "./latestNews.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import image from "../../../assets/Rectangle103.png";
+import l1 from '../../../assets/l1.png'
+import l2 from '../../../assets/l2.png'
+import l3 from '../../../assets/l3.png'
+import l4 from '../../../assets/l4.png'
 import { NavLink } from "react-router-dom";
 import BgImg from "../../../assets/Vector2.png";
 
@@ -21,42 +24,42 @@ const fakeData = [
   {
     id: 1,
     content: "Why register my establishment on Find Your Place?",
-    imageUrl: image,
+    imageUrl: l1,
     cardImg: BgImg,
     date: "12 February 2024",
   },
   {
     id: 2,
     content: "Why register my establishment on Find Your Place?",
-    imageUrl: image,
+    imageUrl: l2,
     cardImg: BgImg,
     date: "12 February ",
   },
   {
     id: 3,
     content: "Why register my establishment on Find Your Place?",
-    imageUrl: image,
+    imageUrl: l3,
     cardImg: BgImg,
     date: "12 February 2024",
   },
   {
     id: 4,
     content: "Why register my establishment on Find Your Place?",
-    imageUrl: image,
+    imageUrl: l4,
     cardImg: BgImg,
     date: "12 February    ",
   },
   {
     id: 5,
     content: "Why register my establishment on Find Your Place?",
-    imageUrl: image,
+    imageUrl: l1,
     cardImg: BgImg,
     date: "12 February 2024",
   },
   {
     id: 6,
     content: "Why register my establishment on Find Your Place?",
-    imageUrl: image,
+    imageUrl: l2,
     cardImg: BgImg,
     date: "12 February 2024",
   },

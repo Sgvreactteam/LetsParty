@@ -1,43 +1,50 @@
 import React from 'react'
 import MainCard from '../commanCard/MainCard';
 import Footer from '../Footer/Footer';
-import image from '../../../assets/Rectangle103.png'
+import img1 from '../../../assets/img1.jpeg'
+import img2 from '../../../assets/img2.png'
+import img3 from '../../../assets/img3.png'
+import img4 from '../../../assets/img4.png'
+import img5 from '../../../assets/img5.png'
+import img6 from '../../../assets/img6.png'
+import img7 from '../../../assets/img7.png'
+import { Link } from 'react-router-dom';
 
 const cardData = [
     {
       id: 1,
-      photoSrc: image,
+      photoSrc: img1,
       name: "David Classic Rock",
       
     },
     {
       id: 2,
-      photoSrc: image,
+      photoSrc: img2,
       name: "Classical Music Band",
     },
     {
       id: 3,
-      photoSrc: image,
+      photoSrc: img3,
       name: "Night club",
     },
     {
       id: 4,
-      photoSrc: image,
+      photoSrc: img4,
       name: "Party room",
     },
     {
       id: 5,
-      photoSrc: image,
+      photoSrc: img5,
       name: "Electronic Arrangement",
     },
     {
       id: 6,
-      photoSrc: image,
+      photoSrc: img6,
       name: "Conference & Meeting room",
     },
     {
       id: 7,
-      photoSrc: image,
+      photoSrc: img7,
       name: "Herry Metal",
     },
     // Add more data as needed
@@ -211,15 +218,19 @@ function FilterEntertainment1() {
     </div>
 
     <div className=" col-span-3">
-        <div className=" font-pop text-xl pb-4">Entertainment</div>
-      <div className="grid grid-cols-4 gap-4">
+
+
+      <div className="grid grid-cols-4 gap-4 mt-8">
+
         {cardData.map((data) => (
+          <Link to={"/details/" + data.id}>
           <MainCard
             key={data.id}
             photoSrc={data.photoSrc}
             name={data.name}
             city={data.city}
           />
+          </Link>
         ))}
       </div>
     </div>

@@ -8,8 +8,16 @@ import whiteLogo from './logoWhite.png'
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import ContactOverlay from './ContactOverlay';
 const Footer = () => {
     const { t } = useTranslation()
+    const [contactModal, setContactModal] = useState(false)
+    const openContactOverlay = () => {
+        setContactModal(true);
+      }
+      const closeContactOverlay = ( ) => {
+        setContactModal(false);
+      }
   return (
     <div className="bg-[#141626] w-full text-white font-pop pt-12 flex flex-col">
         <div className="flex flex-row w-[80%] mx-auto justify-between">
@@ -24,9 +32,16 @@ const Footer = () => {
                 </p>
                 <Link to='/ProfessionalRegister'> {t('createAccLogin')} </Link>
                 <Link to=""> {t('changeAnn')} </Link>
-                <div className='px-4 w-40 py-2 mt-2 rounded-sm bg-secondary font-light'><a href="" className="flex  items-center gap-2"> <FaPhoneAlt size={20} /> {t('contactMe')} </a></div>
+                <div  onClick={() => {openContactOverlay()}} className='px-4 w-40 py-2 mt-2 rounded-sm bg-secondary font-light cursor-pointer'><p className="flex  items-center gap-2"> <FaPhoneAlt size={20} /> {t('contactMe')} </p></div>
                 <img src={whiteLogo} className='w-40 bg-black mt-2' alt="" />
             </div>
+            {
+            contactModal && (
+                <ContactOverlay
+                  closeContactOverlay={closeContactOverlay}
+                />
+              )
+    }
             <div className="flex flex-col gap-2 w-1/3 font-light">
                 <Link to="/terms&condition"> {t('termsCon')} </Link>
                 <p> {t('pripol')} </p>
