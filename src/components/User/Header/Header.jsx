@@ -376,16 +376,7 @@ export default function Header() {
                 </Menu.Button>
               </div>
 
-              <Transition
-                as={Fragment}
-                show={openMenu === flag}
-                enter="transition ease-out duration-100"
-                enterFrom="transform opacity-0 scale-95"
-                enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
-                leaveFrom="transform opacity-100 scale-100"
-                leaveTo="transform opacity-0 scale-95"
-              >
+              
                 <Menu.Items className="absolute right-0 z-10  w-40 origin-top-right  bg-white shadow-lg ">
                   <div className="py-1">
                     {subcategory.map(({ id, flag, lang, func }) => (
@@ -393,7 +384,7 @@ export default function Header() {
 
 
 
-                            <div onClick={func} className="flex flex-row pl-4 items-center gap-2 text-lg font-pop">
+                            <div onClick={func} className="flex flex-row pl-4 cursor-pointer items-center gap-2 text-lg font-pop">
                               <img
                                 src={flag}
                                 alt=""
@@ -407,7 +398,7 @@ export default function Header() {
                     ))}
                   </div>
                 </Menu.Items>
-              </Transition>
+
             </Menu>
           ))}
         </div>
@@ -439,8 +430,8 @@ export default function Header() {
               <div className="flex gap-2" key={index}>
                 {subcategory.map(({ id, flag, lang }) => (
                   <div
-                    onClick={func}
-                    className="flex flex-row gap-1 justify-center items-center"
+                    onKeyPress={func}
+                    className="flex flex-row  cursor-pointer gap-1 justify-center items-center"
                     key={id}
                   >
                     <img src={flag} alt="" className="w-5 h-3" />
