@@ -1,11 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react'
 import './photoOverlay.css'
+import ReCAPTCHA from 'react-google-recaptcha';
 import { IoCloseSharp } from "react-icons/io5";
 import { t } from 'i18next';
 import Input from '../../../ui/Input';
 import Button from '../../../ui/Button';
 const FormOverlay = ({closeFormModal}) => {
+  const [captchaToken, setCaptchaToken] = useState('');
+
+  const handleCaptchaChange = (token) => {
+    // Called when the user has successfully completed the reCAPTCHA challenge and a token has been generated
+    console.log('Captcha Token:', token);
+    setCaptchaToken(token);
+  };
     useEffect(() => {
         const handleClickOutside = (event) => {
             const modalContent = document.querySelector('.modal-content');
@@ -82,7 +90,10 @@ const FormOverlay = ({closeFormModal}) => {
         <Input placeholder={t('message')} classes="textarea"></Input>
 
         <div className="flex justify-between items-center">
-            <p>I'm not a robot</p>
+            <ReCAPTCHA
+            sitekey="YOUR_RECAPTCHA_SITE_KEY" // Replace with your reCAPTCHA Site Key
+            onChange={handleCaptchaChange} // Callback function when token is generated
+            />
             <Button type="purpleButton"> {t('submit')} </Button>
         </div>
 
