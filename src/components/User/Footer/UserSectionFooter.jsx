@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { useTranslation } from 'react-i18next';
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropup } from "react-icons/io";
-import Modaal from '../Header/Modaal';
 import VenueOverlay from './VenueOverlay';
 import EntOverlay from './EntOverlay';
 import { Link } from 'react-router-dom';

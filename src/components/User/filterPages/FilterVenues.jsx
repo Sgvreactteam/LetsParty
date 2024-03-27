@@ -5,16 +5,11 @@ import img2 from '../../../assets/img2.png'
 import img3 from '../../../assets/img3.png'
 import img4 from '../../../assets/img4.png'
 import img5 from '../../../assets/img5.png'
-
-import Footer from "../Footer/Footer";
 import Map from "./Map";
 import { t } from 'i18next';
-
 import person from '../../../assets/Vector.png'
 import group from '../../../assets/Group.png'
 import { Link } from "react-router-dom";
-
-
 
 const cardData = [
   {
@@ -96,7 +91,7 @@ function FilterVenues() {
       Heading: "Features of the venue ",
       labels: [
         { id: "1", label: t('profKitchen') },
-        { id: "1", label: t('partywithTerrRooms') },
+        { id: "1", label: t('withTerr') },
         { id: "1", label: t('withGar') },
         { id: "1", label: t('soundSysAva') },
         { id: "1", label: t('lightsAva') },

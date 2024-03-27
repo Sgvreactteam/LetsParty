@@ -27,7 +27,7 @@ const Input = ({ children, placeholder, type, classes, state, onChange }) => {
   
 
   return (
-    <input onChange={handleChange}  placeholder={placeholder} type={type} className={className}>
+    <input onChange={handleChange} state={state} placeholder={placeholder} type={type} className={className}>
       {children}
     </input>
   )

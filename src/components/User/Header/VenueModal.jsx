@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { Modal, Select } from "flowbite-react";
 import Button from "../../../ui/Button";
 
@@ -7,20 +7,49 @@ function VenueModal({ isModalOpen, setIsModalOpen }) {
   const [modalSize, setModalSize] = useState("md");
   const category =  [
     { value: "", label: "Select" },
-    { value: "Birthday", label: "Birthday" },
-    { value: "Wedding", label: "Wedding" },
-    { value: "Anniversary", label: "Anniversary" },
-    { value: "Family Gathering", label: "Family Gathering" },
-    { value: "reception", label: "Reception" },
+        { value: "Birthday", label: "Birthday" },
+        { value: "Wedding", label: "Wedding" },
+        { value: "Anniversary", label: "Anniversary" },
+        { value: "Family Gathering", label: "Family Gathering" },
+        { value: "Concert/theatre show", label: "Concert/theatre show" },
+        { value: "Product launch", label: "Product launch" },
+        { value: "Afterwork", label: "Afterwork" },
+        { value: "Conference", label: "Conference" },
+        { value: "Business meeting", label: "Business meeting" },
+        { value: "Gala/Ceremony", label: "Gala/Ceremony" },
     
   ]
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsModalOpen();
+      }
+    };
+
+      const handleClickOutside = (event) => {
+        const modalContent = document.querySelector(".modal-content");
+  
+        if (modalContent && !event.target.closest(".modal-content")) {
+          // Close the modal if the click is outside the modal content and not on the excluded class
+          setIsModalOpen();
+        }
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
+  
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [setIsModalOpen]);
 
   return (
     <>
 
-          <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <Modal className="" show={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <div className="fixed inset-0 flex justify-center items-center">
-        <div className="bg-white rounded-lg shadow-lg ">
+        <div className="bg-white modal-content rounded-lg shadow-lg ">
             <Modal.Header className="!border-none"></Modal.Header>
             <Modal.Body className="px-4 pb-3">
               <div className="text-center font-con text-2xl text-secondary">
@@ -51,7 +80,7 @@ function VenueModal({ isModalOpen, setIsModalOpen }) {
                     className="font-lato  rounded border border-borde focus:outline-none py-2"
                   >
                     <option value="">Privatise</option>
-                    <option value="">Book</option>
+                    <option value="">Book a table</option>
                   </select>
                 </div>
                 <div className="flex flex-col">

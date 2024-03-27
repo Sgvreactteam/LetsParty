@@ -43,7 +43,7 @@ function AnnouncementStep3() {
   return (
     <>
       <div className="text-2xl text-secondary  font-con border-b-[1px] border-borde py-5 px-10">{t('createAnn')}</div>
-      <div className="mt-3 px-10">
+      { location.pathname==="/Rental/myannouncementss" || location.pathname==="/Services/myannouncementss"  ? <></> : <div className="mt-3 px-10">
         {headingsData.map((headingData, index) => (
           <div key={index}>
             <h2 className="text-xl font-con  pb-2">{headingData.heading}</h2>
@@ -66,9 +66,9 @@ function AnnouncementStep3() {
             </div>
           </div>
         ))}
-      </div>
+      </div>}
 
-      { !location.pathname==="Entertainment/myannouncementss" && <div className="mt-3 px-10">
+      { location.pathname==="/Entertainment/myannouncementss" ?<></> : <div className="mt-3 px-10">
         <h2 className="text-2xl font-con  pb-2">Accepted Kinds Of Booking</h2>
         <div className="flex flex-wrap gap-2">
           <div className=" flex justify-start items-baseline ">

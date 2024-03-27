@@ -25,24 +25,31 @@ function MapOverlay({ closeModal }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
+      const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      };
     const handleClickOutside = (event) => {
-      const modalContent = document.querySelector(".modal-content");
+      const modalContent = document.querySelector(".modal-contentM");
 
-      if (modalContent && !event.target.closest(".modal-content")) {
+      if (modalContent && !event.target.closest(".modal-contentM")) {
         // Close the modal if the click is outside the modal content and not on the excluded class
         closeModal();
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [closeModal]);
 
   return (
     <div className="modal-overlay">
-      <div className="modal-content relative">
+      <div className="modal-contentM relative">
         <div className="w-[70vw] items-center bg-white h-[30px]">
           <button onClick={closeModal}>
             <IoCloseSharp

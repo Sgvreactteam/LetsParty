@@ -38,7 +38,7 @@ const LandingPage = () => {
     
       const subcategoriesMap = {
         venues: [
-          { value: "", label: "Kind of Event" },
+          { value: "", label: "Select" },
           { value: "Castles", label: `${t('castles')}` },
           { value: "Party Rooms", label: `${t('partyRooms')}` },
           { value: "Bars", label: `${t('bars')}` },

@@ -5,6 +5,12 @@ import './overlay.css'
 import { IoMdClose } from "react-icons/io";
 const VenueOverlay = ({ closeModal }) => {
     useEffect(() => {
+      const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      };
+
         const handleClickOutside = (event) => {
           const modalContent = document.querySelector(".modal-content");
     
@@ -14,9 +20,10 @@ const VenueOverlay = ({ closeModal }) => {
           }
         };
         document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener('keydown', handleKeyDown);
     
         return () => {
-          document.removeEventListener("mousedown", handleClickOutside);
+          document.removeEventListener("mousedown keydown", handleClickOutside, handleKeyDown);
         };
       }, [closeModal]);
       const category =  [
@@ -25,7 +32,12 @@ const VenueOverlay = ({ closeModal }) => {
         { value: "Wedding", label: "Wedding" },
         { value: "Anniversary", label: "Anniversary" },
         { value: "Family Gathering", label: "Family Gathering" },
-        { value: "reception", label: "Reception" },
+        { value: "Concert/theatre show", label: "Concert/theatre show" },
+        { value: "Product launch", label: "Product launch" },
+        { value: "Afterwork", label: "Afterwork" },
+        { value: "Conference", label: "Conference" },
+        { value: "Business meeting", label: "Business meeting" },
+        { value: "Gala/Ceremony", label: "Gala/Ceremony" },
         
       ]
   return (
@@ -60,7 +72,7 @@ const VenueOverlay = ({ closeModal }) => {
                     className="font-lato  rounded border border-borde focus:outline-none py-2"
                   >
                     <option value="">Privatise</option>
-                    <option value="">Book</option>
+                    <option value="">Book a table</option>
                   </select>
                 </div>
                 <div className="flex flex-col">
