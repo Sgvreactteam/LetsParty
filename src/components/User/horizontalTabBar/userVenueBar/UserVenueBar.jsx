@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Virtual, Navigation, Pagination } from "swiper/modules";
+import {  Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaHeart } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
@@ -18,6 +18,14 @@ import group from '../../../../assets/Group.png'
 
 
 function UserVenueBar(props) {
+
+  // const progressCircle = useRef(null);
+  // const progressContent = useRef(null);
+  // const onAutoplayTimeLeft = (s, time, progress) => {
+  //   progressCircle.current.style.setProperty("--progress", 1 - progress);
+  //   progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  //   progressContent.current.style.display = "none";
+  // };
 
   const handleSwiperInit = (swiper) => {
     props.setSwiperRef(swiper);
@@ -74,8 +82,14 @@ function UserVenueBar(props) {
       <div className="z-10">
          <h3>Castles</h3>
         <Swiper
-          modules={[Virtual, Navigation, Pagination]}
+          modules={[ Navigation, Pagination, Autoplay]}
           onSwiper={handleSwiperInit}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          // onAutoplayTimeLeft={onAutoplayTimeLeft}
+          loop={true}
           slidesPerView={1}
           spaceBetween={30}
           navigation={false} 
@@ -90,7 +104,6 @@ function UserVenueBar(props) {
               slidesPerView: 4,
             },
           }}
-          virtual
         >
           {fakeData.map((venue) => (
            <SwiperSlide key={venue.id} virtualIndex={venue.id - 1}>

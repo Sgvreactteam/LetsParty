@@ -121,5 +121,6 @@
     "eveInfo": "Informationen zur Veranstaltung",
     "eveDate": "Veranstaltungsdatum",
     "participants": "Zahl der Teilnehmer",
-    "message": "Nachricht"
+    "message": "Nachricht",
+    "nameOfCom": "Name der Firma"
 }

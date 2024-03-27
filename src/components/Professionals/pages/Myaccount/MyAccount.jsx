@@ -2,11 +2,19 @@ import { useState, useEffect } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 import Input from "../../../../ui/Input";
+import { MdOutlineEdit } from "react-icons/md";
+import Button from "../../../../ui/Button";
 
 function MyAccount() {
 
   const { t } = useTranslation();
   const [textareaHeight, setTextareaHeight] = useState("auto");
+  const [editing, setEditing] = useState(false)
+  const handleChangePassword = () => {
+    setEditing(true)
+  }
+  const [newPass, setNewPass] = useState("")
+  const [confirmPass, setConfirmPass] = useState("")
 
   useEffect(() => {
     const textarea = document.getElementById("address");
@@ -15,15 +23,23 @@ function MyAccount() {
       textarea.style.height = textarea.scrollHeight + "px";
     }
   }, [textareaHeight]);
+
+  const handleNewPass = (event) => {
+    setNewPass(event.target.value)
+  }
+  const handleConfirmPass = (event) => {
+    setConfirmPass(event.target.value)
+  }
   return (
     <div className="">
       <div className="flex justify-between items-center border-b-2 border-[#CCCCCC]  bg-[#F8F8F8]">
         <div className="text-2xl text-secondary font-con py-5 pl-10">{t('myAcc')}</div>
-        <div className="pr-10">
-          <button className="flex items-center justify-center text-white bg-primary font-pop border rounded-md py-1 px-3">
+        <div className="pr-10 flex gap-4">
+          <Button type="purpleButton" onClick={handleChangePassword}>Change Password</Button>
+          <Button type="purpleButton">
             <FaRegEdit size={16} />
             <span className="ms-1">{t('edit')}</span>
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -42,16 +58,7 @@ function MyAccount() {
               className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
             />
           </div>
-          <div className="flex flex-col">
-            <label htmlFor="" className="font-pop">
-              {t('password')}
-            </label>
-            <input
-              type="password"
-              placeholder="Password"
-              className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
-            />
-          </div>
+          
           <div className="flex flex-col">
             <label htmlFor="" className="font-pop">
               {t('phoneNum')}
@@ -68,10 +75,30 @@ function MyAccount() {
             </label>
             <input
               type="text"
-              placeholder="David"
+              placeholder=""
               className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
             />
           </div>
+          <div className="flex flex-col">
+            <label htmlFor="" className="font-pop">
+              {t('nameOfCom')}
+            </label>
+            <input
+              type="text"
+              placeholder="Name of the company"
+              className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="" className="font-pop">
+              {t('email')}
+            </label>
+            <input
+              type="text"
+              placeholder="Email address"
+              className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
+            />
+          </div> <br />
           <div className="flex flex-col">
             <label htmlFor="" className="font-pop">
               {t('address')}
@@ -79,12 +106,24 @@ function MyAccount() {
             <Input
               id="address"
               classes="textarea"
-              placeholder="Street : Avenida Cervantes 5, Elantxobe , Biscay Zip Code : 48310"
+              placeholder=""
 
               onChange={(e) => setTextareaHeight(e.target.scrollHeight + "px")}
             />
           </div>
         </div>
+          {
+            editing && <div className="flex flex-col">
+              <label htmlFor="">New Password</label>
+              <Input state={newPass} onChange={handleNewPass} classes="small" placeholder=" Enter new password" type="password"></Input>
+              <label htmlFor="">Confirm new password</label>
+              <Input state={confirmPass} onChange={handleConfirmPass} classes="small" placeholder="Confirm new password" type="password"></Input>
+            </div>
+          }
+          <div className="mt-8 flex flex-end">
+            
+            <Button type="purpleButton">Save</Button>
+          </div>
       </div>
     </div>
   )

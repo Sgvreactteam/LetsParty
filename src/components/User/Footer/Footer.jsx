@@ -33,7 +33,7 @@ const Footer = () => {
                 <Link to='/ProfessionalRegister'> {t('createAccLogin')} </Link>
                 <Link to=""> {t('changeAnn')} </Link>
                 <div  onClick={() => {openContactOverlay()}} className='px-4 w-40 py-2 mt-2 rounded-sm bg-secondary font-light cursor-pointer'><p className="flex  items-center gap-2"> <FaPhoneAlt size={20} /> {t('contactMe')} </p></div>
-                <img src={whiteLogo} className='w-40 bg-black mt-2' alt="" />
+                <img src={whiteLogo} className='w-40 bg-[#141626] mt-2' alt="" />
             </div>
             {
             contactModal && (
@@ -41,7 +41,7 @@ const Footer = () => {
                   closeContactOverlay={closeContactOverlay}
                 />
               )
-    }
+            }
             <div className="flex flex-col gap-2 w-1/3 font-light">
                 <Link to="/terms&condition"> {t('termsCon')} </Link>
                 <p> {t('pripol')} </p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Modal } from "flowbite-react";
 import Button from "../../../ui/Button";
 
@@ -12,10 +12,36 @@ function EnterModal({ isModalOpen, setIsModalOpen }) {
     { value: "afterwork ", label: "Afterwork" },
 
   ];
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsModalOpen();
+      }
+    };
+
+      const handleClickOutside = (event) => {
+        const modalContent = document.querySelector(".modal-content");
+  
+        if (modalContent && !event.target.closest(".modal-content")) {
+          // Close the modal if the click is outside the modal content and not on the excluded class
+          setIsModalOpen();
+        }
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
+  
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [setIsModalOpen]);
+
+
   return (
     <Modal show={isModalOpen} onClose={() => setIsModalOpen(false)}>
       <div className="fixed inset-0 flex justify-center items-center">
-        <div className="bg-white rounded-lg shadow-lg ">
+        <div className="bg-white rounded-lg modal-content shadow-lg ">
           <Modal.Header className="!border-none"></Modal.Header>
           <Modal.Body className="px-3">
             <div className="text-center font-con text-2xl text-secondary">
