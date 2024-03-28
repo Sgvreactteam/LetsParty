@@ -5,6 +5,11 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 const PhotoOverlay = ({ closeModal, currentPhoto, onPrev, onNext }) => {
     useEffect(() => {
+      const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      };
         const handleClickOutside = (event) => {
             const modalContent = document.querySelector('.modal-content');
 
@@ -22,9 +27,11 @@ const PhotoOverlay = ({ closeModal, currentPhoto, onPrev, onNext }) => {
           
         };
         document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleKeyDown);
     
         return () => {
           document.removeEventListener('mousedown', handleClickOutside);
+          document.removeEventListener('keydown', handleKeyDown);
         };
 
         

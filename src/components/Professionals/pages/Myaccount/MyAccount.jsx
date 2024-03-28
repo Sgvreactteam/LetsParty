@@ -48,16 +48,7 @@ function MyAccount() {
           {t('personalInfo')}
         </h2>
         <div className="grid grid-cols-2 gap-3">
-          <div className="flex flex-col">
-            <label htmlFor="" className="font-pop ">
-              {t('email')}
-            </label>
-            <input
-              type="email"
-              placeholder="Ex: demo@gmail.com"
-              className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
-            />
-          </div>
+          
           
           <div className="flex flex-col">
             <label htmlFor="" className="font-pop">
@@ -98,7 +89,7 @@ function MyAccount() {
               placeholder="Email address"
               className="font-lato font-medium rounded border border-borde focus:outline-none p-2"
             />
-          </div> <br />
+          </div> 
           <div className="flex flex-col">
             <label htmlFor="" className="font-pop">
               {t('address')}

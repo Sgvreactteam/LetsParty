@@ -6,7 +6,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { t } from 'i18next';
 import Input from '../../../ui/Input';
 import Button from '../../../ui/Button';
-const FormOverlay = ({closeFormModal}) => {
+const FormOverlay = ({closeFormModalX}) => {
   const [captchaToken, setCaptchaToken] = useState('');
 
   const handleCaptchaChange = (token) => {
@@ -15,6 +15,11 @@ const FormOverlay = ({closeFormModal}) => {
     setCaptchaToken(token);
   };
     useEffect(() => {
+      const handleKeyDown = (event) => {
+        if (event.key === 'Escape') {
+          closeFormModalX();
+        }
+      };
         const handleClickOutside = (event) => {
             const modalContent = document.querySelector('.modal-content');
 
@@ -24,7 +29,7 @@ const FormOverlay = ({closeFormModal}) => {
               !event.target.closest('.button') 
             ) {
               // Close the modal if the click is outside the modal content and not on the excluded class
-              closeFormModal();
+              closeFormModalX();
             }
 
             
@@ -32,15 +37,17 @@ const FormOverlay = ({closeFormModal}) => {
           
         };
         document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('keydown', handleKeyDown);
     
         return () => {
           document.removeEventListener('mousedown', handleClickOutside);
+          document.removeEventListener('keydown', handleKeyDown);
         };
 
         
     
         
-      }, [closeFormModal]);
+      }, [closeFormModalX]);
 
       
     
@@ -49,7 +56,7 @@ const FormOverlay = ({closeFormModal}) => {
       <div className="modal-content bg-white flex flex-col gap-2 p-8 rounded-3xl w-[50vw] overflow-y-auto top-0">
         <div className="flex w-full justify-center">
         <p className='text-secondary text-2xl'> {t('contactwith')} </p>
-        <IoCloseSharp onClick={closeFormModal} size={24} className='absolute top-0 mt-2 mr-2 right-0' color='white' />
+        <IoCloseSharp onClick={closeFormModalX} size={24} className='absolute top-0 mt-2 mr-2 right-0' color='white' />
         </div>
         <p className='text-xl underline-offset-4 underline'>{t('personalInfo')}</p>
         <div className="flex gap-4">
@@ -91,9 +98,12 @@ const FormOverlay = ({closeFormModal}) => {
 
         <div className="flex justify-between items-center">
             <ReCAPTCHA
-            sitekey="YOUR_RECAPTCHA_SITE_KEY" // Replace with your reCAPTCHA Site Key
+            sitekey="" // Replace with your reCAPTCHA Site Key
             onChange={handleCaptchaChange} // Callback function when token is generated
             />
+            {/* <button className='' onClick={() => console.log('Token:', captchaToken)}>Check Token</button> */} 
+
+
             <Button type="purpleButton"> {t('submit')} </Button>
         </div>
 

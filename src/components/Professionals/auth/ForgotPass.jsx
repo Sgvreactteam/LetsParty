@@ -4,9 +4,8 @@ import authBackground from '../../../assets/auth-background.jpeg'
 import Logo from '../../../assets/logo.png'
 import Button from '../../../ui/Button';
 import Input from '../../../ui/Input';
-import { Link } from 'react-router-dom';
 
-const UserLogin = () => {
+const ForgotPass = () => {
     const { t } = useTranslation();
   return (
     <div className='relative w-full h-[100vh] flex items-center justify-center'>
@@ -18,17 +17,15 @@ const UserLogin = () => {
           <form className='flex sm:flex-row w-full flex-col flex-wrap justify-around items-center gap-2' action="">
 
             <Input placeholder={t('email')} type="email" classes="large"  />
-            <Input placeholder={t('password')} type="password" classes="large"  />
-            <Button to="/landingPage" type="purpleButton">{t('register')}</Button>
+            <Input placeholder={t('newpassword')} type="password" classes="large"  />
+            <Input placeholder={t('verpassword')} type="password" classes="large"  />
+            <Button to="/ProfessionalDashboard" type="purpleButton">{t('submit')}</Button>
           </form>
-          <div className="flex justify-between w-full mt-8">
-            <Link className='p-2 border rounded-sm' to='/userRegister'>{t('createAcc')}</Link>
-            <Link to="/userForgotpass" className='p-2 border rounded-sm'>{t('forgotPass')}</Link>
-          </div>
+          
         </div>
       </div>
     </div>
   )
 }
 
-export default UserLogin
+export default ForgotPass
