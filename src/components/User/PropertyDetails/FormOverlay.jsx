@@ -98,7 +98,7 @@ const FormOverlay = ({closeFormModalX}) => {
 
         <div className="flex justify-between items-center">
             <ReCAPTCHA
-            sitekey="" // Replace with your reCAPTCHA Site Key
+            sitekey="6LcRUacpAAAAAPS2efSYzcjEoNlYXV9bh2S8xHu1" // Replace with your reCAPTCHA Site Key
             onChange={handleCaptchaChange} // Callback function when token is generated
             />
             {/* <button className='' onClick={() => console.log('Token:', captchaToken)}>Check Token</button> */} 

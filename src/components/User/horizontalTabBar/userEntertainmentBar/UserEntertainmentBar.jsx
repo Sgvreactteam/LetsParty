@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Virtual, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import img1 from "../../../../../assets/Rectangle103.png"
 import { FaHeart } from "react-icons/fa";
@@ -59,23 +59,28 @@ function UserEntertainmentBar() {
       <div className="px-16">
         <h3>Castles</h3>
         <Swiper
-          modules={[Virtual, Navigation, Pagination]}
-          onSwiper={handleSwiperInit}
-          slidesPerView={1}
-          spaceBetween={30}
-          navigation={false} // Disable built-in navigation
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 4,
-            },
-          }}
-          virtual
+           modules={[ Navigation, Pagination, Autoplay]}
+           onSwiper={handleSwiperInit}
+           autoplay={{
+             delay: 1500,
+             disableOnInteraction: false,
+           }}
+           // onAutoplayTimeLeft={onAutoplayTimeLeft}
+           loop={true}
+           slidesPerView={1}
+           spaceBetween={30}
+           navigation={false} 
+           breakpoints={{
+             640: {
+               slidesPerView: 2,
+             },
+             768: {
+               slidesPerView: 3,
+             },
+             1024: {
+               slidesPerView: 4,
+             },
+           }}
         >
           {EntertainmentData.map((venue) => (
             <NavLink to={"/details/" + venue.id}>
