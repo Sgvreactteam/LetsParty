@@ -9,7 +9,8 @@ const Input = ({ children, placeholder, type, classes, state, onChange }) => {
     const styles = {
       small: base + "sm:w-[45%] w-[100%]",
       large: base + "sm:w-[95%] w-[100%]",
-      textarea: base + "sm:w-[95%] w-[100%]"
+      textarea: base + "sm:w-[95%] w-[100%]",
+      basic: base + "w-[100%]"
     }
 
     const className = styles[classes];

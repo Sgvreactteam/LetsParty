@@ -275,7 +275,8 @@ export default function Header() {
           </div>
           <Modaal
             isModalOpen={isModalOpen}
-            setIsModalOpen={() => setIsModalOpen(!isModalOpen)}
+            setIsModalOpen={() => setIsModalOpen(true)}
+            closeModal={() => setIsModalOpen(false)}
             category={selectedCategory}
           />
 

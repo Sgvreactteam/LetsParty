@@ -3,7 +3,7 @@ import { Modal } from "flowbite-react";
 import Button from "../../../ui/Button";
 
 
-function EnterModal({ isModalOpen, setIsModalOpen }) {
+function EnterModal({ isModalOpen, setIsModalOpen, closeModal }) {
   const category = [
     { value: "", label: "Select..." },
     { value: "DJ", label: "DJ" },
@@ -16,7 +16,7 @@ function EnterModal({ isModalOpen, setIsModalOpen }) {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
-        setIsModalOpen();
+        closeModal();
       }
     };
 
@@ -25,7 +25,7 @@ function EnterModal({ isModalOpen, setIsModalOpen }) {
   
         if (modalContent && !event.target.closest(".modal-content")) {
           // Close the modal if the click is outside the modal content and not on the excluded class
-          setIsModalOpen();
+          closeModal();
         }
       };
       document.addEventListener("mousedown", handleClickOutside);
@@ -35,7 +35,7 @@ function EnterModal({ isModalOpen, setIsModalOpen }) {
         document.removeEventListener("mousedown", handleClickOutside);
         document.removeEventListener('keydown', handleKeyDown);
       };
-    }, [setIsModalOpen]);
+    }, [closeModal]);
 
 
   return (

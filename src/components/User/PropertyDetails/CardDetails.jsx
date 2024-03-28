@@ -211,7 +211,7 @@ const Details = () => {
     const openFormModal = () => {
       setFormModal(true);
     }
-    const closeFormModal = ( ) => {
+    const closeFormModalX = ( ) => {
       setFormModal(false);
     }
 
@@ -334,7 +334,7 @@ const Details = () => {
     {
             formModal && (
                 <FormOverlay
-                  closeFormModal={closeFormModal}
+                  closeFormModalX={closeFormModalX}
                 />
               )
     }

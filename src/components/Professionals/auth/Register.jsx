@@ -4,6 +4,7 @@ import authBackground from '../../../assets/auth-background.jpeg'
 import Logo from '../../../assets/logo.png'
 import Button from '../../../ui/Button';
 import Input from '../../../ui/Input';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     const { t } = useTranslation();
@@ -22,7 +23,7 @@ const Register = () => {
             <Input placeholder={t('address')} type="text" classes="textarea" />
             <Button to="/ProfessionalDashboard" type="purpleButton">{t('register')}</Button>
           </form>
-          <span className='mt-4'>{t('alreadyHaveAnAccount')} {t('login')}</span>
+          <span className='mt-4'>{t('alreadyHaveAnAccount')}  <Link to='/ProfessionalLogin'> {t('login')}</Link></span>
         </div>
       </div>
     </div>

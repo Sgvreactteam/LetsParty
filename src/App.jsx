@@ -26,6 +26,8 @@ import Profile from './components/User/ProfilePage/Profile';
 import Favourites from './components/User/Favourites/Favourites';
 import TermCondition from './components/User/TermCondition/TermCondition';
 import MainLayout from './Layout/MainLayout';
+import Login from './components/Professionals/auth/Login';
+import ForgotPass from './components/Professionals/auth/ForgotPass';
 
 function App() {
 
@@ -35,9 +37,9 @@ function App() {
       <Routes>
         {/* User ======== */}
         <Route index element={<UserLogin />} />
-        <Route element={<MainLayout/>}>
         <Route path='/userRegister' element={<UserRegister />} />
         <Route path='/userForgotpass' element={<UserForgotPass />} />
+        <Route element={<MainLayout/>}>
         <Route path='/landingPage' element={<LandingPage />} />
         <Route path='/filterVenues' element={<FilterVenues />} />
         <Route path='/profile' element={<Profile />} />
@@ -52,6 +54,8 @@ function App() {
         {/* professional=========== */}
         <>
         <Route path='/ProfessionalRegister' index element={<Register />}/>
+        <Route path='/ProfessionalLogin' element={<Login />} />
+        <Route path='/forgotPassword' element={<ForgotPass />} />
         <Route element={<ProLayout />}>
         <Route path='/ProfessionalDashboard' element={<Prodashboard index="0" />} />
         <Route path='/myaccount' element={<MyAccount />} />
