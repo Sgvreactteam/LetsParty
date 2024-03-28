@@ -28,11 +28,18 @@ const EntOverlay = ({ closeModal }) => {
       };
     }, [closeModal]);
       const category = [
-        { value: "", label: "Select..." },
-        { value: "DJ", label: "DJ" },
-        { value: "concert ", label: "Concert/Theatre Show" },
-        { value: "public party  ", label: "Public Party" },
-        { value: "afterwork ", label: "Afterwork" },
+        { value: "", label: "Select" },
+
+    { value: "Birthday", label: "Birthday" },
+        { value: "Wedding", label: "Wedding" },
+        { value: "Anniversary", label: "Anniversary" },
+        { value: "Family Gathering", label: "Family Gathering" },
+        { value: "Concert/theatre show", label: "Concert/theatre show" },
+        { value: "Product launch", label: "Product launch" },
+        { value: "Afterwork", label: "Afterwork" },
+        { value: "Conference", label: "Conference" },
+        { value: "Business meeting", label: "Business meeting" },
+        { value: "Gala/Ceremony", label: "Gala/Ceremony" },
     
       ];
   return (

@@ -88,7 +88,7 @@ const ContactOverlay = ({closeContactOverlay}) => {
 
         <div className="flex justify-between items-center">
         <ReCAPTCHA
-        sitekey="YOUR_RECAPTCHA_SITE_KEY" // Replace with your reCAPTCHA Site Key
+        sitekey="6LcRUacpAAAAAPS2efSYzcjEoNlYXV9bh2S8xHu1" // Replace with your reCAPTCHA Site Key
         onChange={handleCaptchaChange} // Callback function when token is generated
       />
             <Button type="purpleButton"> {t('submit')} </Button>
